@@ -16,7 +16,7 @@ namespace JXM.Data
     public partial class JXMobileDBContext : DbContext
     {
         public JXMobileDBContext()
-            : base("name=JXMobileDBContext")
+            : base("name=JXMLocalDBConnection")
         {
         }
     

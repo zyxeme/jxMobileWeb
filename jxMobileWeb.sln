@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jxMobileWeb", "jxMobileWeb\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{9B8C0634-F28B-4F09-8221-BEAAF84B74FE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{48240902-F98B-41B6-88EA-E958D1FD9A20}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{9B8C0634-F28B-4F09-8221-BEAAF84B74FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B8C0634-F28B-4F09-8221-BEAAF84B74FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B8C0634-F28B-4F09-8221-BEAAF84B74FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48240902-F98B-41B6-88EA-E958D1FD9A20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48240902-F98B-41B6-88EA-E958D1FD9A20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48240902-F98B-41B6-88EA-E958D1FD9A20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48240902-F98B-41B6-88EA-E958D1FD9A20}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
