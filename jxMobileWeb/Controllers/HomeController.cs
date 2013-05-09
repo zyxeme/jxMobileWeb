@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace jxMobileWeb.Controllers
+namespace JXM.MobileWeb.Controllers
 {
     public class HomeController : Controller
     {
