@@ -4,7 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Web;
 
-namespace JXM.Domain.Infrastructure
+namespace JXM.Domain.LocalDB.Infrastructure
 {
     public interface IGenericRepository
     {

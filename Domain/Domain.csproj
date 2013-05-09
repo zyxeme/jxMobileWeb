@@ -44,10 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Infrastructure\GenericRepository.cs" />
-    <Compile Include="Infrastructure\IGenericRepository.cs" />
-    <Compile Include="Infrastructure\IUnitOfWork.cs" />
-    <Compile Include="Infrastructure\UnitOfWork.cs" />
+    <Compile Include="Interfaces\IRecordRepository.cs" />
+    <Compile Include="LocalDB\Infrastructure\GenericRepository.cs" />
+    <Compile Include="LocalDB\Infrastructure\IGenericRepository.cs" />
+    <Compile Include="LocalDB\Infrastructure\IUnitOfWork.cs" />
+    <Compile Include="LocalDB\Infrastructure\UnitOfWork.cs" />
+    <Compile Include="LocalDB\RecordRepositoryLocal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

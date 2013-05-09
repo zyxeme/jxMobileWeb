@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using JXM.Data;
 
-namespace JXM.Domain.Infrastructure
+namespace JXM.Domain.LocalDB.Infrastructure
 {
     public class GenericRepository : IGenericRepository
     {
