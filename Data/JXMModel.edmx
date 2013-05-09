@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="JXMobileModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="JXMobileModelStoreContainer">
+          <EntitySet Name="vReportListForSearch" EntityType="JXMobileModel.Store.vReportListForSearch" store:Type="Views" store:Schema="dbo" store:Name="vReportListForSearch">
+            <DefiningQuery>SELECT 
+      [vReportListForSearch].[ENTERPRISECODE] AS [ENTERPRISECODE], 
+      [vReportListForSearch].[CUSTOMERCODE] AS [CUSTOMERCODE], 
+      [vReportListForSearch].[CARMNGNO] AS [CARMNGNO], 
+      [vReportListForSearch].[NUMBERPLATE] AS [NUMBERPLATE], 
+      [vReportListForSearch].[MODELNAME] AS [MODELNAME], 
+      [vReportListForSearch].[CUSTNAME] AS [CUSTNAME], 
+      [vReportListForSearch].[KANA] AS [KANA]
+      FROM [dbo].[vReportListForSearch] AS [vReportListForSearch]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'JXMobile.dbo.vReportListForSearch' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vReportListForSearch">
+          <Key>
+            <PropertyRef Name="CARMNGNO" />
+          </Key>
+          <Property Name="ENTERPRISECODE" Type="nchar" MaxLength="16" />
+          <Property Name="CUSTOMERCODE" Type="int" />
+          <Property Name="CARMNGNO" Type="int" Nullable="false" />
+          <Property Name="NUMBERPLATE" Type="nvarchar" MaxLength="71" />
+          <Property Name="MODELNAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="CUSTNAME" Type="nvarchar" MaxLength="232" />
+          <Property Name="KANA" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="JXMobileModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="JXMobileDBContext" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="vReportListForSearch" EntityType="JXMobileModel.vReportListForSearch" />
+        </EntityContainer>
+        <EntityType Name="vReportListForSearch">
+          <Key>
+            <PropertyRef Name="CARMNGNO" />
+          </Key>
+          <Property Name="ENTERPRISECODE" Type="String" MaxLength="16" Unicode="true" FixedLength="true" />
+          <Property Name="CUSTOMERCODE" Type="Int32" />
+          <Property Name="CARMNGNO" Type="Int32" Nullable="false" />
+          <Property Name="NUMBERPLATE" Type="String" MaxLength="71" Unicode="true" FixedLength="false" />
+          <Property Name="MODELNAME" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="CUSTNAME" Type="String" MaxLength="232" Unicode="true" FixedLength="false" />
+          <Property Name="KANA" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="JXMobileModelStoreContainer" CdmEntityContainer="JXMobileDBContext">
+          <EntitySetMapping Name="vReportListForSearch">
+            <EntityTypeMapping TypeName="JXMobileModel.vReportListForSearch">
+              <MappingFragment StoreEntitySet="vReportListForSearch">
+                <ScalarProperty Name="ENTERPRISECODE" ColumnName="ENTERPRISECODE" />
+                <ScalarProperty Name="CUSTOMERCODE" ColumnName="CUSTOMERCODE" />
+                <ScalarProperty Name="CARMNGNO" ColumnName="CARMNGNO" />
+                <ScalarProperty Name="NUMBERPLATE" ColumnName="NUMBERPLATE" />
+                <ScalarProperty Name="MODELNAME" ColumnName="MODELNAME" />
+                <ScalarProperty Name="CUSTNAME" ColumnName="CUSTNAME" />
+                <ScalarProperty Name="KANA" ColumnName="KANA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

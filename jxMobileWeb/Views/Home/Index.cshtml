@@ -1,5 +1,21 @@
 ﻿@{
     ViewBag.Title = "Index";
 }
+@model IList<JXM.Data.vReportListForSearch>
 
 <h2>Index</h2>
+
+@{
+    var webgrid = new WebGrid(Model,ajaxUpdateContainerId: "grid", selectionFieldName: "selectedRow");
+}
+<div id ="grid">
+@webgrid.GetHtml(columns:webgrid.Columns(
+webgrid.Column(format:@<text>@item.GetSelectLink("選択")</text>),
+webgrid.Column("NUMBERPLATE", header:"車番"),
+    webgrid.Column("MODELNAME", header:"車種"),
+    webgrid.Column("CUSTNAME", header:"お客様名"),
+    webgrid.Column("KANA", header:"お客様カナ")),
+    selectedRowStyle:"webgrid-selected-row",
+    tableStyle: "webgrid")
+    
+</div>
