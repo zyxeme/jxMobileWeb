@@ -23,7 +23,6 @@ namespace JXM.Common.Exceptions
         protected AbstractException(String errorMessage)
             : base(errorMessage)
         {
-            //TODO:エラー内容をログに出力する
         }
 
         protected AbstractException(String errorMessage, System.Exception exp)

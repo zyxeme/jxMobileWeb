@@ -68,7 +68,7 @@ namespace JXM.Domain.LocalDB.Infrastructure
 
         public IQueryable<TEntity> GetQuery<TEntity>(Expression<Func<TEntity, bool>> predicate = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null) where TEntity : class
         {
-            IQueryable<TEntity> query = _context.Set<TEntity>().AsQueryable();
+            IQueryable<TEntity> query = DbContext.Set<TEntity>().AsQueryable();
 
             if (predicate != null)
             {
@@ -83,86 +83,14 @@ namespace JXM.Domain.LocalDB.Infrastructure
             return query;
         }
 
-        /*
-        public TEntity Single<TEntity>(Expression<Func<TEntity, bool>> criteria) where TEntity : class
+        public TEntity Single<TEntity>(Expression<Func<TEntity, bool>> predicate) where TEntity : class
         {
-            throw new NotImplementedException();
+            return GetQuery<TEntity>().Single<TEntity>(predicate);
         }
 
         public TEntity First<TEntity>(Expression<Func<TEntity, bool>> predicate) where TEntity : class
         {
-            throw new NotImplementedException();
-        }
-
-        public void Add<TEntity>(TEntity entity) where TEntity : class
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete<TEntity>(TEntity entity) where TEntity : class
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete<TEntity>(Expression<Func<TEntity, bool>> criteria) where TEntity : class
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update<TEntity>(TEntity entity) where TEntity : class
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<TEntity> GetAll<TEntity>() where TEntity : class
-        {
-            throw new NotImplementedException();
-        }
-
-        public int Count<TEntity>() where TEntity : class
-        {
-            throw new NotImplementedException();
-        }
-
-        public int Count<TEntity>(Expression<Func<TEntity, bool>> criteria) where TEntity : class
-        {
-            throw new NotImplementedException();
-        }
-        */
-
-
-
-
-
-
-
-
-
-
-
-        /*
-        public IQueryable<TEntity> GetQuery<TEntity>(Expression<Func<TEntity, bool>> predicate) where TEntity : class
-        {
-            return GetQuery<TEntity>().Where(predicate);
-        }
-
-        public IEnumerable<TEntity> Get<TEntity, TOrderBy>(Expression<Func<TEntity, TOrderBy>> orderBy, int pageIndex, int pageSize, SortOrder sortOrder = SortOrder.Ascending) where TEntity : class
-        {
-            if (sortOrder == SortOrder.Ascending)
-            {
-                return GetQuery<TEntity>().OrderBy(orderBy).Skip((pageIndex - 1) * pageSize).Take(pageSize).AsEnumerable();
-            }
-            return GetQuery<TEntity>().OrderByDescending(orderBy).Skip((pageIndex - 1) * pageSize).Take(pageSize).AsEnumerable();
-        }
-
-        public TEntity Single<TEntity>(Expression<Func<TEntity, bool>> criteria) where TEntity : class
-        {
-            return GetQuery<TEntity>().Single<TEntity>(criteria);
-        }
-
-        public TEntity First<TEntity>(Expression<Func<TEntity, bool>> predicate) where TEntity : class
-        {
-            return GetQuery<TEntity>().First(predicate);
+            return GetQuery<TEntity>().First<TEntity>(predicate);
         }
 
         public void Add<TEntity>(TEntity entity) where TEntity : class
@@ -183,37 +111,13 @@ namespace JXM.Domain.LocalDB.Infrastructure
             DbContext.Set<TEntity>().Remove(entity);
         }
 
-        public void Delete<TEntity>(Expression<Func<TEntity, bool>> criteria) where TEntity : class
+        public void Delete<TEntity>(Expression<Func<TEntity, bool>> predicate) where TEntity : class
         {
-            IEnumerable<TEntity> records = Find<TEntity>(criteria);
+            IQueryable<TEntity> records = GetQuery<TEntity>(predicate);
 
             foreach (TEntity record in records)
             {
                 Delete<TEntity>(record);
-            }
-        }
-
-        public IEnumerable<TEntity> GetAll<TEntity>() where TEntity : class
-        {
-            return GetQuery<TEntity>().AsEnumerable();
-        }
-
-        public TEntity Save<TEntity>(TEntity entity) where TEntity : class
-        {
-            Add<TEntity>(entity);
-            DbContext.SaveChanges();
-            return entity;
-        }
-
-        public void Update<TEntity>(TEntity entity) where TEntity : class
-        {
-            var fqen = GetEntityName<TEntity>();
-
-            object originalItem;
-            EntityKey key = ((IObjectContextAdapter)DbContext).ObjectContext.CreateEntityKey(fqen, entity);
-            if (((IObjectContextAdapter)DbContext).ObjectContext.TryGetObjectByKey(key, out originalItem))
-            {
-                ((IObjectContextAdapter)DbContext).ObjectContext.ApplyCurrentValues(key.EntitySetName, entity);
             }
         }
 
@@ -222,27 +126,16 @@ namespace JXM.Domain.LocalDB.Infrastructure
             return GetQuery<TEntity>().Count();
         }
 
-        public int Count<TEntity>(Expression<Func<TEntity, bool>> criteria) where TEntity : class
+        public int Count<TEntity>(Expression<Func<TEntity, bool>> predicate) where TEntity : class
         {
-            return GetQuery<TEntity>().Count(criteria);
+            return GetQuery<TEntity>(predicate).Count();
         }
 
-        private EntityKey GetEntityKey<TEntity>(object keyValue) where TEntity : class
+        /*
+        public void Update<TEntity>(TEntity entity) where TEntity : class
         {
-            var entitySetName = GetEntityName<TEntity>();
-            var objectSet = ((IObjectContextAdapter)DbContext).ObjectContext.CreateObjectSet<TEntity>();
-            var keyPropertyName = objectSet.EntitySet.ElementType.KeyMembers[0].ToString();
-            var entityKey = new EntityKey(entitySetName, new[] { new EntityKeyMember(keyPropertyName, keyValue) });
-            return entityKey;
-        }
 
-        private string GetEntityName<TEntity>() where TEntity : class
-        {
-            string a = ((IObjectContextAdapter)DbContext).ObjectContext.DefaultContainerName;
-            string b = _pluralizer.Pluralize(typeof(TEntity).Name);
-            return string.Format("{0}.{1}", ((IObjectContextAdapter)DbContext).ObjectContext.DefaultContainerName, _pluralizer.Pluralize(typeof(TEntity).Name));
         }
         */
-
     }
 }
