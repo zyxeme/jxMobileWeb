@@ -11,6 +11,7 @@ using JXM.MobileWeb.Infrastructure;
 
 namespace JXM.MobileWeb.Controllers
 {
+    [HandleError(View = "Error")]
     public class HomeController : BaseController
     {
         private IRecordRepository recordRepository;
