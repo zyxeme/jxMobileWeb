@@ -205,6 +205,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Log4net.xml" />
     <Content Include="objects.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

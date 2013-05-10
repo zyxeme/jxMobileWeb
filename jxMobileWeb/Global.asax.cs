@@ -23,6 +23,10 @@ namespace JXM.MobileWeb
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            // log4net
+            log4net.Config.XmlConfigurator.Configure(new System.IO.FileInfo(Server.MapPath("~/Log4net.xml")));
+
         }
 
         protected void Application_Error(object sender, EventArgs e)

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <log4net>
+    <!-- ログの出力先（Appender）の設定 -->
+
+    <!-- RollingFileAppender -->
+    <appender name="RollingFileAppender" type="log4net.Appender.RollingFileAppender">
+      <param name="File" value="log\jxm" />
+      <param name="AppendToFile" value="true" />
+      <param name="RollingStyle" value="Date" />
+      <param name="DatePattern" value="yyyyMMdd'.log'" />
+      <param name="StaticLogFileName" value="false" />
+      <layout type="log4net.Layout.PatternLayout">
+        <param name="ConversionPattern" value="%d [%t] %-5p %c - %m%n" />
+      </layout>
+      <filter type="log4net.Filter.LevelRangeFilter">
+        <param name="LevelMin" value="DEBUG" />
+        <param name="LevelMax" value="FATAL" />
+      </filter>
+    </appender>
+
+    <!-- AspNetTraceAppender -->
+    <appender name="AspNetTraceAppender" type="log4net.Appender.AspNetTraceAppender" >
+      <layout type="log4net.Layout.PatternLayout">
+        <param name="ConversionPattern" value="%d [%t] %-5p %c - %m%n" />
+      </layout>
+    </appender>
+
+    <root>
+      <level value="DEBUG" />
+      <appender-ref ref="RollingFileAppender" />
+      <appender-ref ref="AspNetTraceAppender" />
+    </root>
+  </log4net>
+
+</configuration>
