@@ -11,7 +11,6 @@ using JXM.MobileWeb.Infrastructure;
 
 namespace JXM.MobileWeb.Controllers
 {
-    [HandleError(View = "Error")]
     public class HomeController : BaseController
     {
         private IRecordRepository recordRepository;
@@ -30,14 +29,7 @@ namespace JXM.MobileWeb.Controllers
 
         public ActionResult Index()
         {
-            //JXMobileDBContext context = new JXMobileDBContext();
-            //IList<vReportListForSearch> records = context.vReportListForSearch.AsQueryable().ToList();
-
-            //GenericRepository repo = new GenericRepository();
-            //IList<vReportListForSearch> records = repo.GetQuery<vReportListForSearch>().ToList();
-
-            //RecordRepositoryLocal repoLocal = new RecordRepositoryLocal();
-            //IList<vReportListForSearch> records = repoLocal.GetList();
+            throw new Exception("Oops");
 
             IList<vReportListForSearch> records = recordRepository.GetList();
 

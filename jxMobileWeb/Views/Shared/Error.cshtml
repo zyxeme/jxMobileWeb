@@ -1,7 +1,4 @@
-﻿@{
-    Layout = null;
-}
-
+﻿@model System.Web.Mvc.HandleErrorInfo
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,5 +10,13 @@
         <h1>Error.</h1>
         <h2>An error occurred while processing your request.</h2>
     </hgroup>
+    <h2>Exception details</h2>
+        <p>
+	        Controller: @Model.ControllerName <br>
+	        Action: @Model.ActionName <br>
+            Message: @Model.Exception.Message <br>
+	        Exception: <br>
+            @Model.Exception
+        </p>
 </body>
 </html>
