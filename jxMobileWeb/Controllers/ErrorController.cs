@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace JXM.MobileWeb.Controllers
+namespace JxMobileWeb.Controllers
 {
     public class ErrorController : Controller
     {

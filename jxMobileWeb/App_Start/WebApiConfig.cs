@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 
-namespace JXM.MobileWeb
+namespace JxMobileWeb
 {
     public static class WebApiConfig
     {

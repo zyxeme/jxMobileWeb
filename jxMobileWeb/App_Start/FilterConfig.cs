@@ -1,14 +1,14 @@
 ﻿using System.Web;
 using System.Web.Mvc;
-using JXM.MobileWeb.Infrastructure;
+using JxMobileWeb.Infrastructure;
 
-namespace JXM.MobileWeb
+namespace JxMobileWeb
 {
     public class FilterConfig
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
-            filters.Add(new JXMHandleErrorAttribute());
+            //filters.Add(new JXMHandleErrorAttribute());
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JXM.Common.Exceptions
+namespace JxMobileWeb.Common.Exceptions
 {
     class JXMDBException : AbstractException
     {

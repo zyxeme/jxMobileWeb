@@ -6,15 +6,17 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using JXM.MobileWeb.Controllers;
+using JxMobileWeb.Controllers;
+using log4net;
 
-namespace JXM.MobileWeb
+namespace JxMobileWeb
 {
     // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
     // visit http://go.microsoft.com/?LinkId=9394801
 
     public class MvcApplication : System.Web.HttpApplication
     {
+
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
@@ -26,7 +28,6 @@ namespace JXM.MobileWeb
 
             // log4net
             log4net.Config.XmlConfigurator.Configure(new System.IO.FileInfo(Server.MapPath("~/Log4net.xml")));
-
         }
 
         protected void Application_Error(object sender, EventArgs e)
@@ -54,6 +55,9 @@ namespace JXM.MobileWeb
             var routeData = new RouteData();
             var action = "ServerError";
 
+            ILog _logger = LogManager.GetLogger("error");
+            _logger.Error(ex.Message, ex);
+
             if (ex is HttpException)
             {
                 var httpEx = ex as HttpException;
@@ -72,7 +76,7 @@ namespace JXM.MobileWeb
 
             httpContext.ClearError();
             httpContext.Response.Clear();
-            httpContext.Response.StatusCode = ex is HttpException ? ((HttpException)ex).GetHttpCode() : 500;
+            httpContext.Response.StatusCode = 200; // ex is HttpException ? ((HttpException)ex).GetHttpCode() : 500;
             httpContext.Response.TrySkipIisCustomErrors = true;
 
             routeData.Values["controller"] = "Error";
@@ -82,5 +86,6 @@ namespace JXM.MobileWeb
             ((IController)controller).Execute(new RequestContext(new HttpContextWrapper(httpContext), routeData));
 
         }
+
     }
 }

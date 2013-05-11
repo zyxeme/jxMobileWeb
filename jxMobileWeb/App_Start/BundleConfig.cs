@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace JXM.MobileWeb
+namespace JxMobileWeb
 {
     public class BundleConfig
     {

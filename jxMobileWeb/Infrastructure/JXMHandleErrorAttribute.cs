@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using log4net;
 
-namespace JXM.MobileWeb.Infrastructure
+namespace JxMobileWeb.Infrastructure
 {
     public class JXMHandleErrorAttribute : HandleErrorAttribute
     {

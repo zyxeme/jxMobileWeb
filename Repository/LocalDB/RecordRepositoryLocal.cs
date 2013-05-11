@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using JXM.Data;
-using JXM.Domain.Interfaces;
-using JXM.Domain.LocalDB.Infrastructure;
+using JxMobileWeb.Data;
+using JxMobileWeb.Repository.Interfaces;
+using JxMobileWeb.Repository.LocalDB.Infrastructure;
 
-namespace JXM.Domain.LocalDB
+
+namespace JxMobileWeb.Repository.LocalDB
 {
     public class RecordRepositoryLocal : GenericRepository, IRecordRepository
     {

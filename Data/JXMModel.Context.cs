@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace JXM.Data
+namespace JxMobileWeb.Data
 {
     using System;
     using System.Data.Entity;
@@ -16,7 +16,7 @@ namespace JXM.Data
     public partial class JXMobileDBContext : DbContext
     {
         public JXMobileDBContext()
-            : base("name=JXMLocalDBConnection")
+            : base("name=JXMobileDBContext")
         {
         }
     

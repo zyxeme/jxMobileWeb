@@ -7,7 +7,7 @@ using log4net;
 using Spring.Context;
 using Spring.Context.Support;
 
-namespace JXM.MobileWeb.Infrastructure
+namespace JxMobileWeb.Infrastructure
 {
     public class BaseController : Controller
     {

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace JXM.Data
+namespace JxMobileWeb.Data
 {
     using System;
     using System.Collections.Generic;

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using JXM.Data;
+using JxMobileWeb.Data;
 
-namespace JXM.Domain.Interfaces
+namespace JxMobileWeb.Repository.Interfaces
 {
     public interface IRecordRepository
     {

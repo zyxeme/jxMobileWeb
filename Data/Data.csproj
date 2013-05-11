@@ -7,8 +7,8 @@
     <ProjectGuid>{9B8C0634-F28B-4F09-8221-BEAAF84B74FE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>JXM.Data</RootNamespace>
-    <AssemblyName>JXM.Data</AssemblyName>
+    <RootNamespace>JxMobileWeb.Data</RootNamespace>
+    <AssemblyName>JxMobileWeb.Data</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

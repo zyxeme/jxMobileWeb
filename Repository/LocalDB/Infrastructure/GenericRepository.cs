@@ -9,9 +9,9 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
-using JXM.Data;
+using JxMobileWeb.Data;
 
-namespace JXM.Domain.LocalDB.Infrastructure
+namespace JxMobileWeb.Repository.LocalDB.Infrastructure
 {
     public class GenericRepository : IGenericRepository
     {

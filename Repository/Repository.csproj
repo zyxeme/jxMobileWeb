@@ -7,8 +7,8 @@
     <ProjectGuid>{48240902-F98B-41B6-88EA-E958D1FD9A20}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>JXM.Domain</RootNamespace>
-    <AssemblyName>JXM.Domain</AssemblyName>
+    <RootNamespace>JxMobileWeb.Repository</RootNamespace>
+    <AssemblyName>JxMobileWeb.Repository</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -62,7 +62,6 @@
       <Name>Data</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="RemoteDB\README" />
   </ItemGroup>

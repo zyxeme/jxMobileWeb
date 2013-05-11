@@ -5,7 +5,7 @@ using System.Data.Objects;
 using System.Linq;
 using System.Web;
 
-namespace JXM.Domain.LocalDB.Infrastructure
+namespace JxMobileWeb.Repository.LocalDB.Infrastructure
 {
     public interface IUnitOfWork : IDisposable
     {

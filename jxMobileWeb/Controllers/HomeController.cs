@@ -3,19 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using JXM.Data;
-using JXM.Domain.Interfaces;
-using JXM.Domain.LocalDB;
-using JXM.Domain.LocalDB.Infrastructure;
-using JXM.MobileWeb.Infrastructure;
+using JxMobileWeb.Data;
+using JxMobileWeb.Infrastructure;
+using JxMobileWeb.Repository.Interfaces;
 
-namespace JXM.MobileWeb.Controllers
+namespace JxMobileWeb.Controllers
 {
     public class HomeController : BaseController
     {
         private IRecordRepository recordRepository;
 
-        public HomeController() : this((IRecordRepository)context.GetObject("RecordRepository"))
+        public HomeController()
+            : this((IRecordRepository)context.GetObject("RecordRepository"))
         {
         }
 
@@ -29,12 +28,9 @@ namespace JXM.MobileWeb.Controllers
 
         public ActionResult Index()
         {
-            throw new Exception("Oops");
-
             IList<vReportListForSearch> records = recordRepository.GetList();
 
             return View(records);
         }
-
     }
 }
