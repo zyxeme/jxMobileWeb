@@ -4,8 +4,16 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="301c7a74fee4429daebb8b8f8642f76a" Name="Diagram1">
+      <Diagram DiagramId="301c7a74fee4429daebb8b8f8642f76a" Name="Diagram1" ZoomLevel="77">
         <EntityTypeShape EntityType="JXMobileModel.vReportListForSearch" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JXMobileModel.CARMAINRF" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="JXMobileModel.CARSPECRF" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="JXMobileModel.CUSTOMERRF" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="JXMobileModel.JXACCEGOINFURF" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="JXMobileModel.JXCUSTVTTLRF" Width="1.5" PointX="8.75" PointY="8.75" />
+        <EntityTypeShape EntityType="JXMobileModel.JXNOMNGSETRF" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="JXMobileModel.JXSLIPDETAILRF" Width="1.5" PointX="10.75" PointY="5.75" />
+        <EntityTypeShape EntityType="JXMobileModel.JXSLIPHEDRRF" Width="1.5" PointX="12.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

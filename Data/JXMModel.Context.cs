@@ -26,5 +26,13 @@ namespace JxMobileWeb.Data
         }
     
         public DbSet<vReportListForSearch> vReportListForSearch { get; set; }
+        public DbSet<CARMAINRF> CARMAINRF { get; set; }
+        public DbSet<CARSPECRF> CARSPECRF { get; set; }
+        public DbSet<CUSTOMERRF> CUSTOMERRF { get; set; }
+        public DbSet<JXACCEGOINFURF> JXACCEGOINFURF { get; set; }
+        public DbSet<JXCUSTVTTLRF> JXCUSTVTTLRF { get; set; }
+        public DbSet<JXNOMNGSETRF> JXNOMNGSETRF { get; set; }
+        public DbSet<JXSLIPDETAILRF> JXSLIPDETAILRF { get; set; }
+        public DbSet<JXSLIPHEDRRF> JXSLIPHEDRRF { get; set; }
     }
 }

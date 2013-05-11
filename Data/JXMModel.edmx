@@ -4,8 +4,35 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="JXMobileModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="JXMobileModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="JXMobileModelStoreContainer">
+          <EntitySet Name="CARMAINRF" EntityType="JXMobileModel.Store.CARMAINRF" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CARSPECRF" EntityType="JXMobileModel.Store.CARSPECRF" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CUSTOMERRF" EntityType="JXMobileModel.Store.CUSTOMERRF" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="JXACCEGOINFURF" EntityType="JXMobileModel.Store.JXACCEGOINFURF" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="JXCUSTVTTLRF" EntityType="JXMobileModel.Store.JXCUSTVTTLRF" store:Type="Tables" store:Schema="dbo" store:Name="JXCUSTVTTLRF">
+            <DefiningQuery>SELECT 
+      [JXCUSTVTTLRF].[CREATEDATETIMERF] AS [CREATEDATETIMERF], 
+      [JXCUSTVTTLRF].[UPDATEDATETIMERF] AS [UPDATEDATETIMERF], 
+      [JXCUSTVTTLRF].[ENTERPRISECODERF] AS [ENTERPRISECODERF], 
+      [JXCUSTVTTLRF].[FILEHEADERGUIDRF] AS [FILEHEADERGUIDRF], 
+      [JXCUSTVTTLRF].[UPDEMPLOYEECODERF] AS [UPDEMPLOYEECODERF], 
+      [JXCUSTVTTLRF].[UPDASSEMBLYID1RF] AS [UPDASSEMBLYID1RF], 
+      [JXCUSTVTTLRF].[UPDASSEMBLYID2RF] AS [UPDASSEMBLYID2RF], 
+      [JXCUSTVTTLRF].[LOGICALDELETECODERF] AS [LOGICALDELETECODERF], 
+      [JXCUSTVTTLRF].[SECTIONCODERF] AS [SECTIONCODERF], 
+      [JXCUSTVTTLRF].[CUSTOMERCODERF] AS [CUSTOMERCODERF], 
+      [JXCUSTVTTLRF].[JXTTLUNITYMRF] AS [JXTTLUNITYMRF], 
+      [JXCUSTVTTLRF].[JXOILSPLYCTRF] AS [JXOILSPLYCTRF], 
+      [JXCUSTVTTLRF].[JXOILSPLYLSTDTRF] AS [JXOILSPLYLSTDTRF], 
+      [JXCUSTVTTLRF].[JXBUYCTRF] AS [JXBUYCTRF], 
+      [JXCUSTVTTLRF].[JXBUYRLSTDTRF] AS [JXBUYRLSTDTRF], 
+      [JXCUSTVTTLRF].[JXVSTLSTDTRF] AS [JXVSTLSTDTRF]
+      FROM [dbo].[JXCUSTVTTLRF] AS [JXCUSTVTTLRF]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="JXNOMNGSETRF" EntityType="JXMobileModel.Store.JXNOMNGSETRF" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="JXSLIPDETAILRF" EntityType="JXMobileModel.Store.JXSLIPDETAILRF" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="JXSLIPHEDRRF" EntityType="JXMobileModel.Store.JXSLIPHEDRRF" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="vReportListForSearch" EntityType="JXMobileModel.Store.vReportListForSearch" store:Type="Views" store:Schema="dbo" store:Name="vReportListForSearch">
             <DefiningQuery>SELECT 
       [vReportListForSearch].[ENTERPRISECODE] AS [ENTERPRISECODE], 
@@ -18,6 +45,631 @@
       FROM [dbo].[vReportListForSearch] AS [vReportListForSearch]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
+        <EntityType Name="CARMAINRF">
+          <Key>
+            <PropertyRef Name="ENTERPRISECODERF" />
+            <PropertyRef Name="CARMNGNORF" />
+          </Key>
+          <Property Name="CREATEDATETIMERF" Type="bigint" Nullable="false" />
+          <Property Name="UPDATEDATETIMERF" Type="bigint" Nullable="false" />
+          <Property Name="ENTERPRISECODERF" Type="nchar" Nullable="false" MaxLength="16" />
+          <Property Name="FILEHEADERGUIDRF" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UPDEMPLOYEECODERF" Type="nchar" Nullable="false" MaxLength="9" />
+          <Property Name="UPDASSEMBLYID1RF" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="UPDASSEMBLYID2RF" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="LOGICALDELETECODERF" Type="int" Nullable="false" />
+          <Property Name="CARMNGNORF" Type="int" Nullable="false" />
+          <Property Name="NUMBERPLATE1CODERF" Type="int" />
+          <Property Name="NUMBERPLATE1NAMERF" Type="nvarchar" MaxLength="4" />
+          <Property Name="NUMBERPLATE2RF" Type="nvarchar" MaxLength="3" />
+          <Property Name="NUMBERPLATE3RF" Type="nvarchar" MaxLength="2" />
+          <Property Name="NUMBERPLATE4RF" Type="int" />
+          <Property Name="ENTRYDATERF" Type="int" />
+          <Property Name="FIRSTENTRYDATENUMTYPRF" Type="int" />
+          <Property Name="PRODUCETYPEOFYEARRF" Type="int" />
+          <Property Name="CARINSPECTYEARRF" Type="int" />
+          <Property Name="CUSTOMERCODERF" Type="int" />
+          <Property Name="CLAIMCODERF" Type="int" />
+          <Property Name="INPSECTIONCODERF" Type="nchar" MaxLength="6" />
+          <Property Name="MNGSECTIONCODERF" Type="nchar" MaxLength="6" />
+          <Property Name="SERVICESECTIONCDRF" Type="nchar" MaxLength="6" />
+          <Property Name="FEEGROUPCODERF" Type="int" />
+          <Property Name="FEEGROUPNAMERF" Type="nvarchar" MaxLength="30" />
+          <Property Name="FEEHEADERCODERF" Type="int" />
+          <Property Name="FEEHEADERNAMERF" Type="nvarchar" MaxLength="30" />
+          <Property Name="MODEL12FULLMODELRF" Type="varbinary" MaxLength="116" />
+          <Property Name="CARPROPERNORF" Type="int" />
+          <Property Name="FULLMODELFIXEDNO1RF" Type="int" />
+          <Property Name="FULLMODELFIXEDNO2RF" Type="int" />
+          <Property Name="FULLMODELFIXEDNO3RF" Type="int" />
+          <Property Name="FULLMODELFIXEDNO4RF" Type="int" />
+          <Property Name="FULLMODELFIXEDNO5RF" Type="int" />
+          <Property Name="FULLMODELFIXEDNO6RF" Type="int" />
+          <Property Name="FULLMODELFIXEDNO7RF" Type="int" />
+          <Property Name="FULLMODELFIXEDNO8RF" Type="int" />
+          <Property Name="FULLMODELFIXEDNO9RF" Type="int" />
+          <Property Name="FULLMODELFIXEDNO10RF" Type="int" />
+          <Property Name="FRAMENORF" Type="nvarchar" MaxLength="30" />
+          <Property Name="FRAMEMODELRF" Type="varbinary" MaxLength="84" />
+          <Property Name="CHASSISNORF" Type="nvarchar" MaxLength="18" />
+          <Property Name="CUSTOMIZECODERF" Type="int" />
+          <Property Name="CARADDITIONALINFO1CDRF" Type="int" />
+          <Property Name="CARADDITIONALINFO1NMRF" Type="nvarchar" MaxLength="20" />
+          <Property Name="CARNORF" Type="nvarchar" MaxLength="12" />
+          <Property Name="CHILDCODERF" Type="int" />
+          <Property Name="CHILDNAMERF" Type="nvarchar" MaxLength="15" />
+          <Property Name="COLORNORF" Type="nvarchar" MaxLength="15" />
+          <Property Name="TRIMNORF" Type="nvarchar" MaxLength="6" />
+          <Property Name="KEYNORF" Type="nvarchar" MaxLength="10" />
+          <Property Name="BOOKINDEXMAKERCDRF" Type="int" />
+          <Property Name="BOOKINDEXMODELCDRF" Type="int" />
+          <Property Name="BOOKINDEXMODELSUBCDRF" Type="int" />
+          <Property Name="BOOKINDEXMAKERNMRF" Type="nvarchar" MaxLength="30" />
+          <Property Name="BOOKINDEXMODELNMRF" Type="varbinary" MaxLength="100" />
+          <Property Name="SERIESCDRF" Type="bigint" />
+          <Property Name="SERIESNMRF" Type="varbinary" MaxLength="180" />
+          <Property Name="CARANALYSISCD1RF" Type="int" />
+          <Property Name="CARANALYSISCD2RF" Type="int" />
+          <Property Name="CARANALYSISCD3RF" Type="int" />
+          <Property Name="CARANALYSISCD4RF" Type="int" />
+          <Property Name="CARANALYSISCD5RF" Type="int" />
+          <Property Name="CARANALYSISCD6RF" Type="int" />
+          <Property Name="DMOUTPUTCONDITIONCDRF" Type="int" />
+          <Property Name="NEWUSEDCARCODERF" Type="int" />
+          <Property Name="NEWUSEDCARNAMERF" Type="nvarchar" MaxLength="10" />
+          <Property Name="PASSENBSINESCDRF" Type="int" />
+          <Property Name="PSSNGRBSINSSCDNMRF" Type="nvarchar" MaxLength="10" />
+          <Property Name="SALESLFOTHRMKRCDRF" Type="int" />
+          <Property Name="SALESLFOTHRMKRNMRF" Type="nvarchar" MaxLength="10" />
+          <Property Name="SELFOTHRMKRCDRF" Type="int" />
+          <Property Name="SELFOTHRMKRNMRF" Type="nvarchar" MaxLength="10" />
+          <Property Name="TAKEINIMAGEGROUPCDRF" Type="uniqueidentifier" />
+          <Property Name="FIRSTTIMECIYEARRF" Type="int" />
+          <Property Name="FIRSTTIMECIMATDATERF" Type="int" />
+          <Property Name="EXCHSTDGROUPCDRF" Type="int" />
+          <Property Name="EXCHSTDCARDIVCODERF" Type="int" />
+          <Property Name="TRUSTCONTCARDIVCDRF" Type="int" />
+          <Property Name="CHECKCALCUNNCSRYCDRF" Type="int" />
+          <Property Name="FULLMODELORORDERSIGNRF" Type="varbinary" MaxLength="148" />
+          <Property Name="CARADDITIONALINFO3NMRF" Type="nvarchar" MaxLength="40" />
+          <Property Name="SUBSTCARUSEDIVCDRF" Type="int" />
+        </EntityType>
+        <EntityType Name="CARSPECRF">
+          <Key>
+            <PropertyRef Name="ENTERPRISECODERF" />
+            <PropertyRef Name="CARMNGNORF" />
+          </Key>
+          <Property Name="CREATEDATETIMERF" Type="bigint" Nullable="false" />
+          <Property Name="UPDATEDATETIMERF" Type="bigint" Nullable="false" />
+          <Property Name="ENTERPRISECODERF" Type="nchar" Nullable="false" MaxLength="16" />
+          <Property Name="FILEHEADERGUIDRF" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UPDEMPLOYEECODERF" Type="nchar" Nullable="false" MaxLength="9" />
+          <Property Name="UPDASSEMBLYID1RF" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="UPDASSEMBLYID2RF" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="LOGICALDELETECODERF" Type="int" Nullable="false" />
+          <Property Name="CARMNGNORF" Type="int" Nullable="false" />
+          <Property Name="MODELDESIGNATIONNORF" Type="int" />
+          <Property Name="CATEGORYNORF" Type="int" />
+          <Property Name="CARKINDCODERF" Type="int" />
+          <Property Name="CARKINDNAMERF" Type="nvarchar" MaxLength="15" />
+          <Property Name="CARPURPOSECODERF" Type="int" />
+          <Property Name="CARPURPOSENAMERF" Type="nvarchar" MaxLength="10" />
+          <Property Name="CARPRIVATEBUSINESSCDRF" Type="int" />
+          <Property Name="PRIVATEBUSINESSNMRF" Type="nvarchar" MaxLength="15" />
+          <Property Name="BODYSHAPECODERF" Type="int" />
+          <Property Name="AIRABODYSHAPECODERF" Type="int" />
+          <Property Name="BODYSHAPENAMERF" Type="nvarchar" MaxLength="15" />
+          <Property Name="DOMESTICFOREIGNCODERF" Type="int" />
+          <Property Name="DOMESTICFOREIGNNAMERF" Type="nvarchar" MaxLength="2" />
+          <Property Name="MAKERPARTSSRCHCODERF" Type="int" />
+          <Property Name="MAKERCODERF" Type="int" />
+          <Property Name="AIRAMAKERCODERF" Type="int" />
+          <Property Name="MAKERNAMERF" Type="nvarchar" MaxLength="30" />
+          <Property Name="AIRAMAKERNAMERF" Type="nvarchar" MaxLength="15" />
+          <Property Name="MODELCODERF" Type="int" />
+          <Property Name="MODELSUBCODERF" Type="int" />
+          <Property Name="SYSTEMATICCODERF" Type="int" />
+          <Property Name="SYSTEMATICNAMERF" Type="nvarchar" MaxLength="132" />
+          <Property Name="PRODUCETYPEOFYEARCDRF" Type="int" />
+          <Property Name="PRODUCETYPEOFYEARNMRF" Type="nvarchar" MaxLength="132" />
+          <Property Name="DOORCOUNTRF" Type="int" />
+          <Property Name="BODYNAMECODERF" Type="int" />
+          <Property Name="BODYNAMERF" Type="nvarchar" MaxLength="68" />
+          <Property Name="CHARACTERISTICCODERF" Type="int" />
+          <Property Name="CHARACTERISTICNAMERF" Type="nvarchar" MaxLength="132" />
+          <Property Name="MODELNAMERF" Type="nvarchar" MaxLength="100" />
+          <Property Name="GRADECODERF" Type="int" />
+          <Property Name="GRADENAMERF" Type="nvarchar" MaxLength="180" />
+          <Property Name="GRADEFULLNAMERF" Type="nvarchar" MaxLength="180" />
+          <Property Name="GRADEADDNAMEBCRF" Type="nvarchar" MaxLength="100" />
+          <Property Name="CARINSPECTCERTMODELRF" Type="nvarchar" MaxLength="20" />
+          <Property Name="EXHAUSTGASSIGNRF" Type="nvarchar" MaxLength="10" />
+          <Property Name="SERIESMODELRF" Type="nvarchar" MaxLength="100" />
+          <Property Name="ENGINEMODELNMRF" Type="nvarchar" MaxLength="12" />
+          <Property Name="TOTALENGINEDISPLACERF" Type="int" />
+          <Property Name="TTLENGINEDISPUNITCDRF" Type="int" />
+          <Property Name="TTLENGINEDISPUNITNMRF" Type="nvarchar" MaxLength="30" />
+          <Property Name="CMNNMENGINEDISPLACERF" Type="int" />
+          <Property Name="CMNNMENGDISPUNITCDRF" Type="int" />
+          <Property Name="CMNNMENGDISPUNITNMRF" Type="nvarchar" MaxLength="30" />
+          <Property Name="ROTORCNTRF" Type="nvarchar" MaxLength="2" />
+          <Property Name="PASSENGERCAPACITY1RF" Type="int" />
+          <Property Name="PASSENGERCAPACITY2RF" Type="int" />
+          <Property Name="MAXLOADINGCAPACITY1RF" Type="int" />
+          <Property Name="MAXLOADINGCAPACITY2RF" Type="int" />
+          <Property Name="VEHICLEWEIGHTRF" Type="int" />
+          <Property Name="GROSSVEHICLEWEIGHT1RF" Type="int" />
+          <Property Name="GROSSVEHICLEWEIGHT2RF" Type="int" />
+          <Property Name="CARLENGTH1RF" Type="int" />
+          <Property Name="CARLENGTH2RF" Type="int" />
+          <Property Name="CARLENGTH3RF" Type="int" />
+          <Property Name="CARHEIGHT1RF" Type="int" />
+          <Property Name="CARHEIGHT2RF" Type="int" />
+          <Property Name="CARHEIGHT3RF" Type="int" />
+          <Property Name="CARWIDTH1RF" Type="int" />
+          <Property Name="CARWIDTH2RF" Type="int" />
+          <Property Name="CARWIDTH3RF" Type="int" />
+          <Property Name="FFAXLEWEIGHTRF" Type="int" />
+          <Property Name="FRAXLEWEIGHTRF" Type="int" />
+          <Property Name="RFAXLEWEIGHTRF" Type="int" />
+          <Property Name="RRAXLEWEIGHTRF" Type="int" />
+          <Property Name="ENGINEMODELRF" Type="nvarchar" MaxLength="12" />
+          <Property Name="FUELCODERF" Type="int" />
+          <Property Name="FUELNAMERF" Type="nvarchar" MaxLength="20" />
+          <Property Name="ENGINEDISPLACERF" Type="nvarchar" MaxLength="8" />
+          <Property Name="DISPLACEMENTUNITCDRF" Type="int" />
+          <Property Name="DISPLACEMENTUNITNMRF" Type="nvarchar" MaxLength="30" />
+          <Property Name="FUELEFFICIENTRATERF" Type="float" />
+          <Property Name="HYBRIDDIVIDECDRF" Type="int" />
+          <Property Name="HYBRIDDIVIDENMRF" Type="nvarchar" MaxLength="15" />
+          <Property Name="HANDLEINFOCDRF" Type="int" />
+          <Property Name="HANDLEINFONMRF" Type="nvarchar" MaxLength="15" />
+          <Property Name="BRAKEINFOCDRF" Type="int" />
+          <Property Name="BRAKEINFONMRF" Type="nvarchar" MaxLength="15" />
+          <Property Name="WHEELDRIVEMETHODCDRF" Type="int" />
+          <Property Name="WHEELDRIVEMETHODNMRF" Type="nvarchar" MaxLength="15" />
+          <Property Name="GEARCDRF" Type="int" />
+          <Property Name="GEARNMRF" Type="nvarchar" MaxLength="15" />
+          <Property Name="NUMBEROFGEARRF" Type="int" />
+          <Property Name="SHIFTMETHODRF" Type="int" />
+          <Property Name="SHIFTMETHODNAMERF" Type="nvarchar" MaxLength="8" />
+          <Property Name="TMCODERF" Type="int" />
+          <Property Name="TMCODENAMERF" Type="nvarchar" MaxLength="30" />
+          <Property Name="ROOFSHAPECODERF" Type="int" />
+          <Property Name="ROOFSHAPENAMERF" Type="nvarchar" MaxLength="15" />
+          <Property Name="SHEETINFOCDRF" Type="int" />
+          <Property Name="SHEETINFONMRF" Type="nvarchar" MaxLength="15" />
+          <Property Name="EXGASSTRDLVLINFOCDRF" Type="int" />
+          <Property Name="EXGASSTRDLVLINFONMRF" Type="nvarchar" MaxLength="15" />
+          <Property Name="MILEMETERDISPVALUNITRF" Type="int" />
+          <Property Name="GENRECODERF" Type="int" />
+          <Property Name="GENRENAMERF" Type="nvarchar" MaxLength="10" />
+          <Property Name="BODYCOLORRF" Type="int" />
+          <Property Name="BODYCOLORNAMERF" Type="nvarchar" MaxLength="1" />
+          <Property Name="COLORCODERF" Type="nvarchar" MaxLength="20" />
+          <Property Name="COLORCDDUPDERIVEDNORF" Type="int" />
+          <Property Name="COLORNAME1RF" Type="nvarchar" MaxLength="132" />
+          <Property Name="BODYPAINTKINDCDRF" Type="int" />
+          <Property Name="TRFRBODYPAINTKINDCDRF" Type="int" />
+          <Property Name="LOWCONCEALEXISTRF" Type="int" />
+          <Property Name="HIGHFUNCTIONBPEXISTRF" Type="int" />
+          <Property Name="UNITECOLORCODERF" Type="int" />
+          <Property Name="TRIMCODERF" Type="nvarchar" MaxLength="15" />
+          <Property Name="TRIMNAMERF" Type="nvarchar" MaxLength="132" />
+          <Property Name="BLOCKILLUSTRATIONCDRF" Type="int" />
+          <Property Name="TWODILLUSTNORF" Type="int" />
+          <Property Name="THREEDILLUSTNORF" Type="int" />
+          <Property Name="BPINDEXOFFERFLAGRF" Type="int" />
+          <Property Name="EXCHINDEXOFFERFLAGRF" Type="int" />
+          <Property Name="BMPRBPINDEXOFFERFLAGRF" Type="int" />
+          <Property Name="FRMBPINDEXOFFERFLAGRF" Type="int" />
+          <Property Name="PARTSDATAOFFERFLAGRF" Type="int" />
+          <Property Name="FRBUMPERSAMECOLORCDRF" Type="int" />
+          <Property Name="FRBUMPERPAINTFILMCDRF" Type="int" />
+          <Property Name="FRBUMPERCRESTPTTNCDRF" Type="int" />
+          <Property Name="FRBUMPERHEATPROCCDRF" Type="int" />
+          <Property Name="FRBUMPERPFILMCNTCDRF" Type="int" />
+          <Property Name="RRBUMPERSAMECOLORCDRF" Type="int" />
+          <Property Name="RRBUMPERPAINTFILMCDRF" Type="int" />
+          <Property Name="RRBUMPERCRESTPTTNCDRF" Type="int" />
+          <Property Name="RRBUMPERHEATPROCCDRF" Type="int" />
+          <Property Name="RRBUMPERPFILMCNTCDRF" Type="int" />
+          <Property Name="TWOTONEDIVCDRF" Type="int" />
+          <Property Name="PAINTFILMKINDRF" Type="int" />
+          <Property Name="TWOTONEPAINTFILMKINDRF" Type="int" />
+          <Property Name="BOOTHUSEDIVCDRF" Type="int" />
+          <Property Name="RUSTPROOFWAXPAINTCDRF" Type="int" />
+          <Property Name="PAINTKINDRF" Type="int" />
+          <Property Name="HIGHFUNCBPDIVCDRF" Type="int" />
+          <Property Name="LOWCONCEALMENTDIVCDRF" Type="int" />
+          <Property Name="RPCOLORCODERF" Type="nvarchar" MaxLength="20" />
+          <Property Name="VEHICLEWEIGHT2RF" Type="int" />
+        </EntityType>
+        <EntityType Name="CUSTOMERRF">
+          <Key>
+            <PropertyRef Name="ENTERPRISECODERF" />
+            <PropertyRef Name="CUSTOMERCODERF" />
+          </Key>
+          <Property Name="CREATEDATETIMERF" Type="bigint" Nullable="false" />
+          <Property Name="UPDATEDATETIMERF" Type="bigint" Nullable="false" />
+          <Property Name="ENTERPRISECODERF" Type="nchar" Nullable="false" MaxLength="16" />
+          <Property Name="FILEHEADERGUIDRF" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UPDEMPLOYEECODERF" Type="nchar" Nullable="false" MaxLength="9" />
+          <Property Name="UPDASSEMBLYID1RF" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="UPDASSEMBLYID2RF" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="LOGICALDELETECODERF" Type="int" Nullable="false" />
+          <Property Name="CUSTOMERCODERF" Type="int" Nullable="false" />
+          <Property Name="CUSTOMERSUBCODERF" Type="nvarchar" MaxLength="20" />
+          <Property Name="NAMERF" Type="nvarchar" MaxLength="116" />
+          <Property Name="NAME2RF" Type="nvarchar" MaxLength="116" />
+          <Property Name="HONORIFICTITLERF" Type="nvarchar" MaxLength="4" />
+          <Property Name="KANARF" Type="nvarchar" MaxLength="30" />
+          <Property Name="OUTPUTNAMECODERF" Type="int" />
+          <Property Name="OUTPUTNAMERF" Type="nvarchar" MaxLength="15" />
+          <Property Name="CORPORATEDIVCODERF" Type="int" />
+          <Property Name="JOBTYPECODERF" Type="int" />
+          <Property Name="BUSINESSTYPECODERF" Type="int" />
+          <Property Name="SEXCODERF" Type="int" />
+          <Property Name="SEXNAMERF" Type="nvarchar" MaxLength="2" />
+          <Property Name="BIRTHDAYRF" Type="int" />
+          <Property Name="POSTNORF" Type="nvarchar" MaxLength="68" />
+          <Property Name="ADDRESS1RF" Type="nvarchar" MaxLength="180" />
+          <Property Name="ADDRESS2RF" Type="int" />
+          <Property Name="ADDRESS3RF" Type="nvarchar" MaxLength="148" />
+          <Property Name="ADDRESS4RF" Type="nvarchar" MaxLength="180" />
+          <Property Name="ADDRESSCODE1RF" Type="int" />
+          <Property Name="ADDRESSCODE2RF" Type="int" />
+          <Property Name="ADDRESSCODE3RF" Type="int" />
+          <Property Name="HOMETELNORF" Type="nvarchar" MaxLength="84" />
+          <Property Name="OFFICETELNORF" Type="nvarchar" MaxLength="84" />
+          <Property Name="PORTABLETELNORF" Type="nvarchar" MaxLength="84" />
+          <Property Name="HOMEFAXNORF" Type="nvarchar" MaxLength="84" />
+          <Property Name="OFFICEFAXNORF" Type="nvarchar" MaxLength="84" />
+          <Property Name="OTHERSTELNORF" Type="nvarchar" MaxLength="84" />
+          <Property Name="MAINCONTACTCODERF" Type="int" />
+          <Property Name="SEARCHTELNORF" Type="nchar" MaxLength="4" />
+          <Property Name="GELAVORRATECOSTRF" Type="bigint" />
+          <Property Name="CILAVORRATECOSTRF" Type="bigint" />
+          <Property Name="GELAVORDISCOUNTRATERF" Type="float" />
+          <Property Name="GEPARTSDISCOUNTRATERF" Type="float" />
+          <Property Name="CILAVORDISCOUNTRATERF" Type="float" />
+          <Property Name="CIPARTSDISCOUNTRATERF" Type="float" />
+          <Property Name="BRBPLAVORDISRATERF" Type="float" />
+          <Property Name="BRBPPARTSDISRATERF" Type="float" />
+          <Property Name="MNGSECTIONCODERF" Type="nchar" MaxLength="6" />
+          <Property Name="INPSECTIONCODERF" Type="nchar" MaxLength="6" />
+          <Property Name="CUSTANALYSCODE1RF" Type="int" />
+          <Property Name="CUSTANALYSCODE2RF" Type="int" />
+          <Property Name="CUSTANALYSCODE3RF" Type="int" />
+          <Property Name="CUSTANALYSCODE4RF" Type="int" />
+          <Property Name="CUSTANALYSCODE5RF" Type="int" />
+          <Property Name="CUSTANALYSCODE6RF" Type="int" />
+          <Property Name="BILLOUTPUTCODERF" Type="int" />
+          <Property Name="BILLOUTPUTNAMERF" Type="nvarchar" MaxLength="10" />
+          <Property Name="TOTALDAYRF" Type="int" />
+          <Property Name="LASTTIMETEMPDATERF" Type="int" />
+          <Property Name="COLLECTMONEYCODERF" Type="int" />
+          <Property Name="COLLECTMONEYNAMERF" Type="nvarchar" MaxLength="3" />
+          <Property Name="COLLECTMONEYDAYRF" Type="int" />
+          <Property Name="CLAIMCODERF" Type="int" />
+          <Property Name="DMOUTCODERF" Type="int" />
+          <Property Name="DMOUTNAMERF" Type="nvarchar" MaxLength="10" />
+          <Property Name="MAINSENDMAILADDRCDRF" Type="int" />
+          <Property Name="MAILADDRKINDCODE1RF" Type="int" />
+          <Property Name="MAILADDRKINDNAME1RF" Type="nvarchar" MaxLength="10" />
+          <Property Name="MAILADDRESS1RF" Type="nvarchar" MaxLength="64" />
+          <Property Name="MAILSENDCODE1RF" Type="int" />
+          <Property Name="MAILSENDNAME1RF" Type="nvarchar" MaxLength="10" />
+          <Property Name="MAILADDRKINDCODE2RF" Type="int" />
+          <Property Name="MAILADDRKINDNAME2RF" Type="nvarchar" MaxLength="10" />
+          <Property Name="MAILADDRESS2RF" Type="nvarchar" MaxLength="64" />
+          <Property Name="MAILSENDCODE2RF" Type="int" />
+          <Property Name="MAILSENDNAME2RF" Type="nvarchar" MaxLength="10" />
+          <Property Name="MAILADDRKINDCODE3RF" Type="int" />
+          <Property Name="MAILADDRKINDNAME3RF" Type="nvarchar" MaxLength="10" />
+          <Property Name="MAILADDRESS3RF" Type="nvarchar" MaxLength="64" />
+          <Property Name="MAILSENDCODE3RF" Type="int" />
+          <Property Name="MAILSENDNAME3RF" Type="nvarchar" MaxLength="10" />
+          <Property Name="MAILADDRKINDCODE4RF" Type="int" />
+          <Property Name="MAILADDRKINDNAME4RF" Type="nvarchar" MaxLength="10" />
+          <Property Name="MAILADDRESS4RF" Type="nvarchar" MaxLength="64" />
+          <Property Name="MAILSENDCODE4RF" Type="int" />
+          <Property Name="MAILSENDNAME4RF" Type="nvarchar" MaxLength="10" />
+          <Property Name="MAILADDRKINDCODE5RF" Type="int" />
+          <Property Name="MAILADDRKINDNAME5RF" Type="nvarchar" MaxLength="10" />
+          <Property Name="MAILADDRESS5RF" Type="nvarchar" MaxLength="64" />
+          <Property Name="MAILSENDCODE5RF" Type="int" />
+          <Property Name="MAILSENDNAME5RF" Type="nvarchar" MaxLength="10" />
+          <Property Name="MAILADDRKINDCODE6RF" Type="int" />
+          <Property Name="MAILADDRKINDNAME6RF" Type="nvarchar" MaxLength="10" />
+          <Property Name="MAILADDRESS6RF" Type="nvarchar" MaxLength="64" />
+          <Property Name="MAILSENDCODE6RF" Type="int" />
+          <Property Name="MAILSENDNAME6RF" Type="nvarchar" MaxLength="10" />
+          <Property Name="CUSTOMERAGENTCDRF" Type="nchar" MaxLength="9" />
+          <Property Name="BILLCOLLECTERCDRF" Type="nchar" MaxLength="9" />
+          <Property Name="TAKEINIMAGEGROUPCDRF" Type="uniqueidentifier" />
+          <Property Name="BRLVRRTUNPRCADOPTCDRF" Type="int" />
+          <Property Name="BRBASELAVORRATERF" Type="bigint" />
+          <Property Name="BREXCHLAVORRATERF" Type="bigint" />
+          <Property Name="BROUTPLATELAVORRATERF" Type="bigint" />
+          <Property Name="BRINPLTFRMLAVORRATERF" Type="bigint" />
+          <Property Name="BRBPLAVORRATERF" Type="bigint" />
+          <Property Name="BRMTRLPRICELAVORRATERF" Type="bigint" />
+          <Property Name="BRRPLAVORRATERF" Type="bigint" />
+          <Property Name="TRUSTCOMPANYDIVCDRF" Type="int" />
+          <Property Name="PARTSSUPPLIERDIVCDRF" Type="int" />
+          <Property Name="CARSUPPLIERDIVCDRF" Type="int" />
+          <Property Name="OSRCSUPPLIERDIVCDRF" Type="int" />
+          <Property Name="HOMETELNOSEARCHRF" Type="nchar" MaxLength="4" />
+          <Property Name="OFFICETELNOSEARCHRF" Type="nchar" MaxLength="4" />
+          <Property Name="PORTABLETELNOSEARCHRF" Type="nchar" MaxLength="4" />
+          <Property Name="HOMEFAXNOSEARCHRF" Type="nchar" MaxLength="4" />
+          <Property Name="OFFICEFAXNOSEARCHRF" Type="nchar" MaxLength="4" />
+          <Property Name="OTHERSTELNOSEARCHRF" Type="nchar" MaxLength="4" />
+          <Property Name="CUSTOMERRANKCODERF" Type="int" />
+          <Property Name="CONTACTTIMEMEMORF" Type="nvarchar" MaxLength="20" />
+          <Property Name="RPFRACPROCCDUSEDIVRF" Type="smallint" />
+          <Property Name="RPLAVORFRACPROCCDRF" Type="int" />
+          <Property Name="RPPARTSFRACPROCCDRF" Type="int" />
+          <Property Name="RPLAVORDISFRACPROCCDRF" Type="int" />
+          <Property Name="RPPARTSDISFRACPROCCDRF" Type="int" />
+          <Property Name="RPCNSTAXFRACPROCCDRF" Type="int" />
+          <Property Name="BRFRACPROCCDUSEDIVRF" Type="smallint" />
+          <Property Name="BRLAVORFRACPROCCDRF" Type="int" />
+          <Property Name="BRPARTSFRACPROCCDRF" Type="int" />
+          <Property Name="BRLAVORDISFRACPROCCDRF" Type="int" />
+          <Property Name="BRPARTSDISFRACPROCCDRF" Type="int" />
+          <Property Name="BRCNSTAXFRACPROCCDRF" Type="int" />
+          <Property Name="MTRLPRICEFRACPROCCDRF" Type="int" />
+          <Property Name="INTRODUCERCODERF" Type="int" />
+          <Property Name="RPTTLCDDISRATEUSECDRF" Type="smallint" />
+          <Property Name="BRTTLCDDISRATEUSECDRF" Type="smallint" />
+          <Property Name="GECUSTTTLCDDISRATE1RF" Type="float" />
+          <Property Name="GECUSTTTLCDDISRATE2RF" Type="float" />
+          <Property Name="GECUSTTTLCDDISRATE3RF" Type="float" />
+          <Property Name="GECUSTTTLCDDISRATE4RF" Type="float" />
+          <Property Name="GECUSTTTLCDDISRATE5RF" Type="float" />
+          <Property Name="GECUSTTTLCDDISRATE6RF" Type="float" />
+          <Property Name="GECUSTTTLCDDISRATE7RF" Type="float" />
+          <Property Name="GECUSTTTLCDDISRATE8RF" Type="float" />
+          <Property Name="GECUSTTTLCDDISRATE9RF" Type="float" />
+          <Property Name="GECUSTTTLCDDISRATE10RF" Type="float" />
+          <Property Name="GECUSTTTLCDDISRATE11RF" Type="float" />
+          <Property Name="GECUSTTTLCDDISRATE12RF" Type="float" />
+          <Property Name="GECUSTTTLCDDISRATE13RF" Type="float" />
+          <Property Name="GECUSTTTLCDDISRATE14RF" Type="float" />
+          <Property Name="GECUSTTTLCDDISRATE15RF" Type="float" />
+          <Property Name="GECUSTTTLCDDISRATE16RF" Type="float" />
+          <Property Name="GECUSTTTLCDDISRATE17RF" Type="float" />
+          <Property Name="GECUSTTTLCDDISRATE18RF" Type="float" />
+          <Property Name="GECUSTTTLCDDISRATE19RF" Type="float" />
+          <Property Name="GECUSTTTLCDDISRATE20RF" Type="float" />
+          <Property Name="CICUSTTTLCDDISRATE1RF" Type="float" />
+          <Property Name="CICUSTTTLCDDISRATE2RF" Type="float" />
+          <Property Name="CICUSTTTLCDDISRATE3RF" Type="float" />
+          <Property Name="CICUSTTTLCDDISRATE4RF" Type="float" />
+          <Property Name="CICUSTTTLCDDISRATE5RF" Type="float" />
+          <Property Name="CICUSTTTLCDDISRATE6RF" Type="float" />
+          <Property Name="CICUSTTTLCDDISRATE7RF" Type="float" />
+          <Property Name="CICUSTTTLCDDISRATE8RF" Type="float" />
+          <Property Name="CICUSTTTLCDDISRATE9RF" Type="float" />
+          <Property Name="CICUSTTTLCDDISRATE10RF" Type="float" />
+          <Property Name="CICUSTTTLCDDISRATE11RF" Type="float" />
+          <Property Name="CICUSTTTLCDDISRATE12RF" Type="float" />
+          <Property Name="CICUSTTTLCDDISRATE13RF" Type="float" />
+          <Property Name="CICUSTTTLCDDISRATE14RF" Type="float" />
+          <Property Name="CICUSTTTLCDDISRATE15RF" Type="float" />
+          <Property Name="CICUSTTTLCDDISRATE16RF" Type="float" />
+          <Property Name="CICUSTTTLCDDISRATE17RF" Type="float" />
+          <Property Name="CICUSTTTLCDDISRATE18RF" Type="float" />
+          <Property Name="CICUSTTTLCDDISRATE19RF" Type="float" />
+          <Property Name="CICUSTTTLCDDISRATE20RF" Type="float" />
+          <Property Name="BRCUSTTTLCDDISRATE1RF" Type="float" />
+          <Property Name="BRCUSTTTLCDDISRATE2RF" Type="float" />
+          <Property Name="BRCUSTTTLCDDISRATE3RF" Type="float" />
+          <Property Name="BRCUSTTTLCDDISRATE4RF" Type="float" />
+          <Property Name="BRCUSTTTLCDDISRATE5RF" Type="float" />
+          <Property Name="BRCUSTTTLCDDISRATE6RF" Type="float" />
+          <Property Name="BRCUSTTTLCDDISRATE7RF" Type="float" />
+          <Property Name="BRCUSTTTLCDDISRATE8RF" Type="float" />
+          <Property Name="BRCUSTTTLCDDISRATE9RF" Type="float" />
+          <Property Name="BRCUSTTTLCDDISRATE10RF" Type="float" />
+          <Property Name="BRCUSTTTLCDDISRATE11RF" Type="float" />
+          <Property Name="BRCUSTTTLCDDISRATE12RF" Type="float" />
+          <Property Name="BRCUSTTTLCDDISRATE13RF" Type="float" />
+          <Property Name="BRCUSTTTLCDDISRATE14RF" Type="float" />
+          <Property Name="BRCUSTTTLCDDISRATE15RF" Type="float" />
+          <Property Name="BRCUSTTTLCDDISRATE16RF" Type="float" />
+          <Property Name="BRCUSTTTLCDDISRATE17RF" Type="float" />
+          <Property Name="BRCUSTTTLCDDISRATE18RF" Type="float" />
+          <Property Name="BRCUSTTTLCDDISRATE19RF" Type="float" />
+          <Property Name="BRCUSTTTLCDDISRATE20RF" Type="float" />
+          <Property Name="CRANKAUTOUPDEXCLDDIVRF" Type="smallint" />
+        </EntityType>
+        <EntityType Name="JXACCEGOINFURF">
+          <Key>
+            <PropertyRef Name="ENTERPRISECODERF" />
+            <PropertyRef Name="SECTIONCODERF" />
+            <PropertyRef Name="EGOILCODERF" />
+          </Key>
+          <Property Name="CREATEDATETIMERF" Type="bigint" Nullable="false" />
+          <Property Name="UPDATEDATETIMERF" Type="bigint" Nullable="false" />
+          <Property Name="ENTERPRISECODERF" Type="nchar" Nullable="false" MaxLength="16" />
+          <Property Name="FILEHEADERGUIDRF" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UPDEMPLOYEECODERF" Type="nchar" Nullable="false" MaxLength="9" />
+          <Property Name="UPDASSEMBLYID1RF" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="UPDASSEMBLYID2RF" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="LOGICALDELETECODERF" Type="int" Nullable="false" />
+          <Property Name="SECTIONCODERF" Type="nchar" Nullable="false" MaxLength="6" />
+          <Property Name="EGOILCODERF" Type="int" Nullable="false" />
+          <Property Name="EGOILAPIGAUGERF" Type="nvarchar" MaxLength="20" />
+          <Property Name="EGOILAPIGAUGECDRF" Type="int" />
+          <Property Name="EGOILILSACGAUGERF" Type="nvarchar" MaxLength="20" />
+          <Property Name="EGOILILSACGAUGECDRF" Type="int" />
+          <Property Name="EGOILOTHERGAUGERF" Type="nvarchar" MaxLength="20" />
+          <Property Name="EGOILVISCOSITYRF" Type="nchar" MaxLength="20" />
+          <Property Name="EGOILVISCOSITYCDRF" Type="int" />
+          <Property Name="EGOILBASEOILRF" Type="nvarchar" MaxLength="20" />
+          <Property Name="EGOILBASEOILCDRF" Type="int" />
+          <Property Name="EGOILPRRF" Type="nvarchar(max)" />
+          <Property Name="TAKEINIMAGECODERF" Type="uniqueidentifier" />
+          <Property Name="FUELCODERF" Type="int" />
+          <Property Name="TURBOUSEDIVRF" Type="int" />
+          <Property Name="INPSECTIONCODERF" Type="nchar" MaxLength="6" />
+          <Property Name="EGOILMAKERRF" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'JXMobile.dbo.JXCUSTVTTLRF' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="JXCUSTVTTLRF">
+          <Key>
+            <PropertyRef Name="CREATEDATETIMERF" />
+            <PropertyRef Name="UPDATEDATETIMERF" />
+            <PropertyRef Name="ENTERPRISECODERF" />
+            <PropertyRef Name="FILEHEADERGUIDRF" />
+            <PropertyRef Name="UPDEMPLOYEECODERF" />
+            <PropertyRef Name="UPDASSEMBLYID1RF" />
+            <PropertyRef Name="UPDASSEMBLYID2RF" />
+            <PropertyRef Name="LOGICALDELETECODERF" />
+            <PropertyRef Name="SECTIONCODERF" />
+            <PropertyRef Name="CUSTOMERCODERF" />
+          </Key>
+          <Property Name="CREATEDATETIMERF" Type="bigint" Nullable="false" />
+          <Property Name="UPDATEDATETIMERF" Type="bigint" Nullable="false" />
+          <Property Name="ENTERPRISECODERF" Type="nchar" Nullable="false" MaxLength="16" />
+          <Property Name="FILEHEADERGUIDRF" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UPDEMPLOYEECODERF" Type="nchar" Nullable="false" MaxLength="9" />
+          <Property Name="UPDASSEMBLYID1RF" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="UPDASSEMBLYID2RF" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="LOGICALDELETECODERF" Type="int" Nullable="false" />
+          <Property Name="SECTIONCODERF" Type="nchar" Nullable="false" MaxLength="6" />
+          <Property Name="CUSTOMERCODERF" Type="int" Nullable="false" />
+          <Property Name="JXTTLUNITYMRF" Type="int" />
+          <Property Name="JXOILSPLYCTRF" Type="int" />
+          <Property Name="JXOILSPLYLSTDTRF" Type="int" />
+          <Property Name="JXBUYCTRF" Type="int" />
+          <Property Name="JXBUYRLSTDTRF" Type="int" />
+          <Property Name="JXVSTLSTDTRF" Type="int" />
+        </EntityType>
+        <EntityType Name="JXNOMNGSETRF">
+          <Key>
+            <PropertyRef Name="ENTERPRISECODERF" />
+            <PropertyRef Name="SECTIONCODERF" />
+            <PropertyRef Name="JXNOCODERF" />
+          </Key>
+          <Property Name="CREATEDATETIMERF" Type="bigint" Nullable="false" />
+          <Property Name="UPDATEDATETIMERF" Type="bigint" Nullable="false" />
+          <Property Name="ENTERPRISECODERF" Type="nchar" Nullable="false" MaxLength="16" />
+          <Property Name="FILEHEADERGUIDRF" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UPDEMPLOYEECODERF" Type="nchar" Nullable="false" MaxLength="9" />
+          <Property Name="UPDASSEMBLYID1RF" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="UPDASSEMBLYID2RF" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="LOGICALDELETECODERF" Type="int" Nullable="false" />
+          <Property Name="SECTIONCODERF" Type="nchar" Nullable="false" MaxLength="6" />
+          <Property Name="JXNOCODERF" Type="int" Nullable="false" />
+          <Property Name="NOPRESENTVALRF" Type="bigint" />
+          <Property Name="JXLASTYEARMONTHRF" Type="int" />
+          <Property Name="JXNORESETTIMINGDIVCDRF" Type="int" />
+        </EntityType>
+        <EntityType Name="JXSLIPDETAILRF">
+          <Key>
+            <PropertyRef Name="ENTERPRISECODERF" />
+            <PropertyRef Name="JXESTMACPODRCDRF" />
+            <PropertyRef Name="SLIPNORF" />
+            <PropertyRef Name="JXDETAILNORF" />
+          </Key>
+          <Property Name="CREATEDATETIMERF" Type="bigint" Nullable="false" />
+          <Property Name="UPDATEDATETIMERF" Type="bigint" Nullable="false" />
+          <Property Name="ENTERPRISECODERF" Type="nchar" Nullable="false" MaxLength="16" />
+          <Property Name="FILEHEADERGUIDRF" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UPDEMPLOYEECODERF" Type="nchar" Nullable="false" MaxLength="9" />
+          <Property Name="UPDASSEMBLYID1RF" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="UPDASSEMBLYID2RF" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="LOGICALDELETECODERF" Type="int" Nullable="false" />
+          <Property Name="JXESTMACPODRCDRF" Type="int" Nullable="false" />
+          <Property Name="SLIPNORF" Type="nchar" Nullable="false" MaxLength="9" />
+          <Property Name="JXDETAILNORF" Type="int" Nullable="false" />
+          <Property Name="JXCARWASHCARECDRF" Type="int" Nullable="false" />
+          <Property Name="JXGOODSGENRERF" Type="int" Nullable="false" />
+          <Property Name="JXGOODSCODERF" Type="int" Nullable="false" />
+          <Property Name="EGOILVISCOSITYRF" Type="nchar" MaxLength="20" />
+          <Property Name="BTTYSIZERF" Type="nchar" MaxLength="30" />
+          <Property Name="TIRESIZERF" Type="nchar" MaxLength="30" />
+          <Property Name="FUELCODERF" Type="int" />
+          <Property Name="JXPARTSNORF" Type="nvarchar" MaxLength="24" />
+          <Property Name="JXGOODSNAMERF" Type="nvarchar" MaxLength="60" />
+          <Property Name="JXGOODSCNTRF" Type="float" />
+          <Property Name="JXGOODSUNITPRICERF" Type="bigint" />
+          <Property Name="JXGOODSUNITPRCCORRCDRF" Type="int" />
+          <Property Name="JXGOODSPRICERF" Type="bigint" />
+          <Property Name="JXGOODSPRCCORRCDRF" Type="int" />
+          <Property Name="JXGOODSPRICEKNDRF" Type="int" />
+        </EntityType>
+        <EntityType Name="JXSLIPHEDRRF">
+          <Key>
+            <PropertyRef Name="ENTERPRISECODERF" />
+            <PropertyRef Name="JXESTMACPODRCDRF" />
+            <PropertyRef Name="SLIPNORF" />
+          </Key>
+          <Property Name="CREATEDATETIMERF" Type="bigint" Nullable="false" />
+          <Property Name="UPDATEDATETIMERF" Type="bigint" Nullable="false" />
+          <Property Name="ENTERPRISECODERF" Type="nchar" Nullable="false" MaxLength="16" />
+          <Property Name="FILEHEADERGUIDRF" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UPDEMPLOYEECODERF" Type="nchar" Nullable="false" MaxLength="9" />
+          <Property Name="UPDASSEMBLYID1RF" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="UPDASSEMBLYID2RF" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="LOGICALDELETECODERF" Type="int" Nullable="false" />
+          <Property Name="JXESTMACPODRCDRF" Type="int" Nullable="false" />
+          <Property Name="SLIPNORF" Type="nchar" Nullable="false" MaxLength="9" />
+          <Property Name="JXACALCFLGRF" Type="int" />
+          <Property Name="JXACCEPTDATERF" Type="int" />
+          <Property Name="JXACCEPTTIMERF" Type="int" />
+          <Property Name="JXWORKTIMERF" Type="int" />
+          <Property Name="JXWORKENDSCDLRF" Type="int" />
+          <Property Name="JXPAYMENTCDRF" Type="int" />
+          <Property Name="JXTOTALAMOUNTRF" Type="bigint" />
+          <Property Name="JXTAXRATERF" Type="float" />
+          <Property Name="JXFRACPRCCODERF" Type="int" />
+          <Property Name="MILEAGERF" Type="int" />
+          <Property Name="JXRPAGENTNAMERF" Type="nvarchar" MaxLength="30" />
+          <Property Name="JXRPAGENTMSGRF" Type="nvarchar" MaxLength="30" />
+          <Property Name="CARMNGNORF" Type="int" />
+          <Property Name="CUSTOMERCODERF" Type="int" />
+          <Property Name="NAMERF" Type="nvarchar" MaxLength="30" />
+          <Property Name="NAME2RF" Type="nvarchar" MaxLength="30" />
+          <Property Name="KANARF" Type="nvarchar" MaxLength="30" />
+          <Property Name="SEXNAMERF" Type="nvarchar" MaxLength="2" />
+          <Property Name="BIRTHDAYRF" Type="int" />
+          <Property Name="ADDRESS1RF" Type="nvarchar" MaxLength="60" />
+          <Property Name="ADDRESS2RF" Type="int" />
+          <Property Name="ADDRESS3RF" Type="nvarchar" MaxLength="44" />
+          <Property Name="ADDRESS4RF" Type="nvarchar" MaxLength="60" />
+          <Property Name="HOMETELNORF" Type="nvarchar" MaxLength="16" />
+          <Property Name="PORTABLETELNORF" Type="nvarchar" MaxLength="16" />
+          <Property Name="JXCARDMEMBERNAME1RF" Type="nvarchar" MaxLength="30" />
+          <Property Name="JXCARDMEMBERNAME2RF" Type="nvarchar" MaxLength="30" />
+          <Property Name="JXCARDMEMBERNAME3RF" Type="nvarchar" MaxLength="30" />
+          <Property Name="JXCARDMEMBERNAME4RF" Type="nvarchar" MaxLength="30" />
+          <Property Name="JXCARDMEMBERNAME5RF" Type="nvarchar" MaxLength="30" />
+          <Property Name="DMOUTCODERF" Type="int" />
+          <Property Name="MAILSENDCODERF" Type="int" />
+          <Property Name="NUMBERPLATE1CODERF" Type="int" />
+          <Property Name="NUMBERPLATE1NAMERF" Type="nvarchar" MaxLength="4" />
+          <Property Name="NUMBERPLATE2RF" Type="nvarchar" MaxLength="3" />
+          <Property Name="NUMBERPLATE3RF" Type="nvarchar" MaxLength="2" />
+          <Property Name="NUMBERPLATE4RF" Type="int" />
+          <Property Name="MAKERPARTSSRCHCODERF" Type="int" />
+          <Property Name="MAKERCODERF" Type="int" />
+          <Property Name="AIRAMAKERCODERF" Type="int" />
+          <Property Name="MAKERNAMERF" Type="nvarchar" MaxLength="30" />
+          <Property Name="MODELCODERF" Type="int" />
+          <Property Name="MODELSUBCODERF" Type="int" />
+          <Property Name="MODELNAMERF" Type="nvarchar" MaxLength="20" />
+          <Property Name="FIRSTENTRYDATENUMTYPRF" Type="int" />
+          <Property Name="ENTRYDATERF" Type="int" />
+          <Property Name="CIMATDATERF" Type="int" />
+          <Property Name="JXSIGNIMGRF" Type="image" />
+        </EntityType>
         <!--Errors Found During Generation:
       warning 6002: The table/view 'JXMobile.dbo.vReportListForSearch' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
@@ -33,13 +685,50 @@
           <Property Name="CUSTNAME" Type="nvarchar" MaxLength="232" />
           <Property Name="KANA" Type="nvarchar" MaxLength="30" />
         </EntityType>
-      </Schema>
-    </edmx:StorageModels>
+        <!--Errors Found During Generation:
+      warning 6013: The table/view 'JXMobile.dbo.JXCUSTRF' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="JXCUSTRF">
+        <Property Name="CREATEDATETIMERF" Type="bigint" />
+        <Property Name="UPDATEDATETIMERF" Type="bigint" />
+        <Property Name="ENTERPRISECODERF" Type="nchar" MaxLength="16" />
+        <Property Name="FILEHEADERGUIDRF" Type="uniqueidentifier" />
+        <Property Name="UPDEMPLOYEECODERF" Type="nchar" MaxLength="9" />
+        <Property Name="UPDASSEMBLYID1RF" Type="nvarchar" MaxLength="30" />
+        <Property Name="UPDASSEMBLYID2RF" Type="nvarchar" MaxLength="30" />
+        <Property Name="LOGICALDELETECODERF" Type="int" />
+        <Property Name="CUSTOMERCODERF" Type="int" />
+        <Property Name="JXCARDMEMBERCD1RF" Type="int" />
+        <Property Name="JXCARDADMISDT1RF" Type="int" />
+        <Property Name="JXCARDLIMITDT1RF" Type="int" />
+        <Property Name="JXCARDMEMBERCD2RF" Type="int" />
+        <Property Name="JXCARDADMISDT2RF" Type="int" />
+        <Property Name="JXCARDLIMITDT2RF" Type="int" />
+        <Property Name="JXCARDMEMBERCD3RF" Type="int" />
+        <Property Name="JXCARDADMISDT3RF" Type="int" />
+        <Property Name="JXCARDLIMITDT3RF" Type="int" />
+        <Property Name="JXCARDMEMBERCD4RF" Type="int" />
+        <Property Name="JXCARDADMISDT4RF" Type="int" />
+        <Property Name="JXCARDLIMITDT4RF" Type="int" />
+        <Property Name="JXCARDMEMBERCD5RF" Type="int" />
+        <Property Name="JXCARDADMISDT5RF" Type="int" />
+        <Property Name="JXCARDLIMITDT5RF" Type="int" />
+        <Property Name="JXPAYMTDIVRF" Type="int" />
+      </EntityType>-->
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="JXMobileModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="JXMobileDBContext" p1:LazyLoadingEnabled="true">
           <EntitySet Name="vReportListForSearch" EntityType="JXMobileModel.vReportListForSearch" />
+          <EntitySet Name="CARMAINRF" EntityType="JXMobileModel.CARMAINRF" />
+          <EntitySet Name="CARSPECRF" EntityType="JXMobileModel.CARSPECRF" />
+          <EntitySet Name="CUSTOMERRF" EntityType="JXMobileModel.CUSTOMERRF" />
+          <EntitySet Name="JXACCEGOINFURF" EntityType="JXMobileModel.JXACCEGOINFURF" />
+          <EntitySet Name="JXCUSTVTTLRF" EntityType="JXMobileModel.JXCUSTVTTLRF" />
+          <EntitySet Name="JXNOMNGSETRF" EntityType="JXMobileModel.JXNOMNGSETRF" />
+          <EntitySet Name="JXSLIPDETAILRF" EntityType="JXMobileModel.JXSLIPDETAILRF" />
+          <EntitySet Name="JXSLIPHEDRRF" EntityType="JXMobileModel.JXSLIPHEDRRF" />
         </EntityContainer>
         <EntityType Name="vReportListForSearch">
           <Key>
@@ -52,6 +741,628 @@
           <Property Name="MODELNAME" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
           <Property Name="CUSTNAME" Type="String" MaxLength="232" Unicode="true" FixedLength="false" />
           <Property Name="KANA" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="CARMAINRF">
+          <Key>
+            <PropertyRef Name="ENTERPRISECODERF" />
+            <PropertyRef Name="CARMNGNORF" />
+          </Key>
+          <Property Type="Int64" Name="CREATEDATETIMERF" Nullable="false" />
+          <Property Type="Int64" Name="UPDATEDATETIMERF" Nullable="false" />
+          <Property Type="String" Name="ENTERPRISECODERF" Nullable="false" MaxLength="16" FixedLength="true" Unicode="true" />
+          <Property Type="Guid" Name="FILEHEADERGUIDRF" Nullable="false" />
+          <Property Type="String" Name="UPDEMPLOYEECODERF" Nullable="false" MaxLength="9" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="UPDASSEMBLYID1RF" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UPDASSEMBLYID2RF" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="LOGICALDELETECODERF" Nullable="false" />
+          <Property Type="Int32" Name="CARMNGNORF" Nullable="false" />
+          <Property Type="Int32" Name="NUMBERPLATE1CODERF" />
+          <Property Type="String" Name="NUMBERPLATE1NAMERF" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NUMBERPLATE2RF" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NUMBERPLATE3RF" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="NUMBERPLATE4RF" />
+          <Property Type="Int32" Name="ENTRYDATERF" />
+          <Property Type="Int32" Name="FIRSTENTRYDATENUMTYPRF" />
+          <Property Type="Int32" Name="PRODUCETYPEOFYEARRF" />
+          <Property Type="Int32" Name="CARINSPECTYEARRF" />
+          <Property Type="Int32" Name="CUSTOMERCODERF" />
+          <Property Type="Int32" Name="CLAIMCODERF" />
+          <Property Type="String" Name="INPSECTIONCODERF" MaxLength="6" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="MNGSECTIONCODERF" MaxLength="6" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="SERVICESECTIONCDRF" MaxLength="6" FixedLength="true" Unicode="true" />
+          <Property Type="Int32" Name="FEEGROUPCODERF" />
+          <Property Type="String" Name="FEEGROUPNAMERF" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="FEEHEADERCODERF" />
+          <Property Type="String" Name="FEEHEADERNAMERF" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="Binary" Name="MODEL12FULLMODELRF" MaxLength="116" FixedLength="false" />
+          <Property Type="Int32" Name="CARPROPERNORF" />
+          <Property Type="Int32" Name="FULLMODELFIXEDNO1RF" />
+          <Property Type="Int32" Name="FULLMODELFIXEDNO2RF" />
+          <Property Type="Int32" Name="FULLMODELFIXEDNO3RF" />
+          <Property Type="Int32" Name="FULLMODELFIXEDNO4RF" />
+          <Property Type="Int32" Name="FULLMODELFIXEDNO5RF" />
+          <Property Type="Int32" Name="FULLMODELFIXEDNO6RF" />
+          <Property Type="Int32" Name="FULLMODELFIXEDNO7RF" />
+          <Property Type="Int32" Name="FULLMODELFIXEDNO8RF" />
+          <Property Type="Int32" Name="FULLMODELFIXEDNO9RF" />
+          <Property Type="Int32" Name="FULLMODELFIXEDNO10RF" />
+          <Property Type="String" Name="FRAMENORF" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="Binary" Name="FRAMEMODELRF" MaxLength="84" FixedLength="false" />
+          <Property Type="String" Name="CHASSISNORF" MaxLength="18" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="CUSTOMIZECODERF" />
+          <Property Type="Int32" Name="CARADDITIONALINFO1CDRF" />
+          <Property Type="String" Name="CARADDITIONALINFO1NMRF" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CARNORF" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="CHILDCODERF" />
+          <Property Type="String" Name="CHILDNAMERF" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="COLORNORF" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TRIMNORF" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="KEYNORF" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="BOOKINDEXMAKERCDRF" />
+          <Property Type="Int32" Name="BOOKINDEXMODELCDRF" />
+          <Property Type="Int32" Name="BOOKINDEXMODELSUBCDRF" />
+          <Property Type="String" Name="BOOKINDEXMAKERNMRF" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="Binary" Name="BOOKINDEXMODELNMRF" MaxLength="100" FixedLength="false" />
+          <Property Type="Int64" Name="SERIESCDRF" />
+          <Property Type="Binary" Name="SERIESNMRF" MaxLength="180" FixedLength="false" />
+          <Property Type="Int32" Name="CARANALYSISCD1RF" />
+          <Property Type="Int32" Name="CARANALYSISCD2RF" />
+          <Property Type="Int32" Name="CARANALYSISCD3RF" />
+          <Property Type="Int32" Name="CARANALYSISCD4RF" />
+          <Property Type="Int32" Name="CARANALYSISCD5RF" />
+          <Property Type="Int32" Name="CARANALYSISCD6RF" />
+          <Property Type="Int32" Name="DMOUTPUTCONDITIONCDRF" />
+          <Property Type="Int32" Name="NEWUSEDCARCODERF" />
+          <Property Type="String" Name="NEWUSEDCARNAMERF" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="PASSENBSINESCDRF" />
+          <Property Type="String" Name="PSSNGRBSINSSCDNMRF" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="SALESLFOTHRMKRCDRF" />
+          <Property Type="String" Name="SALESLFOTHRMKRNMRF" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="SELFOTHRMKRCDRF" />
+          <Property Type="String" Name="SELFOTHRMKRNMRF" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="Guid" Name="TAKEINIMAGEGROUPCDRF" />
+          <Property Type="Int32" Name="FIRSTTIMECIYEARRF" />
+          <Property Type="Int32" Name="FIRSTTIMECIMATDATERF" />
+          <Property Type="Int32" Name="EXCHSTDGROUPCDRF" />
+          <Property Type="Int32" Name="EXCHSTDCARDIVCODERF" />
+          <Property Type="Int32" Name="TRUSTCONTCARDIVCDRF" />
+          <Property Type="Int32" Name="CHECKCALCUNNCSRYCDRF" />
+          <Property Type="Binary" Name="FULLMODELORORDERSIGNRF" MaxLength="148" FixedLength="false" />
+          <Property Type="String" Name="CARADDITIONALINFO3NMRF" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="SUBSTCARUSEDIVCDRF" />
+        </EntityType>
+        <EntityType Name="CARSPECRF">
+          <Key>
+            <PropertyRef Name="ENTERPRISECODERF" />
+            <PropertyRef Name="CARMNGNORF" />
+          </Key>
+          <Property Type="Int64" Name="CREATEDATETIMERF" Nullable="false" />
+          <Property Type="Int64" Name="UPDATEDATETIMERF" Nullable="false" />
+          <Property Type="String" Name="ENTERPRISECODERF" Nullable="false" MaxLength="16" FixedLength="true" Unicode="true" />
+          <Property Type="Guid" Name="FILEHEADERGUIDRF" Nullable="false" />
+          <Property Type="String" Name="UPDEMPLOYEECODERF" Nullable="false" MaxLength="9" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="UPDASSEMBLYID1RF" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UPDASSEMBLYID2RF" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="LOGICALDELETECODERF" Nullable="false" />
+          <Property Type="Int32" Name="CARMNGNORF" Nullable="false" />
+          <Property Type="Int32" Name="MODELDESIGNATIONNORF" />
+          <Property Type="Int32" Name="CATEGORYNORF" />
+          <Property Type="Int32" Name="CARKINDCODERF" />
+          <Property Type="String" Name="CARKINDNAMERF" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="CARPURPOSECODERF" />
+          <Property Type="String" Name="CARPURPOSENAMERF" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="CARPRIVATEBUSINESSCDRF" />
+          <Property Type="String" Name="PRIVATEBUSINESSNMRF" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="BODYSHAPECODERF" />
+          <Property Type="Int32" Name="AIRABODYSHAPECODERF" />
+          <Property Type="String" Name="BODYSHAPENAMERF" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="DOMESTICFOREIGNCODERF" />
+          <Property Type="String" Name="DOMESTICFOREIGNNAMERF" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="MAKERPARTSSRCHCODERF" />
+          <Property Type="Int32" Name="MAKERCODERF" />
+          <Property Type="Int32" Name="AIRAMAKERCODERF" />
+          <Property Type="String" Name="MAKERNAMERF" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AIRAMAKERNAMERF" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="MODELCODERF" />
+          <Property Type="Int32" Name="MODELSUBCODERF" />
+          <Property Type="Int32" Name="SYSTEMATICCODERF" />
+          <Property Type="String" Name="SYSTEMATICNAMERF" MaxLength="132" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="PRODUCETYPEOFYEARCDRF" />
+          <Property Type="String" Name="PRODUCETYPEOFYEARNMRF" MaxLength="132" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="DOORCOUNTRF" />
+          <Property Type="Int32" Name="BODYNAMECODERF" />
+          <Property Type="String" Name="BODYNAMERF" MaxLength="68" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="CHARACTERISTICCODERF" />
+          <Property Type="String" Name="CHARACTERISTICNAMERF" MaxLength="132" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MODELNAMERF" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="GRADECODERF" />
+          <Property Type="String" Name="GRADENAMERF" MaxLength="180" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="GRADEFULLNAMERF" MaxLength="180" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="GRADEADDNAMEBCRF" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CARINSPECTCERTMODELRF" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EXHAUSTGASSIGNRF" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SERIESMODELRF" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ENGINEMODELNMRF" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="TOTALENGINEDISPLACERF" />
+          <Property Type="Int32" Name="TTLENGINEDISPUNITCDRF" />
+          <Property Type="String" Name="TTLENGINEDISPUNITNMRF" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="CMNNMENGINEDISPLACERF" />
+          <Property Type="Int32" Name="CMNNMENGDISPUNITCDRF" />
+          <Property Type="String" Name="CMNNMENGDISPUNITNMRF" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ROTORCNTRF" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="PASSENGERCAPACITY1RF" />
+          <Property Type="Int32" Name="PASSENGERCAPACITY2RF" />
+          <Property Type="Int32" Name="MAXLOADINGCAPACITY1RF" />
+          <Property Type="Int32" Name="MAXLOADINGCAPACITY2RF" />
+          <Property Type="Int32" Name="VEHICLEWEIGHTRF" />
+          <Property Type="Int32" Name="GROSSVEHICLEWEIGHT1RF" />
+          <Property Type="Int32" Name="GROSSVEHICLEWEIGHT2RF" />
+          <Property Type="Int32" Name="CARLENGTH1RF" />
+          <Property Type="Int32" Name="CARLENGTH2RF" />
+          <Property Type="Int32" Name="CARLENGTH3RF" />
+          <Property Type="Int32" Name="CARHEIGHT1RF" />
+          <Property Type="Int32" Name="CARHEIGHT2RF" />
+          <Property Type="Int32" Name="CARHEIGHT3RF" />
+          <Property Type="Int32" Name="CARWIDTH1RF" />
+          <Property Type="Int32" Name="CARWIDTH2RF" />
+          <Property Type="Int32" Name="CARWIDTH3RF" />
+          <Property Type="Int32" Name="FFAXLEWEIGHTRF" />
+          <Property Type="Int32" Name="FRAXLEWEIGHTRF" />
+          <Property Type="Int32" Name="RFAXLEWEIGHTRF" />
+          <Property Type="Int32" Name="RRAXLEWEIGHTRF" />
+          <Property Type="String" Name="ENGINEMODELRF" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="FUELCODERF" />
+          <Property Type="String" Name="FUELNAMERF" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ENGINEDISPLACERF" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="DISPLACEMENTUNITCDRF" />
+          <Property Type="String" Name="DISPLACEMENTUNITNMRF" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="FUELEFFICIENTRATERF" />
+          <Property Type="Int32" Name="HYBRIDDIVIDECDRF" />
+          <Property Type="String" Name="HYBRIDDIVIDENMRF" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="HANDLEINFOCDRF" />
+          <Property Type="String" Name="HANDLEINFONMRF" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="BRAKEINFOCDRF" />
+          <Property Type="String" Name="BRAKEINFONMRF" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="WHEELDRIVEMETHODCDRF" />
+          <Property Type="String" Name="WHEELDRIVEMETHODNMRF" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="GEARCDRF" />
+          <Property Type="String" Name="GEARNMRF" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="NUMBEROFGEARRF" />
+          <Property Type="Int32" Name="SHIFTMETHODRF" />
+          <Property Type="String" Name="SHIFTMETHODNAMERF" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="TMCODERF" />
+          <Property Type="String" Name="TMCODENAMERF" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ROOFSHAPECODERF" />
+          <Property Type="String" Name="ROOFSHAPENAMERF" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="SHEETINFOCDRF" />
+          <Property Type="String" Name="SHEETINFONMRF" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="EXGASSTRDLVLINFOCDRF" />
+          <Property Type="String" Name="EXGASSTRDLVLINFONMRF" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="MILEMETERDISPVALUNITRF" />
+          <Property Type="Int32" Name="GENRECODERF" />
+          <Property Type="String" Name="GENRENAMERF" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="BODYCOLORRF" />
+          <Property Type="String" Name="BODYCOLORNAMERF" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="COLORCODERF" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="COLORCDDUPDERIVEDNORF" />
+          <Property Type="String" Name="COLORNAME1RF" MaxLength="132" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="BODYPAINTKINDCDRF" />
+          <Property Type="Int32" Name="TRFRBODYPAINTKINDCDRF" />
+          <Property Type="Int32" Name="LOWCONCEALEXISTRF" />
+          <Property Type="Int32" Name="HIGHFUNCTIONBPEXISTRF" />
+          <Property Type="Int32" Name="UNITECOLORCODERF" />
+          <Property Type="String" Name="TRIMCODERF" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TRIMNAMERF" MaxLength="132" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="BLOCKILLUSTRATIONCDRF" />
+          <Property Type="Int32" Name="TWODILLUSTNORF" />
+          <Property Type="Int32" Name="THREEDILLUSTNORF" />
+          <Property Type="Int32" Name="BPINDEXOFFERFLAGRF" />
+          <Property Type="Int32" Name="EXCHINDEXOFFERFLAGRF" />
+          <Property Type="Int32" Name="BMPRBPINDEXOFFERFLAGRF" />
+          <Property Type="Int32" Name="FRMBPINDEXOFFERFLAGRF" />
+          <Property Type="Int32" Name="PARTSDATAOFFERFLAGRF" />
+          <Property Type="Int32" Name="FRBUMPERSAMECOLORCDRF" />
+          <Property Type="Int32" Name="FRBUMPERPAINTFILMCDRF" />
+          <Property Type="Int32" Name="FRBUMPERCRESTPTTNCDRF" />
+          <Property Type="Int32" Name="FRBUMPERHEATPROCCDRF" />
+          <Property Type="Int32" Name="FRBUMPERPFILMCNTCDRF" />
+          <Property Type="Int32" Name="RRBUMPERSAMECOLORCDRF" />
+          <Property Type="Int32" Name="RRBUMPERPAINTFILMCDRF" />
+          <Property Type="Int32" Name="RRBUMPERCRESTPTTNCDRF" />
+          <Property Type="Int32" Name="RRBUMPERHEATPROCCDRF" />
+          <Property Type="Int32" Name="RRBUMPERPFILMCNTCDRF" />
+          <Property Type="Int32" Name="TWOTONEDIVCDRF" />
+          <Property Type="Int32" Name="PAINTFILMKINDRF" />
+          <Property Type="Int32" Name="TWOTONEPAINTFILMKINDRF" />
+          <Property Type="Int32" Name="BOOTHUSEDIVCDRF" />
+          <Property Type="Int32" Name="RUSTPROOFWAXPAINTCDRF" />
+          <Property Type="Int32" Name="PAINTKINDRF" />
+          <Property Type="Int32" Name="HIGHFUNCBPDIVCDRF" />
+          <Property Type="Int32" Name="LOWCONCEALMENTDIVCDRF" />
+          <Property Type="String" Name="RPCOLORCODERF" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="VEHICLEWEIGHT2RF" />
+        </EntityType>
+        <EntityType Name="CUSTOMERRF">
+          <Key>
+            <PropertyRef Name="ENTERPRISECODERF" />
+            <PropertyRef Name="CUSTOMERCODERF" />
+          </Key>
+          <Property Type="Int64" Name="CREATEDATETIMERF" Nullable="false" />
+          <Property Type="Int64" Name="UPDATEDATETIMERF" Nullable="false" />
+          <Property Type="String" Name="ENTERPRISECODERF" Nullable="false" MaxLength="16" FixedLength="true" Unicode="true" />
+          <Property Type="Guid" Name="FILEHEADERGUIDRF" Nullable="false" />
+          <Property Type="String" Name="UPDEMPLOYEECODERF" Nullable="false" MaxLength="9" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="UPDASSEMBLYID1RF" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UPDASSEMBLYID2RF" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="LOGICALDELETECODERF" Nullable="false" />
+          <Property Type="Int32" Name="CUSTOMERCODERF" Nullable="false" />
+          <Property Type="String" Name="CUSTOMERSUBCODERF" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NAMERF" MaxLength="116" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NAME2RF" MaxLength="116" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="HONORIFICTITLERF" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="KANARF" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="OUTPUTNAMECODERF" />
+          <Property Type="String" Name="OUTPUTNAMERF" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="CORPORATEDIVCODERF" />
+          <Property Type="Int32" Name="JOBTYPECODERF" />
+          <Property Type="Int32" Name="BUSINESSTYPECODERF" />
+          <Property Type="Int32" Name="SEXCODERF" />
+          <Property Type="String" Name="SEXNAMERF" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="BIRTHDAYRF" />
+          <Property Type="String" Name="POSTNORF" MaxLength="68" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ADDRESS1RF" MaxLength="180" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ADDRESS2RF" />
+          <Property Type="String" Name="ADDRESS3RF" MaxLength="148" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ADDRESS4RF" MaxLength="180" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ADDRESSCODE1RF" />
+          <Property Type="Int32" Name="ADDRESSCODE2RF" />
+          <Property Type="Int32" Name="ADDRESSCODE3RF" />
+          <Property Type="String" Name="HOMETELNORF" MaxLength="84" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="OFFICETELNORF" MaxLength="84" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PORTABLETELNORF" MaxLength="84" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="HOMEFAXNORF" MaxLength="84" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="OFFICEFAXNORF" MaxLength="84" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="OTHERSTELNORF" MaxLength="84" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="MAINCONTACTCODERF" />
+          <Property Type="String" Name="SEARCHTELNORF" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Type="Int64" Name="GELAVORRATECOSTRF" />
+          <Property Type="Int64" Name="CILAVORRATECOSTRF" />
+          <Property Type="Double" Name="GELAVORDISCOUNTRATERF" />
+          <Property Type="Double" Name="GEPARTSDISCOUNTRATERF" />
+          <Property Type="Double" Name="CILAVORDISCOUNTRATERF" />
+          <Property Type="Double" Name="CIPARTSDISCOUNTRATERF" />
+          <Property Type="Double" Name="BRBPLAVORDISRATERF" />
+          <Property Type="Double" Name="BRBPPARTSDISRATERF" />
+          <Property Type="String" Name="MNGSECTIONCODERF" MaxLength="6" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="INPSECTIONCODERF" MaxLength="6" FixedLength="true" Unicode="true" />
+          <Property Type="Int32" Name="CUSTANALYSCODE1RF" />
+          <Property Type="Int32" Name="CUSTANALYSCODE2RF" />
+          <Property Type="Int32" Name="CUSTANALYSCODE3RF" />
+          <Property Type="Int32" Name="CUSTANALYSCODE4RF" />
+          <Property Type="Int32" Name="CUSTANALYSCODE5RF" />
+          <Property Type="Int32" Name="CUSTANALYSCODE6RF" />
+          <Property Type="Int32" Name="BILLOUTPUTCODERF" />
+          <Property Type="String" Name="BILLOUTPUTNAMERF" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="TOTALDAYRF" />
+          <Property Type="Int32" Name="LASTTIMETEMPDATERF" />
+          <Property Type="Int32" Name="COLLECTMONEYCODERF" />
+          <Property Type="String" Name="COLLECTMONEYNAMERF" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="COLLECTMONEYDAYRF" />
+          <Property Type="Int32" Name="CLAIMCODERF" />
+          <Property Type="Int32" Name="DMOUTCODERF" />
+          <Property Type="String" Name="DMOUTNAMERF" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="MAINSENDMAILADDRCDRF" />
+          <Property Type="Int32" Name="MAILADDRKINDCODE1RF" />
+          <Property Type="String" Name="MAILADDRKINDNAME1RF" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MAILADDRESS1RF" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="MAILSENDCODE1RF" />
+          <Property Type="String" Name="MAILSENDNAME1RF" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="MAILADDRKINDCODE2RF" />
+          <Property Type="String" Name="MAILADDRKINDNAME2RF" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MAILADDRESS2RF" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="MAILSENDCODE2RF" />
+          <Property Type="String" Name="MAILSENDNAME2RF" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="MAILADDRKINDCODE3RF" />
+          <Property Type="String" Name="MAILADDRKINDNAME3RF" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MAILADDRESS3RF" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="MAILSENDCODE3RF" />
+          <Property Type="String" Name="MAILSENDNAME3RF" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="MAILADDRKINDCODE4RF" />
+          <Property Type="String" Name="MAILADDRKINDNAME4RF" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MAILADDRESS4RF" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="MAILSENDCODE4RF" />
+          <Property Type="String" Name="MAILSENDNAME4RF" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="MAILADDRKINDCODE5RF" />
+          <Property Type="String" Name="MAILADDRKINDNAME5RF" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MAILADDRESS5RF" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="MAILSENDCODE5RF" />
+          <Property Type="String" Name="MAILSENDNAME5RF" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="MAILADDRKINDCODE6RF" />
+          <Property Type="String" Name="MAILADDRKINDNAME6RF" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MAILADDRESS6RF" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="MAILSENDCODE6RF" />
+          <Property Type="String" Name="MAILSENDNAME6RF" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CUSTOMERAGENTCDRF" MaxLength="9" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="BILLCOLLECTERCDRF" MaxLength="9" FixedLength="true" Unicode="true" />
+          <Property Type="Guid" Name="TAKEINIMAGEGROUPCDRF" />
+          <Property Type="Int32" Name="BRLVRRTUNPRCADOPTCDRF" />
+          <Property Type="Int64" Name="BRBASELAVORRATERF" />
+          <Property Type="Int64" Name="BREXCHLAVORRATERF" />
+          <Property Type="Int64" Name="BROUTPLATELAVORRATERF" />
+          <Property Type="Int64" Name="BRINPLTFRMLAVORRATERF" />
+          <Property Type="Int64" Name="BRBPLAVORRATERF" />
+          <Property Type="Int64" Name="BRMTRLPRICELAVORRATERF" />
+          <Property Type="Int64" Name="BRRPLAVORRATERF" />
+          <Property Type="Int32" Name="TRUSTCOMPANYDIVCDRF" />
+          <Property Type="Int32" Name="PARTSSUPPLIERDIVCDRF" />
+          <Property Type="Int32" Name="CARSUPPLIERDIVCDRF" />
+          <Property Type="Int32" Name="OSRCSUPPLIERDIVCDRF" />
+          <Property Type="String" Name="HOMETELNOSEARCHRF" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="OFFICETELNOSEARCHRF" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="PORTABLETELNOSEARCHRF" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="HOMEFAXNOSEARCHRF" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="OFFICEFAXNOSEARCHRF" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="OTHERSTELNOSEARCHRF" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Type="Int32" Name="CUSTOMERRANKCODERF" />
+          <Property Type="String" Name="CONTACTTIMEMEMORF" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="Int16" Name="RPFRACPROCCDUSEDIVRF" />
+          <Property Type="Int32" Name="RPLAVORFRACPROCCDRF" />
+          <Property Type="Int32" Name="RPPARTSFRACPROCCDRF" />
+          <Property Type="Int32" Name="RPLAVORDISFRACPROCCDRF" />
+          <Property Type="Int32" Name="RPPARTSDISFRACPROCCDRF" />
+          <Property Type="Int32" Name="RPCNSTAXFRACPROCCDRF" />
+          <Property Type="Int16" Name="BRFRACPROCCDUSEDIVRF" />
+          <Property Type="Int32" Name="BRLAVORFRACPROCCDRF" />
+          <Property Type="Int32" Name="BRPARTSFRACPROCCDRF" />
+          <Property Type="Int32" Name="BRLAVORDISFRACPROCCDRF" />
+          <Property Type="Int32" Name="BRPARTSDISFRACPROCCDRF" />
+          <Property Type="Int32" Name="BRCNSTAXFRACPROCCDRF" />
+          <Property Type="Int32" Name="MTRLPRICEFRACPROCCDRF" />
+          <Property Type="Int32" Name="INTRODUCERCODERF" />
+          <Property Type="Int16" Name="RPTTLCDDISRATEUSECDRF" />
+          <Property Type="Int16" Name="BRTTLCDDISRATEUSECDRF" />
+          <Property Type="Double" Name="GECUSTTTLCDDISRATE1RF" />
+          <Property Type="Double" Name="GECUSTTTLCDDISRATE2RF" />
+          <Property Type="Double" Name="GECUSTTTLCDDISRATE3RF" />
+          <Property Type="Double" Name="GECUSTTTLCDDISRATE4RF" />
+          <Property Type="Double" Name="GECUSTTTLCDDISRATE5RF" />
+          <Property Type="Double" Name="GECUSTTTLCDDISRATE6RF" />
+          <Property Type="Double" Name="GECUSTTTLCDDISRATE7RF" />
+          <Property Type="Double" Name="GECUSTTTLCDDISRATE8RF" />
+          <Property Type="Double" Name="GECUSTTTLCDDISRATE9RF" />
+          <Property Type="Double" Name="GECUSTTTLCDDISRATE10RF" />
+          <Property Type="Double" Name="GECUSTTTLCDDISRATE11RF" />
+          <Property Type="Double" Name="GECUSTTTLCDDISRATE12RF" />
+          <Property Type="Double" Name="GECUSTTTLCDDISRATE13RF" />
+          <Property Type="Double" Name="GECUSTTTLCDDISRATE14RF" />
+          <Property Type="Double" Name="GECUSTTTLCDDISRATE15RF" />
+          <Property Type="Double" Name="GECUSTTTLCDDISRATE16RF" />
+          <Property Type="Double" Name="GECUSTTTLCDDISRATE17RF" />
+          <Property Type="Double" Name="GECUSTTTLCDDISRATE18RF" />
+          <Property Type="Double" Name="GECUSTTTLCDDISRATE19RF" />
+          <Property Type="Double" Name="GECUSTTTLCDDISRATE20RF" />
+          <Property Type="Double" Name="CICUSTTTLCDDISRATE1RF" />
+          <Property Type="Double" Name="CICUSTTTLCDDISRATE2RF" />
+          <Property Type="Double" Name="CICUSTTTLCDDISRATE3RF" />
+          <Property Type="Double" Name="CICUSTTTLCDDISRATE4RF" />
+          <Property Type="Double" Name="CICUSTTTLCDDISRATE5RF" />
+          <Property Type="Double" Name="CICUSTTTLCDDISRATE6RF" />
+          <Property Type="Double" Name="CICUSTTTLCDDISRATE7RF" />
+          <Property Type="Double" Name="CICUSTTTLCDDISRATE8RF" />
+          <Property Type="Double" Name="CICUSTTTLCDDISRATE9RF" />
+          <Property Type="Double" Name="CICUSTTTLCDDISRATE10RF" />
+          <Property Type="Double" Name="CICUSTTTLCDDISRATE11RF" />
+          <Property Type="Double" Name="CICUSTTTLCDDISRATE12RF" />
+          <Property Type="Double" Name="CICUSTTTLCDDISRATE13RF" />
+          <Property Type="Double" Name="CICUSTTTLCDDISRATE14RF" />
+          <Property Type="Double" Name="CICUSTTTLCDDISRATE15RF" />
+          <Property Type="Double" Name="CICUSTTTLCDDISRATE16RF" />
+          <Property Type="Double" Name="CICUSTTTLCDDISRATE17RF" />
+          <Property Type="Double" Name="CICUSTTTLCDDISRATE18RF" />
+          <Property Type="Double" Name="CICUSTTTLCDDISRATE19RF" />
+          <Property Type="Double" Name="CICUSTTTLCDDISRATE20RF" />
+          <Property Type="Double" Name="BRCUSTTTLCDDISRATE1RF" />
+          <Property Type="Double" Name="BRCUSTTTLCDDISRATE2RF" />
+          <Property Type="Double" Name="BRCUSTTTLCDDISRATE3RF" />
+          <Property Type="Double" Name="BRCUSTTTLCDDISRATE4RF" />
+          <Property Type="Double" Name="BRCUSTTTLCDDISRATE5RF" />
+          <Property Type="Double" Name="BRCUSTTTLCDDISRATE6RF" />
+          <Property Type="Double" Name="BRCUSTTTLCDDISRATE7RF" />
+          <Property Type="Double" Name="BRCUSTTTLCDDISRATE8RF" />
+          <Property Type="Double" Name="BRCUSTTTLCDDISRATE9RF" />
+          <Property Type="Double" Name="BRCUSTTTLCDDISRATE10RF" />
+          <Property Type="Double" Name="BRCUSTTTLCDDISRATE11RF" />
+          <Property Type="Double" Name="BRCUSTTTLCDDISRATE12RF" />
+          <Property Type="Double" Name="BRCUSTTTLCDDISRATE13RF" />
+          <Property Type="Double" Name="BRCUSTTTLCDDISRATE14RF" />
+          <Property Type="Double" Name="BRCUSTTTLCDDISRATE15RF" />
+          <Property Type="Double" Name="BRCUSTTTLCDDISRATE16RF" />
+          <Property Type="Double" Name="BRCUSTTTLCDDISRATE17RF" />
+          <Property Type="Double" Name="BRCUSTTTLCDDISRATE18RF" />
+          <Property Type="Double" Name="BRCUSTTTLCDDISRATE19RF" />
+          <Property Type="Double" Name="BRCUSTTTLCDDISRATE20RF" />
+          <Property Type="Int16" Name="CRANKAUTOUPDEXCLDDIVRF" />
+        </EntityType>
+        <EntityType Name="JXACCEGOINFURF">
+          <Key>
+            <PropertyRef Name="ENTERPRISECODERF" />
+            <PropertyRef Name="SECTIONCODERF" />
+            <PropertyRef Name="EGOILCODERF" />
+          </Key>
+          <Property Type="Int64" Name="CREATEDATETIMERF" Nullable="false" />
+          <Property Type="Int64" Name="UPDATEDATETIMERF" Nullable="false" />
+          <Property Type="String" Name="ENTERPRISECODERF" Nullable="false" MaxLength="16" FixedLength="true" Unicode="true" />
+          <Property Type="Guid" Name="FILEHEADERGUIDRF" Nullable="false" />
+          <Property Type="String" Name="UPDEMPLOYEECODERF" Nullable="false" MaxLength="9" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="UPDASSEMBLYID1RF" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UPDASSEMBLYID2RF" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="LOGICALDELETECODERF" Nullable="false" />
+          <Property Type="String" Name="SECTIONCODERF" Nullable="false" MaxLength="6" FixedLength="true" Unicode="true" />
+          <Property Type="Int32" Name="EGOILCODERF" Nullable="false" />
+          <Property Type="String" Name="EGOILAPIGAUGERF" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="EGOILAPIGAUGECDRF" />
+          <Property Type="String" Name="EGOILILSACGAUGERF" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="EGOILILSACGAUGECDRF" />
+          <Property Type="String" Name="EGOILOTHERGAUGERF" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EGOILVISCOSITYRF" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Type="Int32" Name="EGOILVISCOSITYCDRF" />
+          <Property Type="String" Name="EGOILBASEOILRF" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="EGOILBASEOILCDRF" />
+          <Property Type="String" Name="EGOILPRRF" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Guid" Name="TAKEINIMAGECODERF" />
+          <Property Type="Int32" Name="FUELCODERF" />
+          <Property Type="Int32" Name="TURBOUSEDIVRF" />
+          <Property Type="String" Name="INPSECTIONCODERF" MaxLength="6" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="EGOILMAKERRF" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="JXCUSTVTTLRF">
+          <Key>
+            <PropertyRef Name="CREATEDATETIMERF" />
+            <PropertyRef Name="UPDATEDATETIMERF" />
+            <PropertyRef Name="ENTERPRISECODERF" />
+            <PropertyRef Name="FILEHEADERGUIDRF" />
+            <PropertyRef Name="UPDEMPLOYEECODERF" />
+            <PropertyRef Name="UPDASSEMBLYID1RF" />
+            <PropertyRef Name="UPDASSEMBLYID2RF" />
+            <PropertyRef Name="LOGICALDELETECODERF" />
+            <PropertyRef Name="SECTIONCODERF" />
+            <PropertyRef Name="CUSTOMERCODERF" />
+          </Key>
+          <Property Type="Int64" Name="CREATEDATETIMERF" Nullable="false" />
+          <Property Type="Int64" Name="UPDATEDATETIMERF" Nullable="false" />
+          <Property Type="String" Name="ENTERPRISECODERF" Nullable="false" MaxLength="16" FixedLength="true" Unicode="true" />
+          <Property Type="Guid" Name="FILEHEADERGUIDRF" Nullable="false" />
+          <Property Type="String" Name="UPDEMPLOYEECODERF" Nullable="false" MaxLength="9" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="UPDASSEMBLYID1RF" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UPDASSEMBLYID2RF" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="LOGICALDELETECODERF" Nullable="false" />
+          <Property Type="String" Name="SECTIONCODERF" Nullable="false" MaxLength="6" FixedLength="true" Unicode="true" />
+          <Property Type="Int32" Name="CUSTOMERCODERF" Nullable="false" />
+          <Property Type="Int32" Name="JXTTLUNITYMRF" />
+          <Property Type="Int32" Name="JXOILSPLYCTRF" />
+          <Property Type="Int32" Name="JXOILSPLYLSTDTRF" />
+          <Property Type="Int32" Name="JXBUYCTRF" />
+          <Property Type="Int32" Name="JXBUYRLSTDTRF" />
+          <Property Type="Int32" Name="JXVSTLSTDTRF" />
+        </EntityType>
+        <EntityType Name="JXNOMNGSETRF">
+          <Key>
+            <PropertyRef Name="ENTERPRISECODERF" />
+            <PropertyRef Name="SECTIONCODERF" />
+            <PropertyRef Name="JXNOCODERF" />
+          </Key>
+          <Property Type="Int64" Name="CREATEDATETIMERF" Nullable="false" />
+          <Property Type="Int64" Name="UPDATEDATETIMERF" Nullable="false" />
+          <Property Type="String" Name="ENTERPRISECODERF" Nullable="false" MaxLength="16" FixedLength="true" Unicode="true" />
+          <Property Type="Guid" Name="FILEHEADERGUIDRF" Nullable="false" />
+          <Property Type="String" Name="UPDEMPLOYEECODERF" Nullable="false" MaxLength="9" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="UPDASSEMBLYID1RF" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UPDASSEMBLYID2RF" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="LOGICALDELETECODERF" Nullable="false" />
+          <Property Type="String" Name="SECTIONCODERF" Nullable="false" MaxLength="6" FixedLength="true" Unicode="true" />
+          <Property Type="Int32" Name="JXNOCODERF" Nullable="false" />
+          <Property Type="Int64" Name="NOPRESENTVALRF" />
+          <Property Type="Int32" Name="JXLASTYEARMONTHRF" />
+          <Property Type="Int32" Name="JXNORESETTIMINGDIVCDRF" />
+        </EntityType>
+        <EntityType Name="JXSLIPDETAILRF">
+          <Key>
+            <PropertyRef Name="ENTERPRISECODERF" />
+            <PropertyRef Name="JXESTMACPODRCDRF" />
+            <PropertyRef Name="SLIPNORF" />
+            <PropertyRef Name="JXDETAILNORF" />
+          </Key>
+          <Property Type="Int64" Name="CREATEDATETIMERF" Nullable="false" />
+          <Property Type="Int64" Name="UPDATEDATETIMERF" Nullable="false" />
+          <Property Type="String" Name="ENTERPRISECODERF" Nullable="false" MaxLength="16" FixedLength="true" Unicode="true" />
+          <Property Type="Guid" Name="FILEHEADERGUIDRF" Nullable="false" />
+          <Property Type="String" Name="UPDEMPLOYEECODERF" Nullable="false" MaxLength="9" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="UPDASSEMBLYID1RF" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UPDASSEMBLYID2RF" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="LOGICALDELETECODERF" Nullable="false" />
+          <Property Type="Int32" Name="JXESTMACPODRCDRF" Nullable="false" />
+          <Property Type="String" Name="SLIPNORF" Nullable="false" MaxLength="9" FixedLength="true" Unicode="true" />
+          <Property Type="Int32" Name="JXDETAILNORF" Nullable="false" />
+          <Property Type="Int32" Name="JXCARWASHCARECDRF" Nullable="false" />
+          <Property Type="Int32" Name="JXGOODSGENRERF" Nullable="false" />
+          <Property Type="Int32" Name="JXGOODSCODERF" Nullable="false" />
+          <Property Type="String" Name="EGOILVISCOSITYRF" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="BTTYSIZERF" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="TIRESIZERF" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Type="Int32" Name="FUELCODERF" />
+          <Property Type="String" Name="JXPARTSNORF" MaxLength="24" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="JXGOODSNAMERF" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="JXGOODSCNTRF" />
+          <Property Type="Int64" Name="JXGOODSUNITPRICERF" />
+          <Property Type="Int32" Name="JXGOODSUNITPRCCORRCDRF" />
+          <Property Type="Int64" Name="JXGOODSPRICERF" />
+          <Property Type="Int32" Name="JXGOODSPRCCORRCDRF" />
+          <Property Type="Int32" Name="JXGOODSPRICEKNDRF" />
+        </EntityType>
+        <EntityType Name="JXSLIPHEDRRF">
+          <Key>
+            <PropertyRef Name="ENTERPRISECODERF" />
+            <PropertyRef Name="JXESTMACPODRCDRF" />
+            <PropertyRef Name="SLIPNORF" />
+          </Key>
+          <Property Type="Int64" Name="CREATEDATETIMERF" Nullable="false" />
+          <Property Type="Int64" Name="UPDATEDATETIMERF" Nullable="false" />
+          <Property Type="String" Name="ENTERPRISECODERF" Nullable="false" MaxLength="16" FixedLength="true" Unicode="true" />
+          <Property Type="Guid" Name="FILEHEADERGUIDRF" Nullable="false" />
+          <Property Type="String" Name="UPDEMPLOYEECODERF" Nullable="false" MaxLength="9" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="UPDASSEMBLYID1RF" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UPDASSEMBLYID2RF" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="LOGICALDELETECODERF" Nullable="false" />
+          <Property Type="Int32" Name="JXESTMACPODRCDRF" Nullable="false" />
+          <Property Type="String" Name="SLIPNORF" Nullable="false" MaxLength="9" FixedLength="true" Unicode="true" />
+          <Property Type="Int32" Name="JXACALCFLGRF" />
+          <Property Type="Int32" Name="JXACCEPTDATERF" />
+          <Property Type="Int32" Name="JXACCEPTTIMERF" />
+          <Property Type="Int32" Name="JXWORKTIMERF" />
+          <Property Type="Int32" Name="JXWORKENDSCDLRF" />
+          <Property Type="Int32" Name="JXPAYMENTCDRF" />
+          <Property Type="Int64" Name="JXTOTALAMOUNTRF" />
+          <Property Type="Double" Name="JXTAXRATERF" />
+          <Property Type="Int32" Name="JXFRACPRCCODERF" />
+          <Property Type="Int32" Name="MILEAGERF" />
+          <Property Type="String" Name="JXRPAGENTNAMERF" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="JXRPAGENTMSGRF" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="CARMNGNORF" />
+          <Property Type="Int32" Name="CUSTOMERCODERF" />
+          <Property Type="String" Name="NAMERF" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NAME2RF" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="KANARF" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SEXNAMERF" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="BIRTHDAYRF" />
+          <Property Type="String" Name="ADDRESS1RF" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ADDRESS2RF" />
+          <Property Type="String" Name="ADDRESS3RF" MaxLength="44" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ADDRESS4RF" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="HOMETELNORF" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PORTABLETELNORF" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="JXCARDMEMBERNAME1RF" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="JXCARDMEMBERNAME2RF" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="JXCARDMEMBERNAME3RF" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="JXCARDMEMBERNAME4RF" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="JXCARDMEMBERNAME5RF" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="DMOUTCODERF" />
+          <Property Type="Int32" Name="MAILSENDCODERF" />
+          <Property Type="Int32" Name="NUMBERPLATE1CODERF" />
+          <Property Type="String" Name="NUMBERPLATE1NAMERF" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NUMBERPLATE2RF" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NUMBERPLATE3RF" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="NUMBERPLATE4RF" />
+          <Property Type="Int32" Name="MAKERPARTSSRCHCODERF" />
+          <Property Type="Int32" Name="MAKERCODERF" />
+          <Property Type="Int32" Name="AIRAMAKERCODERF" />
+          <Property Type="String" Name="MAKERNAMERF" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="MODELCODERF" />
+          <Property Type="Int32" Name="MODELSUBCODERF" />
+          <Property Type="String" Name="MODELNAMERF" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="FIRSTENTRYDATENUMTYPRF" />
+          <Property Type="Int32" Name="ENTRYDATERF" />
+          <Property Type="Int32" Name="CIMATDATERF" />
+          <Property Type="Binary" Name="JXSIGNIMGRF" MaxLength="Max" FixedLength="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -69,6 +1380,615 @@
                 <ScalarProperty Name="MODELNAME" ColumnName="MODELNAME" />
                 <ScalarProperty Name="CUSTNAME" ColumnName="CUSTNAME" />
                 <ScalarProperty Name="KANA" ColumnName="KANA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CARMAINRF">
+            <EntityTypeMapping TypeName="JXMobileModel.CARMAINRF">
+              <MappingFragment StoreEntitySet="CARMAINRF">
+                <ScalarProperty Name="SUBSTCARUSEDIVCDRF" ColumnName="SUBSTCARUSEDIVCDRF" />
+                <ScalarProperty Name="CARADDITIONALINFO3NMRF" ColumnName="CARADDITIONALINFO3NMRF" />
+                <ScalarProperty Name="FULLMODELORORDERSIGNRF" ColumnName="FULLMODELORORDERSIGNRF" />
+                <ScalarProperty Name="CHECKCALCUNNCSRYCDRF" ColumnName="CHECKCALCUNNCSRYCDRF" />
+                <ScalarProperty Name="TRUSTCONTCARDIVCDRF" ColumnName="TRUSTCONTCARDIVCDRF" />
+                <ScalarProperty Name="EXCHSTDCARDIVCODERF" ColumnName="EXCHSTDCARDIVCODERF" />
+                <ScalarProperty Name="EXCHSTDGROUPCDRF" ColumnName="EXCHSTDGROUPCDRF" />
+                <ScalarProperty Name="FIRSTTIMECIMATDATERF" ColumnName="FIRSTTIMECIMATDATERF" />
+                <ScalarProperty Name="FIRSTTIMECIYEARRF" ColumnName="FIRSTTIMECIYEARRF" />
+                <ScalarProperty Name="TAKEINIMAGEGROUPCDRF" ColumnName="TAKEINIMAGEGROUPCDRF" />
+                <ScalarProperty Name="SELFOTHRMKRNMRF" ColumnName="SELFOTHRMKRNMRF" />
+                <ScalarProperty Name="SELFOTHRMKRCDRF" ColumnName="SELFOTHRMKRCDRF" />
+                <ScalarProperty Name="SALESLFOTHRMKRNMRF" ColumnName="SALESLFOTHRMKRNMRF" />
+                <ScalarProperty Name="SALESLFOTHRMKRCDRF" ColumnName="SALESLFOTHRMKRCDRF" />
+                <ScalarProperty Name="PSSNGRBSINSSCDNMRF" ColumnName="PSSNGRBSINSSCDNMRF" />
+                <ScalarProperty Name="PASSENBSINESCDRF" ColumnName="PASSENBSINESCDRF" />
+                <ScalarProperty Name="NEWUSEDCARNAMERF" ColumnName="NEWUSEDCARNAMERF" />
+                <ScalarProperty Name="NEWUSEDCARCODERF" ColumnName="NEWUSEDCARCODERF" />
+                <ScalarProperty Name="DMOUTPUTCONDITIONCDRF" ColumnName="DMOUTPUTCONDITIONCDRF" />
+                <ScalarProperty Name="CARANALYSISCD6RF" ColumnName="CARANALYSISCD6RF" />
+                <ScalarProperty Name="CARANALYSISCD5RF" ColumnName="CARANALYSISCD5RF" />
+                <ScalarProperty Name="CARANALYSISCD4RF" ColumnName="CARANALYSISCD4RF" />
+                <ScalarProperty Name="CARANALYSISCD3RF" ColumnName="CARANALYSISCD3RF" />
+                <ScalarProperty Name="CARANALYSISCD2RF" ColumnName="CARANALYSISCD2RF" />
+                <ScalarProperty Name="CARANALYSISCD1RF" ColumnName="CARANALYSISCD1RF" />
+                <ScalarProperty Name="SERIESNMRF" ColumnName="SERIESNMRF" />
+                <ScalarProperty Name="SERIESCDRF" ColumnName="SERIESCDRF" />
+                <ScalarProperty Name="BOOKINDEXMODELNMRF" ColumnName="BOOKINDEXMODELNMRF" />
+                <ScalarProperty Name="BOOKINDEXMAKERNMRF" ColumnName="BOOKINDEXMAKERNMRF" />
+                <ScalarProperty Name="BOOKINDEXMODELSUBCDRF" ColumnName="BOOKINDEXMODELSUBCDRF" />
+                <ScalarProperty Name="BOOKINDEXMODELCDRF" ColumnName="BOOKINDEXMODELCDRF" />
+                <ScalarProperty Name="BOOKINDEXMAKERCDRF" ColumnName="BOOKINDEXMAKERCDRF" />
+                <ScalarProperty Name="KEYNORF" ColumnName="KEYNORF" />
+                <ScalarProperty Name="TRIMNORF" ColumnName="TRIMNORF" />
+                <ScalarProperty Name="COLORNORF" ColumnName="COLORNORF" />
+                <ScalarProperty Name="CHILDNAMERF" ColumnName="CHILDNAMERF" />
+                <ScalarProperty Name="CHILDCODERF" ColumnName="CHILDCODERF" />
+                <ScalarProperty Name="CARNORF" ColumnName="CARNORF" />
+                <ScalarProperty Name="CARADDITIONALINFO1NMRF" ColumnName="CARADDITIONALINFO1NMRF" />
+                <ScalarProperty Name="CARADDITIONALINFO1CDRF" ColumnName="CARADDITIONALINFO1CDRF" />
+                <ScalarProperty Name="CUSTOMIZECODERF" ColumnName="CUSTOMIZECODERF" />
+                <ScalarProperty Name="CHASSISNORF" ColumnName="CHASSISNORF" />
+                <ScalarProperty Name="FRAMEMODELRF" ColumnName="FRAMEMODELRF" />
+                <ScalarProperty Name="FRAMENORF" ColumnName="FRAMENORF" />
+                <ScalarProperty Name="FULLMODELFIXEDNO10RF" ColumnName="FULLMODELFIXEDNO10RF" />
+                <ScalarProperty Name="FULLMODELFIXEDNO9RF" ColumnName="FULLMODELFIXEDNO9RF" />
+                <ScalarProperty Name="FULLMODELFIXEDNO8RF" ColumnName="FULLMODELFIXEDNO8RF" />
+                <ScalarProperty Name="FULLMODELFIXEDNO7RF" ColumnName="FULLMODELFIXEDNO7RF" />
+                <ScalarProperty Name="FULLMODELFIXEDNO6RF" ColumnName="FULLMODELFIXEDNO6RF" />
+                <ScalarProperty Name="FULLMODELFIXEDNO5RF" ColumnName="FULLMODELFIXEDNO5RF" />
+                <ScalarProperty Name="FULLMODELFIXEDNO4RF" ColumnName="FULLMODELFIXEDNO4RF" />
+                <ScalarProperty Name="FULLMODELFIXEDNO3RF" ColumnName="FULLMODELFIXEDNO3RF" />
+                <ScalarProperty Name="FULLMODELFIXEDNO2RF" ColumnName="FULLMODELFIXEDNO2RF" />
+                <ScalarProperty Name="FULLMODELFIXEDNO1RF" ColumnName="FULLMODELFIXEDNO1RF" />
+                <ScalarProperty Name="CARPROPERNORF" ColumnName="CARPROPERNORF" />
+                <ScalarProperty Name="MODEL12FULLMODELRF" ColumnName="MODEL12FULLMODELRF" />
+                <ScalarProperty Name="FEEHEADERNAMERF" ColumnName="FEEHEADERNAMERF" />
+                <ScalarProperty Name="FEEHEADERCODERF" ColumnName="FEEHEADERCODERF" />
+                <ScalarProperty Name="FEEGROUPNAMERF" ColumnName="FEEGROUPNAMERF" />
+                <ScalarProperty Name="FEEGROUPCODERF" ColumnName="FEEGROUPCODERF" />
+                <ScalarProperty Name="SERVICESECTIONCDRF" ColumnName="SERVICESECTIONCDRF" />
+                <ScalarProperty Name="MNGSECTIONCODERF" ColumnName="MNGSECTIONCODERF" />
+                <ScalarProperty Name="INPSECTIONCODERF" ColumnName="INPSECTIONCODERF" />
+                <ScalarProperty Name="CLAIMCODERF" ColumnName="CLAIMCODERF" />
+                <ScalarProperty Name="CUSTOMERCODERF" ColumnName="CUSTOMERCODERF" />
+                <ScalarProperty Name="CARINSPECTYEARRF" ColumnName="CARINSPECTYEARRF" />
+                <ScalarProperty Name="PRODUCETYPEOFYEARRF" ColumnName="PRODUCETYPEOFYEARRF" />
+                <ScalarProperty Name="FIRSTENTRYDATENUMTYPRF" ColumnName="FIRSTENTRYDATENUMTYPRF" />
+                <ScalarProperty Name="ENTRYDATERF" ColumnName="ENTRYDATERF" />
+                <ScalarProperty Name="NUMBERPLATE4RF" ColumnName="NUMBERPLATE4RF" />
+                <ScalarProperty Name="NUMBERPLATE3RF" ColumnName="NUMBERPLATE3RF" />
+                <ScalarProperty Name="NUMBERPLATE2RF" ColumnName="NUMBERPLATE2RF" />
+                <ScalarProperty Name="NUMBERPLATE1NAMERF" ColumnName="NUMBERPLATE1NAMERF" />
+                <ScalarProperty Name="NUMBERPLATE1CODERF" ColumnName="NUMBERPLATE1CODERF" />
+                <ScalarProperty Name="CARMNGNORF" ColumnName="CARMNGNORF" />
+                <ScalarProperty Name="LOGICALDELETECODERF" ColumnName="LOGICALDELETECODERF" />
+                <ScalarProperty Name="UPDASSEMBLYID2RF" ColumnName="UPDASSEMBLYID2RF" />
+                <ScalarProperty Name="UPDASSEMBLYID1RF" ColumnName="UPDASSEMBLYID1RF" />
+                <ScalarProperty Name="UPDEMPLOYEECODERF" ColumnName="UPDEMPLOYEECODERF" />
+                <ScalarProperty Name="FILEHEADERGUIDRF" ColumnName="FILEHEADERGUIDRF" />
+                <ScalarProperty Name="ENTERPRISECODERF" ColumnName="ENTERPRISECODERF" />
+                <ScalarProperty Name="UPDATEDATETIMERF" ColumnName="UPDATEDATETIMERF" />
+                <ScalarProperty Name="CREATEDATETIMERF" ColumnName="CREATEDATETIMERF" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CARSPECRF">
+            <EntityTypeMapping TypeName="JXMobileModel.CARSPECRF">
+              <MappingFragment StoreEntitySet="CARSPECRF">
+                <ScalarProperty Name="VEHICLEWEIGHT2RF" ColumnName="VEHICLEWEIGHT2RF" />
+                <ScalarProperty Name="RPCOLORCODERF" ColumnName="RPCOLORCODERF" />
+                <ScalarProperty Name="LOWCONCEALMENTDIVCDRF" ColumnName="LOWCONCEALMENTDIVCDRF" />
+                <ScalarProperty Name="HIGHFUNCBPDIVCDRF" ColumnName="HIGHFUNCBPDIVCDRF" />
+                <ScalarProperty Name="PAINTKINDRF" ColumnName="PAINTKINDRF" />
+                <ScalarProperty Name="RUSTPROOFWAXPAINTCDRF" ColumnName="RUSTPROOFWAXPAINTCDRF" />
+                <ScalarProperty Name="BOOTHUSEDIVCDRF" ColumnName="BOOTHUSEDIVCDRF" />
+                <ScalarProperty Name="TWOTONEPAINTFILMKINDRF" ColumnName="TWOTONEPAINTFILMKINDRF" />
+                <ScalarProperty Name="PAINTFILMKINDRF" ColumnName="PAINTFILMKINDRF" />
+                <ScalarProperty Name="TWOTONEDIVCDRF" ColumnName="TWOTONEDIVCDRF" />
+                <ScalarProperty Name="RRBUMPERPFILMCNTCDRF" ColumnName="RRBUMPERPFILMCNTCDRF" />
+                <ScalarProperty Name="RRBUMPERHEATPROCCDRF" ColumnName="RRBUMPERHEATPROCCDRF" />
+                <ScalarProperty Name="RRBUMPERCRESTPTTNCDRF" ColumnName="RRBUMPERCRESTPTTNCDRF" />
+                <ScalarProperty Name="RRBUMPERPAINTFILMCDRF" ColumnName="RRBUMPERPAINTFILMCDRF" />
+                <ScalarProperty Name="RRBUMPERSAMECOLORCDRF" ColumnName="RRBUMPERSAMECOLORCDRF" />
+                <ScalarProperty Name="FRBUMPERPFILMCNTCDRF" ColumnName="FRBUMPERPFILMCNTCDRF" />
+                <ScalarProperty Name="FRBUMPERHEATPROCCDRF" ColumnName="FRBUMPERHEATPROCCDRF" />
+                <ScalarProperty Name="FRBUMPERCRESTPTTNCDRF" ColumnName="FRBUMPERCRESTPTTNCDRF" />
+                <ScalarProperty Name="FRBUMPERPAINTFILMCDRF" ColumnName="FRBUMPERPAINTFILMCDRF" />
+                <ScalarProperty Name="FRBUMPERSAMECOLORCDRF" ColumnName="FRBUMPERSAMECOLORCDRF" />
+                <ScalarProperty Name="PARTSDATAOFFERFLAGRF" ColumnName="PARTSDATAOFFERFLAGRF" />
+                <ScalarProperty Name="FRMBPINDEXOFFERFLAGRF" ColumnName="FRMBPINDEXOFFERFLAGRF" />
+                <ScalarProperty Name="BMPRBPINDEXOFFERFLAGRF" ColumnName="BMPRBPINDEXOFFERFLAGRF" />
+                <ScalarProperty Name="EXCHINDEXOFFERFLAGRF" ColumnName="EXCHINDEXOFFERFLAGRF" />
+                <ScalarProperty Name="BPINDEXOFFERFLAGRF" ColumnName="BPINDEXOFFERFLAGRF" />
+                <ScalarProperty Name="THREEDILLUSTNORF" ColumnName="THREEDILLUSTNORF" />
+                <ScalarProperty Name="TWODILLUSTNORF" ColumnName="TWODILLUSTNORF" />
+                <ScalarProperty Name="BLOCKILLUSTRATIONCDRF" ColumnName="BLOCKILLUSTRATIONCDRF" />
+                <ScalarProperty Name="TRIMNAMERF" ColumnName="TRIMNAMERF" />
+                <ScalarProperty Name="TRIMCODERF" ColumnName="TRIMCODERF" />
+                <ScalarProperty Name="UNITECOLORCODERF" ColumnName="UNITECOLORCODERF" />
+                <ScalarProperty Name="HIGHFUNCTIONBPEXISTRF" ColumnName="HIGHFUNCTIONBPEXISTRF" />
+                <ScalarProperty Name="LOWCONCEALEXISTRF" ColumnName="LOWCONCEALEXISTRF" />
+                <ScalarProperty Name="TRFRBODYPAINTKINDCDRF" ColumnName="TRFRBODYPAINTKINDCDRF" />
+                <ScalarProperty Name="BODYPAINTKINDCDRF" ColumnName="BODYPAINTKINDCDRF" />
+                <ScalarProperty Name="COLORNAME1RF" ColumnName="COLORNAME1RF" />
+                <ScalarProperty Name="COLORCDDUPDERIVEDNORF" ColumnName="COLORCDDUPDERIVEDNORF" />
+                <ScalarProperty Name="COLORCODERF" ColumnName="COLORCODERF" />
+                <ScalarProperty Name="BODYCOLORNAMERF" ColumnName="BODYCOLORNAMERF" />
+                <ScalarProperty Name="BODYCOLORRF" ColumnName="BODYCOLORRF" />
+                <ScalarProperty Name="GENRENAMERF" ColumnName="GENRENAMERF" />
+                <ScalarProperty Name="GENRECODERF" ColumnName="GENRECODERF" />
+                <ScalarProperty Name="MILEMETERDISPVALUNITRF" ColumnName="MILEMETERDISPVALUNITRF" />
+                <ScalarProperty Name="EXGASSTRDLVLINFONMRF" ColumnName="EXGASSTRDLVLINFONMRF" />
+                <ScalarProperty Name="EXGASSTRDLVLINFOCDRF" ColumnName="EXGASSTRDLVLINFOCDRF" />
+                <ScalarProperty Name="SHEETINFONMRF" ColumnName="SHEETINFONMRF" />
+                <ScalarProperty Name="SHEETINFOCDRF" ColumnName="SHEETINFOCDRF" />
+                <ScalarProperty Name="ROOFSHAPENAMERF" ColumnName="ROOFSHAPENAMERF" />
+                <ScalarProperty Name="ROOFSHAPECODERF" ColumnName="ROOFSHAPECODERF" />
+                <ScalarProperty Name="TMCODENAMERF" ColumnName="TMCODENAMERF" />
+                <ScalarProperty Name="TMCODERF" ColumnName="TMCODERF" />
+                <ScalarProperty Name="SHIFTMETHODNAMERF" ColumnName="SHIFTMETHODNAMERF" />
+                <ScalarProperty Name="SHIFTMETHODRF" ColumnName="SHIFTMETHODRF" />
+                <ScalarProperty Name="NUMBEROFGEARRF" ColumnName="NUMBEROFGEARRF" />
+                <ScalarProperty Name="GEARNMRF" ColumnName="GEARNMRF" />
+                <ScalarProperty Name="GEARCDRF" ColumnName="GEARCDRF" />
+                <ScalarProperty Name="WHEELDRIVEMETHODNMRF" ColumnName="WHEELDRIVEMETHODNMRF" />
+                <ScalarProperty Name="WHEELDRIVEMETHODCDRF" ColumnName="WHEELDRIVEMETHODCDRF" />
+                <ScalarProperty Name="BRAKEINFONMRF" ColumnName="BRAKEINFONMRF" />
+                <ScalarProperty Name="BRAKEINFOCDRF" ColumnName="BRAKEINFOCDRF" />
+                <ScalarProperty Name="HANDLEINFONMRF" ColumnName="HANDLEINFONMRF" />
+                <ScalarProperty Name="HANDLEINFOCDRF" ColumnName="HANDLEINFOCDRF" />
+                <ScalarProperty Name="HYBRIDDIVIDENMRF" ColumnName="HYBRIDDIVIDENMRF" />
+                <ScalarProperty Name="HYBRIDDIVIDECDRF" ColumnName="HYBRIDDIVIDECDRF" />
+                <ScalarProperty Name="FUELEFFICIENTRATERF" ColumnName="FUELEFFICIENTRATERF" />
+                <ScalarProperty Name="DISPLACEMENTUNITNMRF" ColumnName="DISPLACEMENTUNITNMRF" />
+                <ScalarProperty Name="DISPLACEMENTUNITCDRF" ColumnName="DISPLACEMENTUNITCDRF" />
+                <ScalarProperty Name="ENGINEDISPLACERF" ColumnName="ENGINEDISPLACERF" />
+                <ScalarProperty Name="FUELNAMERF" ColumnName="FUELNAMERF" />
+                <ScalarProperty Name="FUELCODERF" ColumnName="FUELCODERF" />
+                <ScalarProperty Name="ENGINEMODELRF" ColumnName="ENGINEMODELRF" />
+                <ScalarProperty Name="RRAXLEWEIGHTRF" ColumnName="RRAXLEWEIGHTRF" />
+                <ScalarProperty Name="RFAXLEWEIGHTRF" ColumnName="RFAXLEWEIGHTRF" />
+                <ScalarProperty Name="FRAXLEWEIGHTRF" ColumnName="FRAXLEWEIGHTRF" />
+                <ScalarProperty Name="FFAXLEWEIGHTRF" ColumnName="FFAXLEWEIGHTRF" />
+                <ScalarProperty Name="CARWIDTH3RF" ColumnName="CARWIDTH3RF" />
+                <ScalarProperty Name="CARWIDTH2RF" ColumnName="CARWIDTH2RF" />
+                <ScalarProperty Name="CARWIDTH1RF" ColumnName="CARWIDTH1RF" />
+                <ScalarProperty Name="CARHEIGHT3RF" ColumnName="CARHEIGHT3RF" />
+                <ScalarProperty Name="CARHEIGHT2RF" ColumnName="CARHEIGHT2RF" />
+                <ScalarProperty Name="CARHEIGHT1RF" ColumnName="CARHEIGHT1RF" />
+                <ScalarProperty Name="CARLENGTH3RF" ColumnName="CARLENGTH3RF" />
+                <ScalarProperty Name="CARLENGTH2RF" ColumnName="CARLENGTH2RF" />
+                <ScalarProperty Name="CARLENGTH1RF" ColumnName="CARLENGTH1RF" />
+                <ScalarProperty Name="GROSSVEHICLEWEIGHT2RF" ColumnName="GROSSVEHICLEWEIGHT2RF" />
+                <ScalarProperty Name="GROSSVEHICLEWEIGHT1RF" ColumnName="GROSSVEHICLEWEIGHT1RF" />
+                <ScalarProperty Name="VEHICLEWEIGHTRF" ColumnName="VEHICLEWEIGHTRF" />
+                <ScalarProperty Name="MAXLOADINGCAPACITY2RF" ColumnName="MAXLOADINGCAPACITY2RF" />
+                <ScalarProperty Name="MAXLOADINGCAPACITY1RF" ColumnName="MAXLOADINGCAPACITY1RF" />
+                <ScalarProperty Name="PASSENGERCAPACITY2RF" ColumnName="PASSENGERCAPACITY2RF" />
+                <ScalarProperty Name="PASSENGERCAPACITY1RF" ColumnName="PASSENGERCAPACITY1RF" />
+                <ScalarProperty Name="ROTORCNTRF" ColumnName="ROTORCNTRF" />
+                <ScalarProperty Name="CMNNMENGDISPUNITNMRF" ColumnName="CMNNMENGDISPUNITNMRF" />
+                <ScalarProperty Name="CMNNMENGDISPUNITCDRF" ColumnName="CMNNMENGDISPUNITCDRF" />
+                <ScalarProperty Name="CMNNMENGINEDISPLACERF" ColumnName="CMNNMENGINEDISPLACERF" />
+                <ScalarProperty Name="TTLENGINEDISPUNITNMRF" ColumnName="TTLENGINEDISPUNITNMRF" />
+                <ScalarProperty Name="TTLENGINEDISPUNITCDRF" ColumnName="TTLENGINEDISPUNITCDRF" />
+                <ScalarProperty Name="TOTALENGINEDISPLACERF" ColumnName="TOTALENGINEDISPLACERF" />
+                <ScalarProperty Name="ENGINEMODELNMRF" ColumnName="ENGINEMODELNMRF" />
+                <ScalarProperty Name="SERIESMODELRF" ColumnName="SERIESMODELRF" />
+                <ScalarProperty Name="EXHAUSTGASSIGNRF" ColumnName="EXHAUSTGASSIGNRF" />
+                <ScalarProperty Name="CARINSPECTCERTMODELRF" ColumnName="CARINSPECTCERTMODELRF" />
+                <ScalarProperty Name="GRADEADDNAMEBCRF" ColumnName="GRADEADDNAMEBCRF" />
+                <ScalarProperty Name="GRADEFULLNAMERF" ColumnName="GRADEFULLNAMERF" />
+                <ScalarProperty Name="GRADENAMERF" ColumnName="GRADENAMERF" />
+                <ScalarProperty Name="GRADECODERF" ColumnName="GRADECODERF" />
+                <ScalarProperty Name="MODELNAMERF" ColumnName="MODELNAMERF" />
+                <ScalarProperty Name="CHARACTERISTICNAMERF" ColumnName="CHARACTERISTICNAMERF" />
+                <ScalarProperty Name="CHARACTERISTICCODERF" ColumnName="CHARACTERISTICCODERF" />
+                <ScalarProperty Name="BODYNAMERF" ColumnName="BODYNAMERF" />
+                <ScalarProperty Name="BODYNAMECODERF" ColumnName="BODYNAMECODERF" />
+                <ScalarProperty Name="DOORCOUNTRF" ColumnName="DOORCOUNTRF" />
+                <ScalarProperty Name="PRODUCETYPEOFYEARNMRF" ColumnName="PRODUCETYPEOFYEARNMRF" />
+                <ScalarProperty Name="PRODUCETYPEOFYEARCDRF" ColumnName="PRODUCETYPEOFYEARCDRF" />
+                <ScalarProperty Name="SYSTEMATICNAMERF" ColumnName="SYSTEMATICNAMERF" />
+                <ScalarProperty Name="SYSTEMATICCODERF" ColumnName="SYSTEMATICCODERF" />
+                <ScalarProperty Name="MODELSUBCODERF" ColumnName="MODELSUBCODERF" />
+                <ScalarProperty Name="MODELCODERF" ColumnName="MODELCODERF" />
+                <ScalarProperty Name="AIRAMAKERNAMERF" ColumnName="AIRAMAKERNAMERF" />
+                <ScalarProperty Name="MAKERNAMERF" ColumnName="MAKERNAMERF" />
+                <ScalarProperty Name="AIRAMAKERCODERF" ColumnName="AIRAMAKERCODERF" />
+                <ScalarProperty Name="MAKERCODERF" ColumnName="MAKERCODERF" />
+                <ScalarProperty Name="MAKERPARTSSRCHCODERF" ColumnName="MAKERPARTSSRCHCODERF" />
+                <ScalarProperty Name="DOMESTICFOREIGNNAMERF" ColumnName="DOMESTICFOREIGNNAMERF" />
+                <ScalarProperty Name="DOMESTICFOREIGNCODERF" ColumnName="DOMESTICFOREIGNCODERF" />
+                <ScalarProperty Name="BODYSHAPENAMERF" ColumnName="BODYSHAPENAMERF" />
+                <ScalarProperty Name="AIRABODYSHAPECODERF" ColumnName="AIRABODYSHAPECODERF" />
+                <ScalarProperty Name="BODYSHAPECODERF" ColumnName="BODYSHAPECODERF" />
+                <ScalarProperty Name="PRIVATEBUSINESSNMRF" ColumnName="PRIVATEBUSINESSNMRF" />
+                <ScalarProperty Name="CARPRIVATEBUSINESSCDRF" ColumnName="CARPRIVATEBUSINESSCDRF" />
+                <ScalarProperty Name="CARPURPOSENAMERF" ColumnName="CARPURPOSENAMERF" />
+                <ScalarProperty Name="CARPURPOSECODERF" ColumnName="CARPURPOSECODERF" />
+                <ScalarProperty Name="CARKINDNAMERF" ColumnName="CARKINDNAMERF" />
+                <ScalarProperty Name="CARKINDCODERF" ColumnName="CARKINDCODERF" />
+                <ScalarProperty Name="CATEGORYNORF" ColumnName="CATEGORYNORF" />
+                <ScalarProperty Name="MODELDESIGNATIONNORF" ColumnName="MODELDESIGNATIONNORF" />
+                <ScalarProperty Name="CARMNGNORF" ColumnName="CARMNGNORF" />
+                <ScalarProperty Name="LOGICALDELETECODERF" ColumnName="LOGICALDELETECODERF" />
+                <ScalarProperty Name="UPDASSEMBLYID2RF" ColumnName="UPDASSEMBLYID2RF" />
+                <ScalarProperty Name="UPDASSEMBLYID1RF" ColumnName="UPDASSEMBLYID1RF" />
+                <ScalarProperty Name="UPDEMPLOYEECODERF" ColumnName="UPDEMPLOYEECODERF" />
+                <ScalarProperty Name="FILEHEADERGUIDRF" ColumnName="FILEHEADERGUIDRF" />
+                <ScalarProperty Name="ENTERPRISECODERF" ColumnName="ENTERPRISECODERF" />
+                <ScalarProperty Name="UPDATEDATETIMERF" ColumnName="UPDATEDATETIMERF" />
+                <ScalarProperty Name="CREATEDATETIMERF" ColumnName="CREATEDATETIMERF" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CUSTOMERRF">
+            <EntityTypeMapping TypeName="JXMobileModel.CUSTOMERRF">
+              <MappingFragment StoreEntitySet="CUSTOMERRF">
+                <ScalarProperty Name="CRANKAUTOUPDEXCLDDIVRF" ColumnName="CRANKAUTOUPDEXCLDDIVRF" />
+                <ScalarProperty Name="BRCUSTTTLCDDISRATE20RF" ColumnName="BRCUSTTTLCDDISRATE20RF" />
+                <ScalarProperty Name="BRCUSTTTLCDDISRATE19RF" ColumnName="BRCUSTTTLCDDISRATE19RF" />
+                <ScalarProperty Name="BRCUSTTTLCDDISRATE18RF" ColumnName="BRCUSTTTLCDDISRATE18RF" />
+                <ScalarProperty Name="BRCUSTTTLCDDISRATE17RF" ColumnName="BRCUSTTTLCDDISRATE17RF" />
+                <ScalarProperty Name="BRCUSTTTLCDDISRATE16RF" ColumnName="BRCUSTTTLCDDISRATE16RF" />
+                <ScalarProperty Name="BRCUSTTTLCDDISRATE15RF" ColumnName="BRCUSTTTLCDDISRATE15RF" />
+                <ScalarProperty Name="BRCUSTTTLCDDISRATE14RF" ColumnName="BRCUSTTTLCDDISRATE14RF" />
+                <ScalarProperty Name="BRCUSTTTLCDDISRATE13RF" ColumnName="BRCUSTTTLCDDISRATE13RF" />
+                <ScalarProperty Name="BRCUSTTTLCDDISRATE12RF" ColumnName="BRCUSTTTLCDDISRATE12RF" />
+                <ScalarProperty Name="BRCUSTTTLCDDISRATE11RF" ColumnName="BRCUSTTTLCDDISRATE11RF" />
+                <ScalarProperty Name="BRCUSTTTLCDDISRATE10RF" ColumnName="BRCUSTTTLCDDISRATE10RF" />
+                <ScalarProperty Name="BRCUSTTTLCDDISRATE9RF" ColumnName="BRCUSTTTLCDDISRATE9RF" />
+                <ScalarProperty Name="BRCUSTTTLCDDISRATE8RF" ColumnName="BRCUSTTTLCDDISRATE8RF" />
+                <ScalarProperty Name="BRCUSTTTLCDDISRATE7RF" ColumnName="BRCUSTTTLCDDISRATE7RF" />
+                <ScalarProperty Name="BRCUSTTTLCDDISRATE6RF" ColumnName="BRCUSTTTLCDDISRATE6RF" />
+                <ScalarProperty Name="BRCUSTTTLCDDISRATE5RF" ColumnName="BRCUSTTTLCDDISRATE5RF" />
+                <ScalarProperty Name="BRCUSTTTLCDDISRATE4RF" ColumnName="BRCUSTTTLCDDISRATE4RF" />
+                <ScalarProperty Name="BRCUSTTTLCDDISRATE3RF" ColumnName="BRCUSTTTLCDDISRATE3RF" />
+                <ScalarProperty Name="BRCUSTTTLCDDISRATE2RF" ColumnName="BRCUSTTTLCDDISRATE2RF" />
+                <ScalarProperty Name="BRCUSTTTLCDDISRATE1RF" ColumnName="BRCUSTTTLCDDISRATE1RF" />
+                <ScalarProperty Name="CICUSTTTLCDDISRATE20RF" ColumnName="CICUSTTTLCDDISRATE20RF" />
+                <ScalarProperty Name="CICUSTTTLCDDISRATE19RF" ColumnName="CICUSTTTLCDDISRATE19RF" />
+                <ScalarProperty Name="CICUSTTTLCDDISRATE18RF" ColumnName="CICUSTTTLCDDISRATE18RF" />
+                <ScalarProperty Name="CICUSTTTLCDDISRATE17RF" ColumnName="CICUSTTTLCDDISRATE17RF" />
+                <ScalarProperty Name="CICUSTTTLCDDISRATE16RF" ColumnName="CICUSTTTLCDDISRATE16RF" />
+                <ScalarProperty Name="CICUSTTTLCDDISRATE15RF" ColumnName="CICUSTTTLCDDISRATE15RF" />
+                <ScalarProperty Name="CICUSTTTLCDDISRATE14RF" ColumnName="CICUSTTTLCDDISRATE14RF" />
+                <ScalarProperty Name="CICUSTTTLCDDISRATE13RF" ColumnName="CICUSTTTLCDDISRATE13RF" />
+                <ScalarProperty Name="CICUSTTTLCDDISRATE12RF" ColumnName="CICUSTTTLCDDISRATE12RF" />
+                <ScalarProperty Name="CICUSTTTLCDDISRATE11RF" ColumnName="CICUSTTTLCDDISRATE11RF" />
+                <ScalarProperty Name="CICUSTTTLCDDISRATE10RF" ColumnName="CICUSTTTLCDDISRATE10RF" />
+                <ScalarProperty Name="CICUSTTTLCDDISRATE9RF" ColumnName="CICUSTTTLCDDISRATE9RF" />
+                <ScalarProperty Name="CICUSTTTLCDDISRATE8RF" ColumnName="CICUSTTTLCDDISRATE8RF" />
+                <ScalarProperty Name="CICUSTTTLCDDISRATE7RF" ColumnName="CICUSTTTLCDDISRATE7RF" />
+                <ScalarProperty Name="CICUSTTTLCDDISRATE6RF" ColumnName="CICUSTTTLCDDISRATE6RF" />
+                <ScalarProperty Name="CICUSTTTLCDDISRATE5RF" ColumnName="CICUSTTTLCDDISRATE5RF" />
+                <ScalarProperty Name="CICUSTTTLCDDISRATE4RF" ColumnName="CICUSTTTLCDDISRATE4RF" />
+                <ScalarProperty Name="CICUSTTTLCDDISRATE3RF" ColumnName="CICUSTTTLCDDISRATE3RF" />
+                <ScalarProperty Name="CICUSTTTLCDDISRATE2RF" ColumnName="CICUSTTTLCDDISRATE2RF" />
+                <ScalarProperty Name="CICUSTTTLCDDISRATE1RF" ColumnName="CICUSTTTLCDDISRATE1RF" />
+                <ScalarProperty Name="GECUSTTTLCDDISRATE20RF" ColumnName="GECUSTTTLCDDISRATE20RF" />
+                <ScalarProperty Name="GECUSTTTLCDDISRATE19RF" ColumnName="GECUSTTTLCDDISRATE19RF" />
+                <ScalarProperty Name="GECUSTTTLCDDISRATE18RF" ColumnName="GECUSTTTLCDDISRATE18RF" />
+                <ScalarProperty Name="GECUSTTTLCDDISRATE17RF" ColumnName="GECUSTTTLCDDISRATE17RF" />
+                <ScalarProperty Name="GECUSTTTLCDDISRATE16RF" ColumnName="GECUSTTTLCDDISRATE16RF" />
+                <ScalarProperty Name="GECUSTTTLCDDISRATE15RF" ColumnName="GECUSTTTLCDDISRATE15RF" />
+                <ScalarProperty Name="GECUSTTTLCDDISRATE14RF" ColumnName="GECUSTTTLCDDISRATE14RF" />
+                <ScalarProperty Name="GECUSTTTLCDDISRATE13RF" ColumnName="GECUSTTTLCDDISRATE13RF" />
+                <ScalarProperty Name="GECUSTTTLCDDISRATE12RF" ColumnName="GECUSTTTLCDDISRATE12RF" />
+                <ScalarProperty Name="GECUSTTTLCDDISRATE11RF" ColumnName="GECUSTTTLCDDISRATE11RF" />
+                <ScalarProperty Name="GECUSTTTLCDDISRATE10RF" ColumnName="GECUSTTTLCDDISRATE10RF" />
+                <ScalarProperty Name="GECUSTTTLCDDISRATE9RF" ColumnName="GECUSTTTLCDDISRATE9RF" />
+                <ScalarProperty Name="GECUSTTTLCDDISRATE8RF" ColumnName="GECUSTTTLCDDISRATE8RF" />
+                <ScalarProperty Name="GECUSTTTLCDDISRATE7RF" ColumnName="GECUSTTTLCDDISRATE7RF" />
+                <ScalarProperty Name="GECUSTTTLCDDISRATE6RF" ColumnName="GECUSTTTLCDDISRATE6RF" />
+                <ScalarProperty Name="GECUSTTTLCDDISRATE5RF" ColumnName="GECUSTTTLCDDISRATE5RF" />
+                <ScalarProperty Name="GECUSTTTLCDDISRATE4RF" ColumnName="GECUSTTTLCDDISRATE4RF" />
+                <ScalarProperty Name="GECUSTTTLCDDISRATE3RF" ColumnName="GECUSTTTLCDDISRATE3RF" />
+                <ScalarProperty Name="GECUSTTTLCDDISRATE2RF" ColumnName="GECUSTTTLCDDISRATE2RF" />
+                <ScalarProperty Name="GECUSTTTLCDDISRATE1RF" ColumnName="GECUSTTTLCDDISRATE1RF" />
+                <ScalarProperty Name="BRTTLCDDISRATEUSECDRF" ColumnName="BRTTLCDDISRATEUSECDRF" />
+                <ScalarProperty Name="RPTTLCDDISRATEUSECDRF" ColumnName="RPTTLCDDISRATEUSECDRF" />
+                <ScalarProperty Name="INTRODUCERCODERF" ColumnName="INTRODUCERCODERF" />
+                <ScalarProperty Name="MTRLPRICEFRACPROCCDRF" ColumnName="MTRLPRICEFRACPROCCDRF" />
+                <ScalarProperty Name="BRCNSTAXFRACPROCCDRF" ColumnName="BRCNSTAXFRACPROCCDRF" />
+                <ScalarProperty Name="BRPARTSDISFRACPROCCDRF" ColumnName="BRPARTSDISFRACPROCCDRF" />
+                <ScalarProperty Name="BRLAVORDISFRACPROCCDRF" ColumnName="BRLAVORDISFRACPROCCDRF" />
+                <ScalarProperty Name="BRPARTSFRACPROCCDRF" ColumnName="BRPARTSFRACPROCCDRF" />
+                <ScalarProperty Name="BRLAVORFRACPROCCDRF" ColumnName="BRLAVORFRACPROCCDRF" />
+                <ScalarProperty Name="BRFRACPROCCDUSEDIVRF" ColumnName="BRFRACPROCCDUSEDIVRF" />
+                <ScalarProperty Name="RPCNSTAXFRACPROCCDRF" ColumnName="RPCNSTAXFRACPROCCDRF" />
+                <ScalarProperty Name="RPPARTSDISFRACPROCCDRF" ColumnName="RPPARTSDISFRACPROCCDRF" />
+                <ScalarProperty Name="RPLAVORDISFRACPROCCDRF" ColumnName="RPLAVORDISFRACPROCCDRF" />
+                <ScalarProperty Name="RPPARTSFRACPROCCDRF" ColumnName="RPPARTSFRACPROCCDRF" />
+                <ScalarProperty Name="RPLAVORFRACPROCCDRF" ColumnName="RPLAVORFRACPROCCDRF" />
+                <ScalarProperty Name="RPFRACPROCCDUSEDIVRF" ColumnName="RPFRACPROCCDUSEDIVRF" />
+                <ScalarProperty Name="CONTACTTIMEMEMORF" ColumnName="CONTACTTIMEMEMORF" />
+                <ScalarProperty Name="CUSTOMERRANKCODERF" ColumnName="CUSTOMERRANKCODERF" />
+                <ScalarProperty Name="OTHERSTELNOSEARCHRF" ColumnName="OTHERSTELNOSEARCHRF" />
+                <ScalarProperty Name="OFFICEFAXNOSEARCHRF" ColumnName="OFFICEFAXNOSEARCHRF" />
+                <ScalarProperty Name="HOMEFAXNOSEARCHRF" ColumnName="HOMEFAXNOSEARCHRF" />
+                <ScalarProperty Name="PORTABLETELNOSEARCHRF" ColumnName="PORTABLETELNOSEARCHRF" />
+                <ScalarProperty Name="OFFICETELNOSEARCHRF" ColumnName="OFFICETELNOSEARCHRF" />
+                <ScalarProperty Name="HOMETELNOSEARCHRF" ColumnName="HOMETELNOSEARCHRF" />
+                <ScalarProperty Name="OSRCSUPPLIERDIVCDRF" ColumnName="OSRCSUPPLIERDIVCDRF" />
+                <ScalarProperty Name="CARSUPPLIERDIVCDRF" ColumnName="CARSUPPLIERDIVCDRF" />
+                <ScalarProperty Name="PARTSSUPPLIERDIVCDRF" ColumnName="PARTSSUPPLIERDIVCDRF" />
+                <ScalarProperty Name="TRUSTCOMPANYDIVCDRF" ColumnName="TRUSTCOMPANYDIVCDRF" />
+                <ScalarProperty Name="BRRPLAVORRATERF" ColumnName="BRRPLAVORRATERF" />
+                <ScalarProperty Name="BRMTRLPRICELAVORRATERF" ColumnName="BRMTRLPRICELAVORRATERF" />
+                <ScalarProperty Name="BRBPLAVORRATERF" ColumnName="BRBPLAVORRATERF" />
+                <ScalarProperty Name="BRINPLTFRMLAVORRATERF" ColumnName="BRINPLTFRMLAVORRATERF" />
+                <ScalarProperty Name="BROUTPLATELAVORRATERF" ColumnName="BROUTPLATELAVORRATERF" />
+                <ScalarProperty Name="BREXCHLAVORRATERF" ColumnName="BREXCHLAVORRATERF" />
+                <ScalarProperty Name="BRBASELAVORRATERF" ColumnName="BRBASELAVORRATERF" />
+                <ScalarProperty Name="BRLVRRTUNPRCADOPTCDRF" ColumnName="BRLVRRTUNPRCADOPTCDRF" />
+                <ScalarProperty Name="TAKEINIMAGEGROUPCDRF" ColumnName="TAKEINIMAGEGROUPCDRF" />
+                <ScalarProperty Name="BILLCOLLECTERCDRF" ColumnName="BILLCOLLECTERCDRF" />
+                <ScalarProperty Name="CUSTOMERAGENTCDRF" ColumnName="CUSTOMERAGENTCDRF" />
+                <ScalarProperty Name="MAILSENDNAME6RF" ColumnName="MAILSENDNAME6RF" />
+                <ScalarProperty Name="MAILSENDCODE6RF" ColumnName="MAILSENDCODE6RF" />
+                <ScalarProperty Name="MAILADDRESS6RF" ColumnName="MAILADDRESS6RF" />
+                <ScalarProperty Name="MAILADDRKINDNAME6RF" ColumnName="MAILADDRKINDNAME6RF" />
+                <ScalarProperty Name="MAILADDRKINDCODE6RF" ColumnName="MAILADDRKINDCODE6RF" />
+                <ScalarProperty Name="MAILSENDNAME5RF" ColumnName="MAILSENDNAME5RF" />
+                <ScalarProperty Name="MAILSENDCODE5RF" ColumnName="MAILSENDCODE5RF" />
+                <ScalarProperty Name="MAILADDRESS5RF" ColumnName="MAILADDRESS5RF" />
+                <ScalarProperty Name="MAILADDRKINDNAME5RF" ColumnName="MAILADDRKINDNAME5RF" />
+                <ScalarProperty Name="MAILADDRKINDCODE5RF" ColumnName="MAILADDRKINDCODE5RF" />
+                <ScalarProperty Name="MAILSENDNAME4RF" ColumnName="MAILSENDNAME4RF" />
+                <ScalarProperty Name="MAILSENDCODE4RF" ColumnName="MAILSENDCODE4RF" />
+                <ScalarProperty Name="MAILADDRESS4RF" ColumnName="MAILADDRESS4RF" />
+                <ScalarProperty Name="MAILADDRKINDNAME4RF" ColumnName="MAILADDRKINDNAME4RF" />
+                <ScalarProperty Name="MAILADDRKINDCODE4RF" ColumnName="MAILADDRKINDCODE4RF" />
+                <ScalarProperty Name="MAILSENDNAME3RF" ColumnName="MAILSENDNAME3RF" />
+                <ScalarProperty Name="MAILSENDCODE3RF" ColumnName="MAILSENDCODE3RF" />
+                <ScalarProperty Name="MAILADDRESS3RF" ColumnName="MAILADDRESS3RF" />
+                <ScalarProperty Name="MAILADDRKINDNAME3RF" ColumnName="MAILADDRKINDNAME3RF" />
+                <ScalarProperty Name="MAILADDRKINDCODE3RF" ColumnName="MAILADDRKINDCODE3RF" />
+                <ScalarProperty Name="MAILSENDNAME2RF" ColumnName="MAILSENDNAME2RF" />
+                <ScalarProperty Name="MAILSENDCODE2RF" ColumnName="MAILSENDCODE2RF" />
+                <ScalarProperty Name="MAILADDRESS2RF" ColumnName="MAILADDRESS2RF" />
+                <ScalarProperty Name="MAILADDRKINDNAME2RF" ColumnName="MAILADDRKINDNAME2RF" />
+                <ScalarProperty Name="MAILADDRKINDCODE2RF" ColumnName="MAILADDRKINDCODE2RF" />
+                <ScalarProperty Name="MAILSENDNAME1RF" ColumnName="MAILSENDNAME1RF" />
+                <ScalarProperty Name="MAILSENDCODE1RF" ColumnName="MAILSENDCODE1RF" />
+                <ScalarProperty Name="MAILADDRESS1RF" ColumnName="MAILADDRESS1RF" />
+                <ScalarProperty Name="MAILADDRKINDNAME1RF" ColumnName="MAILADDRKINDNAME1RF" />
+                <ScalarProperty Name="MAILADDRKINDCODE1RF" ColumnName="MAILADDRKINDCODE1RF" />
+                <ScalarProperty Name="MAINSENDMAILADDRCDRF" ColumnName="MAINSENDMAILADDRCDRF" />
+                <ScalarProperty Name="DMOUTNAMERF" ColumnName="DMOUTNAMERF" />
+                <ScalarProperty Name="DMOUTCODERF" ColumnName="DMOUTCODERF" />
+                <ScalarProperty Name="CLAIMCODERF" ColumnName="CLAIMCODERF" />
+                <ScalarProperty Name="COLLECTMONEYDAYRF" ColumnName="COLLECTMONEYDAYRF" />
+                <ScalarProperty Name="COLLECTMONEYNAMERF" ColumnName="COLLECTMONEYNAMERF" />
+                <ScalarProperty Name="COLLECTMONEYCODERF" ColumnName="COLLECTMONEYCODERF" />
+                <ScalarProperty Name="LASTTIMETEMPDATERF" ColumnName="LASTTIMETEMPDATERF" />
+                <ScalarProperty Name="TOTALDAYRF" ColumnName="TOTALDAYRF" />
+                <ScalarProperty Name="BILLOUTPUTNAMERF" ColumnName="BILLOUTPUTNAMERF" />
+                <ScalarProperty Name="BILLOUTPUTCODERF" ColumnName="BILLOUTPUTCODERF" />
+                <ScalarProperty Name="CUSTANALYSCODE6RF" ColumnName="CUSTANALYSCODE6RF" />
+                <ScalarProperty Name="CUSTANALYSCODE5RF" ColumnName="CUSTANALYSCODE5RF" />
+                <ScalarProperty Name="CUSTANALYSCODE4RF" ColumnName="CUSTANALYSCODE4RF" />
+                <ScalarProperty Name="CUSTANALYSCODE3RF" ColumnName="CUSTANALYSCODE3RF" />
+                <ScalarProperty Name="CUSTANALYSCODE2RF" ColumnName="CUSTANALYSCODE2RF" />
+                <ScalarProperty Name="CUSTANALYSCODE1RF" ColumnName="CUSTANALYSCODE1RF" />
+                <ScalarProperty Name="INPSECTIONCODERF" ColumnName="INPSECTIONCODERF" />
+                <ScalarProperty Name="MNGSECTIONCODERF" ColumnName="MNGSECTIONCODERF" />
+                <ScalarProperty Name="BRBPPARTSDISRATERF" ColumnName="BRBPPARTSDISRATERF" />
+                <ScalarProperty Name="BRBPLAVORDISRATERF" ColumnName="BRBPLAVORDISRATERF" />
+                <ScalarProperty Name="CIPARTSDISCOUNTRATERF" ColumnName="CIPARTSDISCOUNTRATERF" />
+                <ScalarProperty Name="CILAVORDISCOUNTRATERF" ColumnName="CILAVORDISCOUNTRATERF" />
+                <ScalarProperty Name="GEPARTSDISCOUNTRATERF" ColumnName="GEPARTSDISCOUNTRATERF" />
+                <ScalarProperty Name="GELAVORDISCOUNTRATERF" ColumnName="GELAVORDISCOUNTRATERF" />
+                <ScalarProperty Name="CILAVORRATECOSTRF" ColumnName="CILAVORRATECOSTRF" />
+                <ScalarProperty Name="GELAVORRATECOSTRF" ColumnName="GELAVORRATECOSTRF" />
+                <ScalarProperty Name="SEARCHTELNORF" ColumnName="SEARCHTELNORF" />
+                <ScalarProperty Name="MAINCONTACTCODERF" ColumnName="MAINCONTACTCODERF" />
+                <ScalarProperty Name="OTHERSTELNORF" ColumnName="OTHERSTELNORF" />
+                <ScalarProperty Name="OFFICEFAXNORF" ColumnName="OFFICEFAXNORF" />
+                <ScalarProperty Name="HOMEFAXNORF" ColumnName="HOMEFAXNORF" />
+                <ScalarProperty Name="PORTABLETELNORF" ColumnName="PORTABLETELNORF" />
+                <ScalarProperty Name="OFFICETELNORF" ColumnName="OFFICETELNORF" />
+                <ScalarProperty Name="HOMETELNORF" ColumnName="HOMETELNORF" />
+                <ScalarProperty Name="ADDRESSCODE3RF" ColumnName="ADDRESSCODE3RF" />
+                <ScalarProperty Name="ADDRESSCODE2RF" ColumnName="ADDRESSCODE2RF" />
+                <ScalarProperty Name="ADDRESSCODE1RF" ColumnName="ADDRESSCODE1RF" />
+                <ScalarProperty Name="ADDRESS4RF" ColumnName="ADDRESS4RF" />
+                <ScalarProperty Name="ADDRESS3RF" ColumnName="ADDRESS3RF" />
+                <ScalarProperty Name="ADDRESS2RF" ColumnName="ADDRESS2RF" />
+                <ScalarProperty Name="ADDRESS1RF" ColumnName="ADDRESS1RF" />
+                <ScalarProperty Name="POSTNORF" ColumnName="POSTNORF" />
+                <ScalarProperty Name="BIRTHDAYRF" ColumnName="BIRTHDAYRF" />
+                <ScalarProperty Name="SEXNAMERF" ColumnName="SEXNAMERF" />
+                <ScalarProperty Name="SEXCODERF" ColumnName="SEXCODERF" />
+                <ScalarProperty Name="BUSINESSTYPECODERF" ColumnName="BUSINESSTYPECODERF" />
+                <ScalarProperty Name="JOBTYPECODERF" ColumnName="JOBTYPECODERF" />
+                <ScalarProperty Name="CORPORATEDIVCODERF" ColumnName="CORPORATEDIVCODERF" />
+                <ScalarProperty Name="OUTPUTNAMERF" ColumnName="OUTPUTNAMERF" />
+                <ScalarProperty Name="OUTPUTNAMECODERF" ColumnName="OUTPUTNAMECODERF" />
+                <ScalarProperty Name="KANARF" ColumnName="KANARF" />
+                <ScalarProperty Name="HONORIFICTITLERF" ColumnName="HONORIFICTITLERF" />
+                <ScalarProperty Name="NAME2RF" ColumnName="NAME2RF" />
+                <ScalarProperty Name="NAMERF" ColumnName="NAMERF" />
+                <ScalarProperty Name="CUSTOMERSUBCODERF" ColumnName="CUSTOMERSUBCODERF" />
+                <ScalarProperty Name="CUSTOMERCODERF" ColumnName="CUSTOMERCODERF" />
+                <ScalarProperty Name="LOGICALDELETECODERF" ColumnName="LOGICALDELETECODERF" />
+                <ScalarProperty Name="UPDASSEMBLYID2RF" ColumnName="UPDASSEMBLYID2RF" />
+                <ScalarProperty Name="UPDASSEMBLYID1RF" ColumnName="UPDASSEMBLYID1RF" />
+                <ScalarProperty Name="UPDEMPLOYEECODERF" ColumnName="UPDEMPLOYEECODERF" />
+                <ScalarProperty Name="FILEHEADERGUIDRF" ColumnName="FILEHEADERGUIDRF" />
+                <ScalarProperty Name="ENTERPRISECODERF" ColumnName="ENTERPRISECODERF" />
+                <ScalarProperty Name="UPDATEDATETIMERF" ColumnName="UPDATEDATETIMERF" />
+                <ScalarProperty Name="CREATEDATETIMERF" ColumnName="CREATEDATETIMERF" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JXACCEGOINFURF">
+            <EntityTypeMapping TypeName="JXMobileModel.JXACCEGOINFURF">
+              <MappingFragment StoreEntitySet="JXACCEGOINFURF">
+                <ScalarProperty Name="EGOILMAKERRF" ColumnName="EGOILMAKERRF" />
+                <ScalarProperty Name="INPSECTIONCODERF" ColumnName="INPSECTIONCODERF" />
+                <ScalarProperty Name="TURBOUSEDIVRF" ColumnName="TURBOUSEDIVRF" />
+                <ScalarProperty Name="FUELCODERF" ColumnName="FUELCODERF" />
+                <ScalarProperty Name="TAKEINIMAGECODERF" ColumnName="TAKEINIMAGECODERF" />
+                <ScalarProperty Name="EGOILPRRF" ColumnName="EGOILPRRF" />
+                <ScalarProperty Name="EGOILBASEOILCDRF" ColumnName="EGOILBASEOILCDRF" />
+                <ScalarProperty Name="EGOILBASEOILRF" ColumnName="EGOILBASEOILRF" />
+                <ScalarProperty Name="EGOILVISCOSITYCDRF" ColumnName="EGOILVISCOSITYCDRF" />
+                <ScalarProperty Name="EGOILVISCOSITYRF" ColumnName="EGOILVISCOSITYRF" />
+                <ScalarProperty Name="EGOILOTHERGAUGERF" ColumnName="EGOILOTHERGAUGERF" />
+                <ScalarProperty Name="EGOILILSACGAUGECDRF" ColumnName="EGOILILSACGAUGECDRF" />
+                <ScalarProperty Name="EGOILILSACGAUGERF" ColumnName="EGOILILSACGAUGERF" />
+                <ScalarProperty Name="EGOILAPIGAUGECDRF" ColumnName="EGOILAPIGAUGECDRF" />
+                <ScalarProperty Name="EGOILAPIGAUGERF" ColumnName="EGOILAPIGAUGERF" />
+                <ScalarProperty Name="EGOILCODERF" ColumnName="EGOILCODERF" />
+                <ScalarProperty Name="SECTIONCODERF" ColumnName="SECTIONCODERF" />
+                <ScalarProperty Name="LOGICALDELETECODERF" ColumnName="LOGICALDELETECODERF" />
+                <ScalarProperty Name="UPDASSEMBLYID2RF" ColumnName="UPDASSEMBLYID2RF" />
+                <ScalarProperty Name="UPDASSEMBLYID1RF" ColumnName="UPDASSEMBLYID1RF" />
+                <ScalarProperty Name="UPDEMPLOYEECODERF" ColumnName="UPDEMPLOYEECODERF" />
+                <ScalarProperty Name="FILEHEADERGUIDRF" ColumnName="FILEHEADERGUIDRF" />
+                <ScalarProperty Name="ENTERPRISECODERF" ColumnName="ENTERPRISECODERF" />
+                <ScalarProperty Name="UPDATEDATETIMERF" ColumnName="UPDATEDATETIMERF" />
+                <ScalarProperty Name="CREATEDATETIMERF" ColumnName="CREATEDATETIMERF" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JXCUSTVTTLRF">
+            <EntityTypeMapping TypeName="JXMobileModel.JXCUSTVTTLRF">
+              <MappingFragment StoreEntitySet="JXCUSTVTTLRF">
+                <ScalarProperty Name="JXVSTLSTDTRF" ColumnName="JXVSTLSTDTRF" />
+                <ScalarProperty Name="JXBUYRLSTDTRF" ColumnName="JXBUYRLSTDTRF" />
+                <ScalarProperty Name="JXBUYCTRF" ColumnName="JXBUYCTRF" />
+                <ScalarProperty Name="JXOILSPLYLSTDTRF" ColumnName="JXOILSPLYLSTDTRF" />
+                <ScalarProperty Name="JXOILSPLYCTRF" ColumnName="JXOILSPLYCTRF" />
+                <ScalarProperty Name="JXTTLUNITYMRF" ColumnName="JXTTLUNITYMRF" />
+                <ScalarProperty Name="CUSTOMERCODERF" ColumnName="CUSTOMERCODERF" />
+                <ScalarProperty Name="SECTIONCODERF" ColumnName="SECTIONCODERF" />
+                <ScalarProperty Name="LOGICALDELETECODERF" ColumnName="LOGICALDELETECODERF" />
+                <ScalarProperty Name="UPDASSEMBLYID2RF" ColumnName="UPDASSEMBLYID2RF" />
+                <ScalarProperty Name="UPDASSEMBLYID1RF" ColumnName="UPDASSEMBLYID1RF" />
+                <ScalarProperty Name="UPDEMPLOYEECODERF" ColumnName="UPDEMPLOYEECODERF" />
+                <ScalarProperty Name="FILEHEADERGUIDRF" ColumnName="FILEHEADERGUIDRF" />
+                <ScalarProperty Name="ENTERPRISECODERF" ColumnName="ENTERPRISECODERF" />
+                <ScalarProperty Name="UPDATEDATETIMERF" ColumnName="UPDATEDATETIMERF" />
+                <ScalarProperty Name="CREATEDATETIMERF" ColumnName="CREATEDATETIMERF" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JXNOMNGSETRF">
+            <EntityTypeMapping TypeName="JXMobileModel.JXNOMNGSETRF">
+              <MappingFragment StoreEntitySet="JXNOMNGSETRF">
+                <ScalarProperty Name="JXNORESETTIMINGDIVCDRF" ColumnName="JXNORESETTIMINGDIVCDRF" />
+                <ScalarProperty Name="JXLASTYEARMONTHRF" ColumnName="JXLASTYEARMONTHRF" />
+                <ScalarProperty Name="NOPRESENTVALRF" ColumnName="NOPRESENTVALRF" />
+                <ScalarProperty Name="JXNOCODERF" ColumnName="JXNOCODERF" />
+                <ScalarProperty Name="SECTIONCODERF" ColumnName="SECTIONCODERF" />
+                <ScalarProperty Name="LOGICALDELETECODERF" ColumnName="LOGICALDELETECODERF" />
+                <ScalarProperty Name="UPDASSEMBLYID2RF" ColumnName="UPDASSEMBLYID2RF" />
+                <ScalarProperty Name="UPDASSEMBLYID1RF" ColumnName="UPDASSEMBLYID1RF" />
+                <ScalarProperty Name="UPDEMPLOYEECODERF" ColumnName="UPDEMPLOYEECODERF" />
+                <ScalarProperty Name="FILEHEADERGUIDRF" ColumnName="FILEHEADERGUIDRF" />
+                <ScalarProperty Name="ENTERPRISECODERF" ColumnName="ENTERPRISECODERF" />
+                <ScalarProperty Name="UPDATEDATETIMERF" ColumnName="UPDATEDATETIMERF" />
+                <ScalarProperty Name="CREATEDATETIMERF" ColumnName="CREATEDATETIMERF" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JXSLIPDETAILRF">
+            <EntityTypeMapping TypeName="JXMobileModel.JXSLIPDETAILRF">
+              <MappingFragment StoreEntitySet="JXSLIPDETAILRF">
+                <ScalarProperty Name="JXGOODSPRICEKNDRF" ColumnName="JXGOODSPRICEKNDRF" />
+                <ScalarProperty Name="JXGOODSPRCCORRCDRF" ColumnName="JXGOODSPRCCORRCDRF" />
+                <ScalarProperty Name="JXGOODSPRICERF" ColumnName="JXGOODSPRICERF" />
+                <ScalarProperty Name="JXGOODSUNITPRCCORRCDRF" ColumnName="JXGOODSUNITPRCCORRCDRF" />
+                <ScalarProperty Name="JXGOODSUNITPRICERF" ColumnName="JXGOODSUNITPRICERF" />
+                <ScalarProperty Name="JXGOODSCNTRF" ColumnName="JXGOODSCNTRF" />
+                <ScalarProperty Name="JXGOODSNAMERF" ColumnName="JXGOODSNAMERF" />
+                <ScalarProperty Name="JXPARTSNORF" ColumnName="JXPARTSNORF" />
+                <ScalarProperty Name="FUELCODERF" ColumnName="FUELCODERF" />
+                <ScalarProperty Name="TIRESIZERF" ColumnName="TIRESIZERF" />
+                <ScalarProperty Name="BTTYSIZERF" ColumnName="BTTYSIZERF" />
+                <ScalarProperty Name="EGOILVISCOSITYRF" ColumnName="EGOILVISCOSITYRF" />
+                <ScalarProperty Name="JXGOODSCODERF" ColumnName="JXGOODSCODERF" />
+                <ScalarProperty Name="JXGOODSGENRERF" ColumnName="JXGOODSGENRERF" />
+                <ScalarProperty Name="JXCARWASHCARECDRF" ColumnName="JXCARWASHCARECDRF" />
+                <ScalarProperty Name="JXDETAILNORF" ColumnName="JXDETAILNORF" />
+                <ScalarProperty Name="SLIPNORF" ColumnName="SLIPNORF" />
+                <ScalarProperty Name="JXESTMACPODRCDRF" ColumnName="JXESTMACPODRCDRF" />
+                <ScalarProperty Name="LOGICALDELETECODERF" ColumnName="LOGICALDELETECODERF" />
+                <ScalarProperty Name="UPDASSEMBLYID2RF" ColumnName="UPDASSEMBLYID2RF" />
+                <ScalarProperty Name="UPDASSEMBLYID1RF" ColumnName="UPDASSEMBLYID1RF" />
+                <ScalarProperty Name="UPDEMPLOYEECODERF" ColumnName="UPDEMPLOYEECODERF" />
+                <ScalarProperty Name="FILEHEADERGUIDRF" ColumnName="FILEHEADERGUIDRF" />
+                <ScalarProperty Name="ENTERPRISECODERF" ColumnName="ENTERPRISECODERF" />
+                <ScalarProperty Name="UPDATEDATETIMERF" ColumnName="UPDATEDATETIMERF" />
+                <ScalarProperty Name="CREATEDATETIMERF" ColumnName="CREATEDATETIMERF" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JXSLIPHEDRRF">
+            <EntityTypeMapping TypeName="JXMobileModel.JXSLIPHEDRRF">
+              <MappingFragment StoreEntitySet="JXSLIPHEDRRF">
+                <ScalarProperty Name="JXSIGNIMGRF" ColumnName="JXSIGNIMGRF" />
+                <ScalarProperty Name="CIMATDATERF" ColumnName="CIMATDATERF" />
+                <ScalarProperty Name="ENTRYDATERF" ColumnName="ENTRYDATERF" />
+                <ScalarProperty Name="FIRSTENTRYDATENUMTYPRF" ColumnName="FIRSTENTRYDATENUMTYPRF" />
+                <ScalarProperty Name="MODELNAMERF" ColumnName="MODELNAMERF" />
+                <ScalarProperty Name="MODELSUBCODERF" ColumnName="MODELSUBCODERF" />
+                <ScalarProperty Name="MODELCODERF" ColumnName="MODELCODERF" />
+                <ScalarProperty Name="MAKERNAMERF" ColumnName="MAKERNAMERF" />
+                <ScalarProperty Name="AIRAMAKERCODERF" ColumnName="AIRAMAKERCODERF" />
+                <ScalarProperty Name="MAKERCODERF" ColumnName="MAKERCODERF" />
+                <ScalarProperty Name="MAKERPARTSSRCHCODERF" ColumnName="MAKERPARTSSRCHCODERF" />
+                <ScalarProperty Name="NUMBERPLATE4RF" ColumnName="NUMBERPLATE4RF" />
+                <ScalarProperty Name="NUMBERPLATE3RF" ColumnName="NUMBERPLATE3RF" />
+                <ScalarProperty Name="NUMBERPLATE2RF" ColumnName="NUMBERPLATE2RF" />
+                <ScalarProperty Name="NUMBERPLATE1NAMERF" ColumnName="NUMBERPLATE1NAMERF" />
+                <ScalarProperty Name="NUMBERPLATE1CODERF" ColumnName="NUMBERPLATE1CODERF" />
+                <ScalarProperty Name="MAILSENDCODERF" ColumnName="MAILSENDCODERF" />
+                <ScalarProperty Name="DMOUTCODERF" ColumnName="DMOUTCODERF" />
+                <ScalarProperty Name="JXCARDMEMBERNAME5RF" ColumnName="JXCARDMEMBERNAME5RF" />
+                <ScalarProperty Name="JXCARDMEMBERNAME4RF" ColumnName="JXCARDMEMBERNAME4RF" />
+                <ScalarProperty Name="JXCARDMEMBERNAME3RF" ColumnName="JXCARDMEMBERNAME3RF" />
+                <ScalarProperty Name="JXCARDMEMBERNAME2RF" ColumnName="JXCARDMEMBERNAME2RF" />
+                <ScalarProperty Name="JXCARDMEMBERNAME1RF" ColumnName="JXCARDMEMBERNAME1RF" />
+                <ScalarProperty Name="PORTABLETELNORF" ColumnName="PORTABLETELNORF" />
+                <ScalarProperty Name="HOMETELNORF" ColumnName="HOMETELNORF" />
+                <ScalarProperty Name="ADDRESS4RF" ColumnName="ADDRESS4RF" />
+                <ScalarProperty Name="ADDRESS3RF" ColumnName="ADDRESS3RF" />
+                <ScalarProperty Name="ADDRESS2RF" ColumnName="ADDRESS2RF" />
+                <ScalarProperty Name="ADDRESS1RF" ColumnName="ADDRESS1RF" />
+                <ScalarProperty Name="BIRTHDAYRF" ColumnName="BIRTHDAYRF" />
+                <ScalarProperty Name="SEXNAMERF" ColumnName="SEXNAMERF" />
+                <ScalarProperty Name="KANARF" ColumnName="KANARF" />
+                <ScalarProperty Name="NAME2RF" ColumnName="NAME2RF" />
+                <ScalarProperty Name="NAMERF" ColumnName="NAMERF" />
+                <ScalarProperty Name="CUSTOMERCODERF" ColumnName="CUSTOMERCODERF" />
+                <ScalarProperty Name="CARMNGNORF" ColumnName="CARMNGNORF" />
+                <ScalarProperty Name="JXRPAGENTMSGRF" ColumnName="JXRPAGENTMSGRF" />
+                <ScalarProperty Name="JXRPAGENTNAMERF" ColumnName="JXRPAGENTNAMERF" />
+                <ScalarProperty Name="MILEAGERF" ColumnName="MILEAGERF" />
+                <ScalarProperty Name="JXFRACPRCCODERF" ColumnName="JXFRACPRCCODERF" />
+                <ScalarProperty Name="JXTAXRATERF" ColumnName="JXTAXRATERF" />
+                <ScalarProperty Name="JXTOTALAMOUNTRF" ColumnName="JXTOTALAMOUNTRF" />
+                <ScalarProperty Name="JXPAYMENTCDRF" ColumnName="JXPAYMENTCDRF" />
+                <ScalarProperty Name="JXWORKENDSCDLRF" ColumnName="JXWORKENDSCDLRF" />
+                <ScalarProperty Name="JXWORKTIMERF" ColumnName="JXWORKTIMERF" />
+                <ScalarProperty Name="JXACCEPTTIMERF" ColumnName="JXACCEPTTIMERF" />
+                <ScalarProperty Name="JXACCEPTDATERF" ColumnName="JXACCEPTDATERF" />
+                <ScalarProperty Name="JXACALCFLGRF" ColumnName="JXACALCFLGRF" />
+                <ScalarProperty Name="SLIPNORF" ColumnName="SLIPNORF" />
+                <ScalarProperty Name="JXESTMACPODRCDRF" ColumnName="JXESTMACPODRCDRF" />
+                <ScalarProperty Name="LOGICALDELETECODERF" ColumnName="LOGICALDELETECODERF" />
+                <ScalarProperty Name="UPDASSEMBLYID2RF" ColumnName="UPDASSEMBLYID2RF" />
+                <ScalarProperty Name="UPDASSEMBLYID1RF" ColumnName="UPDASSEMBLYID1RF" />
+                <ScalarProperty Name="UPDEMPLOYEECODERF" ColumnName="UPDEMPLOYEECODERF" />
+                <ScalarProperty Name="FILEHEADERGUIDRF" ColumnName="FILEHEADERGUIDRF" />
+                <ScalarProperty Name="ENTERPRISECODERF" ColumnName="ENTERPRISECODERF" />
+                <ScalarProperty Name="UPDATEDATETIMERF" ColumnName="UPDATEDATETIMERF" />
+                <ScalarProperty Name="CREATEDATETIMERF" ColumnName="CREATEDATETIMERF" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
