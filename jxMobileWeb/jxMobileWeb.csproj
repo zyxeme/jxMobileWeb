@@ -242,6 +242,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Controllers\SmartPhone\" />
+    <Folder Include="Controllers\Tablet\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

@@ -8,7 +8,7 @@ namespace JxMobileWeb
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
-            //filters.Add(new JXMHandleErrorAttribute());
+            filters.Add(new JXMHandleErrorAttribute());
         }
     }
 }
