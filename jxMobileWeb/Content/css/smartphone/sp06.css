@@ -1,0 +1,173 @@
+@CHARSET "UTF-8";
+
+/****************************************
+		smartphone06
+*****************************************/
+
+.sp06-gc1 {
+	float: left;
+	width: 50%;
+	text-align: left;
+	overflow: hidden;
+}
+
+.sp06-gc2 {
+	float: left;
+	width: 100%;
+	text-align: left;
+	overflow: hidden;
+}
+
+.sp06-gc3 {
+	width: 25%;
+	text-align: left;
+	overflow: hidden;
+}
+
+.sp06-gc4 {
+	width: 75%;
+	text-align: left;
+}
+
+.sp06-gc5 {
+	width: 100%;
+	text-align: left;
+	overflow: hidden;
+}
+
+.sp06-gc6, .sp06-gc7 {
+	width: 100%;
+	float: left;
+	line-height: 2.5em;
+}
+
+.sp06-gc8 {
+	width: 75%;
+	float: left;
+	line-height: 2.5em;
+}
+.sp06-mulrows1 {
+	height: 10.3em;
+	line-height: 1.5em;
+	padding-top: 3.5em;
+}
+
+.sp06-mulrows1-r {
+	height: 10.3em;
+}
+
+.sp06-mulrows2 {
+	height: 16.3em;
+	line-height: 1.5em;
+	padding-top: 2.4em;
+}
+
+.sp06-mulrows2-r {
+	height: 16.3em;
+}
+
+p.sp06-memo-btn {
+	width: 25%;
+	float: left;
+}
+
+p.sp06-memo-btn .ui-btn {
+	width: 80%;
+	min-width: 0;
+}
+
+p.sp06-memo-btn .ui-mini .ui-btn-inner {
+	padding: 0;
+}
+
+.sp06-popup-btn-area {
+	float: left;
+	min-height: 1px;
+	height: 2.5em;
+	line-height: 2.5em;
+	border: 0;
+}
+
+.sp06-popup-space-v {
+	min-height:2.5em;
+}
+
+
+.sp06-gc9 {
+	float: left;
+	width: 15%;
+}
+
+.sp06-vin{
+	line-height:0.9em;
+	padding-top:0.8em;
+}
+
+.sp06-gc10 {
+	float: left;
+	width: 85%;
+}
+
+.sp06-gc11 {
+	padding-top:0.3em;
+}
+.sp06-mulrows3{
+	height: 37.4em;
+	line-height: 1.5em;
+	padding-top: 2.4em;
+}
+.sp06-mulrows3-r{
+	height: 37.4em;
+}
+/****************************************
+		Override Settings
+*****************************************/
+
+.cmn-grid-cell-l {
+    width: 25%;
+}
+
+.cmn-grid-cell-l {
+    width: 25%;
+}
+
+.ui-controlgroup .ui-controlgroup-controls {
+	width: 95%;
+	text-align: left;
+}
+
+.sp06-gc6 .ui-controlgroup .ui-radio {
+	width: 33.3%;
+}
+
+.sp06-gc7 .ui-controlgroup .ui-radio {
+	width: 50%;
+}
+
+#popupMemo .ui-controlgroup, #popupMemo fieldset.ui-controlgroup {
+	margin: 0;
+	width: 100%;
+	text-align: right;
+}
+
+#popupMemo .ui-controlgroup .ui-radio {
+	width: 33%;
+	line-height: 1.2em;
+	font-size: .6em;
+}
+
+#popupMemo .ui-select .ui-btn-icon-right .ui-btn-inner, #popupMemo .ui-select .ui-li-has-count .ui-btn-inner {
+	padding-right: 0;
+	font-size: .8em;
+}
+
+#popupMemo .ui-select .ui-btn-icon-right .ui-btn-inner .ui-icon, #popupMemo .ui-select .ui-li-has-count .ui-btn-inner .ui-icon {
+	width: 0;
+}
+
+.sp06-gc8 .cmn-readonly {
+	min-height: 2.8em;
+	max-height: 2.8em;
+	margin: .4em 0 .4em 2%;
+	padding: .2em 1%;
+}

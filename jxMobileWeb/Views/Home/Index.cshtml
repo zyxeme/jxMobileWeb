@@ -1,42 +1,9 @@
 ﻿@{
     ViewBag.Title = "Index";
 }
-<!-- data model for vReportListForSearch -->
-@*
-@model IList<JxMobileWeb.Data.vReportListForSearch>
-*@
-@model IList<JxMobileWeb.Data.CarInfo>
-@Scripts.Render("~/bundles/jquery")
 
 <h2>Index</h2>
 
-@{
-    var webgrid = new WebGrid(Model,ajaxUpdateContainerId: "grid", selectionFieldName: "selectedRow");
-}
-<!-- data list for vReportListForSearch -->
-@*
-<div id ="grid">
-@webgrid.GetHtml(columns:webgrid.Columns(
-webgrid.Column(format:@<text>@item.GetSelectLink("選択")</text>),
-webgrid.Column("NUMBERPLATE", header:"車番"),
-    webgrid.Column("MODELNAME", header:"車種"),
-    webgrid.Column("CUSTNAME", header:"お客様名"),
-    webgrid.Column("KANA", header:"お客様カナ")),
-    selectedRowStyle:"webgrid-selected-row",
-    tableStyle: "webgrid")
-</div>
-*@
-<div id ="grid">
-@webgrid.GetHtml(columns:webgrid.Columns(
-    webgrid.Column(format:@<text>@item.GetSelectLink("選択")</text>),
-    webgrid.Column("ENTERPRISECODERF", header:"会社コード"),
-    webgrid.Column("CARMNGNORF", header:"車両コード"),
-    webgrid.Column("NUMBERPLATE1NAMERF", header:"ナンバー・プレート　１"),
-    webgrid.Column("NUMBERPLATE2RF", header:"ナンバー・プレート　２"),
-    webgrid.Column("NUMBERPLATE3RF", header:"ナンバー・プレート　３"),
-    webgrid.Column("NUMBERPLATE4RF", header:"ナンバー・プレート　４"),
-    webgrid.Column("MODELNAMERF", header:"車種")),
-    selectedRowStyle:"webgrid-selected-row",
-    tableStyle: "webgrid")
-</div>
-
+<ul>
+  <li><a href="/TB_08" data-ajax="false">受注一覧</a></li>
+</ul>

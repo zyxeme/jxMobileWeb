@@ -1,0 +1,237 @@
+@CHARSET "UTF-8";
+
+/****************************************
+		taplet09
+*****************************************/
+
+.tb09-customer {
+	height: 7.5em;
+}
+
+.tb09-header-content-1 {
+	width: 32%;
+	float: left;
+	margin: .4em 2% .4em 0;
+	overflow: hidden;
+}
+
+.tb09-header-last {
+	margin-right: 0;
+}
+
+.tb09-header-inner {
+	padding: 0 .1em;
+}
+
+.tb09-header-content-2 {
+	width: 32%;
+	float: left;
+	margin: .4em 2% .4em 0;
+	overflow: hidden;
+}
+
+.tb09-header-content-3 {
+	width: 16%;
+	float: left;
+	margin: .4em 2% .4em 0;
+	overflow: hidden;
+}
+
+.tb09-header-content-4 {
+	width: 12%;
+	float: left;
+	margin: .4em 2% .4em 0;
+	overflow: hidden;
+}
+
+.tb09-header-content-5 {
+	width: 16%;
+	float: left;
+	margin: .4em 0;
+	overflow: hidden;
+}
+
+.tb09-header-content-2 .cmn-grid-cell-l {
+	width: 40%;
+}
+
+.tb09-header-content-2 .cmn-grid-cell-r {
+	width: 60%;
+}
+
+.tb09-header-content-3 .cmn-grid-cell-l, .tb09-header-content-5 .cmn-grid-cell-l {
+	width: 50%;
+}
+
+.tb09-header-content-3 .cmn-grid-cell-r, .tb09-header-content-5 .cmn-grid-cell-r {
+	width: 50%;
+}
+
+.tb09-header-content-4 .ui-btn {
+	width: 90%;
+	margin-top:.2em;
+	margin-bottom:.2em;
+}
+
+.tb09-area-btn-up {
+	width: 50%;
+	float: left;
+	margin-top: .5em;
+	overflow: hidden;
+}
+
+.tb09-area-btn-up p .ui-btn {
+	width: 48%;
+	max-width: 20em;
+}
+
+.tb09-area-sum-time {
+	width: 23%;
+	float: left;
+	margin: .5em 0 1em 2%;
+	overflow: hidden;
+}
+
+.tb09-area-sum-amount {
+	width: 23%;
+	float: left;
+	margin: .5em 0 1em 2%;
+	overflow: hidden;
+}
+
+.tb09-area-sum-time .cmn-grid-cell-l, .tb09-area-sum-amount .cmn-grid-cell-l {
+	width: 50%;
+}
+
+.tb09-area-sum-time .cmn-grid-cell-r, .tb09-area-sum-amount .cmn-grid-cell-r {
+	width: 50%;
+}
+
+.tb09-gc1 {
+	width: 25%;
+}
+
+.tb09-gc2 {
+	width: 15%;
+}
+
+.tb09-gc3 {
+	width: 15%;
+}
+
+.tb09-gc4 {
+	width: 15%;
+}
+
+.tb09-gc5 {
+	width: 15%;
+}
+
+.tb09-gc6 {
+	width: 15%;
+}
+
+#tb09ListData .tb09-gc1, #tb09ListData .tb09-gc2 {
+	text-align: left;
+	padding-left: .5em;
+	padding-right: .5em;
+}
+
+#tb09ListData .tb09-gc3 {
+	text-align: center;
+	padding-left: .5em;
+	padding-right: .5em;
+}
+
+#tb09ListData .tb09-gc4, #tb09ListData .tb09-gc5, #tb09ListData .tb09-gc6 {
+	text-align: right;
+	padding-left: .5em;
+	padding-right: .5em;
+}
+
+#popupCalculator .cmn-readonly {
+	text-align: right;
+	background-color: #aaa;
+	color: #fff;
+	font-size: 1.2em;
+}
+
+#popupCalculator .ui-btn {
+	min-width: 0;
+}
+
+#tb09ListTitle, #tb09ListData {
+	float: left;
+	width: 100%;
+}
+
+#tb09ListData a {
+	text-decoration : underline;
+}
+
+.tb09-cal-row {
+	height: 3em;
+	width: 12em;
+}
+
+.tb09-cal-row .ui-btn{
+	width: 22%;
+	font-size: .5em;
+}
+
+.tb09-service-area {
+	width: 50%;
+	float: left;
+	text-align:left;
+	margin-top: 1em;
+}
+
+.tb09-service-area fieldset {
+	width: 80%;
+	overflow: hidden;
+}
+
+.tb09-checkin {
+	width: 40%;
+	margin-left:10%;
+	float: left;
+	text-align: right;
+	margin-top: 1em;
+	overflow:hidden;
+}
+
+.tb09-checkin-card {
+	margin-top: .2em;
+	height:3em;
+}
+
+.tb09-checkin-type {
+	height:3em;
+	overflow: hidden;
+}
+
+.tb09-checkin-type .ui-radio .ui-btn-inner {
+	padding: .6em 35px;
+}
+
+.tb09-area-btn-down {
+	text-align: right;
+}
+
+.tb09-area-btn-down p .ui-btn {
+	width: 45%;
+	max-width: 200px;
+	margin-top: 1em;
+	
+}
+
+.tb09-area-btn-down .ui-checkbox {
+	width: 60%;
+	margin-left: 40%;
+}
+
+/****************************************
+		Override Settings
+*****************************************/
+
+

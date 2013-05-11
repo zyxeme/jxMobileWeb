@@ -1,0 +1,97 @@
+@CHARSET "UTF-8";
+
+/****************************************
+		taplet15_3
+*****************************************/
+.tb15_3-gridArea{
+	padding: .5em 0em;
+	margin-bottom: .5em;
+}
+
+.tb15_3-searchStep{
+	height: 2em;
+	width: 96%;
+	float: left;
+	padding-bottom: 1em;
+	margin: 0 2%;
+}
+
+.tb15_3-carInfoText{
+	text-align: left;
+	width:10em;
+	font-weight:bold;
+	padding-top: 0.2em;
+}
+
+.tb15_3-carInfoGrid{
+	margin: 0 .5%;
+}
+
+.tb15_3-tireRecommendInfo{
+	height: 2em;
+	width: 98%;
+	float: left;
+	margin: 0 1%;
+	text-align: left;
+	font-weight:bold;
+}
+
+.tb15_3-descriptionLink{
+	font-size: .8em;
+	text-decoration : underline;
+}
+
+.tb15_3-gridColYear {
+	width:50%;
+}
+
+.tb15_3-gridColModel {
+	width:25%;
+}
+
+.tb15_3-gridColEngine {
+	width:25%;
+}
+.tb15_3-gridColGrade {
+	width:100%;
+}
+
+.tb15_3-gridColModelR{
+	width:35%;
+}
+
+.tb15_3-gridColNote{
+	width:65%;
+}
+
+.tb15_3-buttonArea{
+	height: 2em;
+	width: 96%;
+	float: left;
+	margin: 15% 5% 2% 2%;
+}
+
+.tb15_3-buttonChange{
+	float:right;
+	background: -webkit-gradient(linear,0 40%,0 100%,from(#00FF66),to(#CCFFCC),color-stop(0.9,#CCFFCC));
+}
+
+.tb15_3-buttonArea .tb15_3-buttonChangeSet{
+    margin-right:1em;
+}
+
+.tb15_3-buttonSearch{
+	float:right;
+	background: -webkit-gradient(linear,0 10%,0 100%,from(#0646FF),to(#4DBEFF),color-stop(0.9,#4DBEFF));
+}
+
+.tb15_3-buttonDescription{
+	float:left;
+	background: -webkit-gradient(linear,0 10%,0 100%,from(#E0AE31),to(#FCFF51),color-stop(0.9,#FCFF51));
+}
+
+.tb15_3-gc1{
+	text-align: left;
+	padding-left: .5em;
+	padding-right: .5em;
+}

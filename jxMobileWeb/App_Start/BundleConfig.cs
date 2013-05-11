@@ -38,6 +38,23 @@ namespace JxMobileWeb
                         "~/Content/themes/base/jquery.ui.datepicker.css",
                         "~/Content/themes/base/jquery.ui.progressbar.css",
                         "~/Content/themes/base/jquery.ui.theme.css"));
+
+            // JxMobileWeb用JavaScript定義
+            bundles.Add(new StyleBundle("~/bundles/smartphone").Include(
+                        "~/Scripts/Common.js",
+                        "~/Scripts/smartphone/*",
+                        "~/Content/css/common.css",
+                        "~/Content/css/jxm.css",
+                        //"~/Content/css/jxm.min.css",
+                        "~/Content/css/smartphone/*"));
+
+            bundles.Add(new StyleBundle("~/bundles/tablet").Include(
+                        "~/Scripts/Common.js",
+                        "~/Scripts/tablet/*",
+                        "~/Content/css/common.css",
+                        "~/Content/css/jxm.css",
+                        //"~/Content/css/jxm.min.css",
+                        "~/Content/css/tablet/*"));
         }
     }
 }

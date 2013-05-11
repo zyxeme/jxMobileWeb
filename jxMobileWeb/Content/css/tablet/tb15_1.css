@@ -1,0 +1,105 @@
+@CHARSET "UTF-8";
+
+/****************************************
+		taplet15_1
+*****************************************/
+.tb15_1-gridArea{
+	padding: .5em 0em;
+	margin-bottom: .5em;
+}
+
+.tb15_1-searchStep{
+	height: 2em;
+	width: 96%;
+	float: left;
+	padding-bottom: 1em;
+	margin: 0 2%;
+}
+
+.tb15_1-carInfoText{
+	text-align: left;
+	width:10em;
+	font-weight:bold;
+	padding-top: 0.2em;
+}
+
+.tb15_1-carInfoGrid{
+	margin: 0 .5%;
+}
+
+.tb15_1-carOilInfo{
+	height: 2em;
+	width: 98%;
+	float: left;
+	margin: 0 1%;
+	text-align: left;
+	font-weight:bold;
+}
+
+.tb15_1-gridColYear {
+	width:50%;
+}
+
+.tb15_1-gridColModel {
+	width:25%;
+}
+
+.tb15_1-gridColEngine {
+	width:25%;
+}
+.tb15_1-gridColGrade {
+	width:100%;
+}
+
+.tb15_1-buttonArea{
+	height: 2em;
+	width: 96%;
+	float: left;
+	margin: 15% 5% 2% 2%;
+}
+
+.tb15_1-buttonChange{
+	float:right;
+	background: -webkit-gradient(linear,0 40%,0 100%,from(#00FF66),to(#CCFFCC),color-stop(0.9,#CCFFCC));
+}
+
+.tb15_1-buttonSearch{
+	float:right;
+	background: -webkit-gradient(linear,0 10%,0 100%,from(#0646FF),to(#4DBEFF),color-stop(0.9,#4DBEFF));
+}
+
+.tb15_1-buttonDescription{
+	float:left;
+	background: -webkit-gradient(linear,0 10%,0 100%,from(#E0AE31),to(#FCFF51),color-stop(0.9,#FCFF51));
+}
+
+.tb15_1-gc1{
+	text-align: left;
+	padding-left: .5em;
+	padding-right: .5em;
+}
+
+#popupCalculator .cmn-readonly {
+	text-align: right;
+	background-color: #aaa;
+	color: #fff;
+	font-size: 1.2em;
+}
+
+#popupCalculator .ui-btn {
+	min-width: 0;
+}
+
+#tb15_1RecommendInfoListData a {
+	text-decoration : underline;
+}
+
+.tb15_1-cal-row {
+	height: 3em;
+	width: 12em;
+}
+
+.tb15_1-cal-row .ui-btn{
+	width: 22%;
+	font-size: .5em;
+}

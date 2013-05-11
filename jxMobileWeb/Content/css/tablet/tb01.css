@@ -1,0 +1,57 @@
+@CHARSET "UTF-8";
+
+/****************************************
+		taplet01
+*****************************************/
+
+.tb01-grid-col-inner {
+	padding: 0 5%;
+}
+
+.tb01-button-cell-center {
+	width: 100%;
+	height: 120%
+}
+
+.tb01-grid-cell-r {
+	background: transparent;
+}
+
+.tb01-bold{
+	font-weight:bold;
+	padding-top: 0.4em;
+}
+/****************************************
+		Override common
+*****************************************/
+.cmn-grid-cell-noborder {
+	text-align:left;
+	margin-top:1.5em;
+	height:3em;
+}
+
+.cmn-grid-cell-l {
+	width: 30%;
+	background: transparent;
+}
+
+.cmn-grid-cell-r {
+	width: 70%;
+	background: transparent;
+}
+
+.cmn-mainbody {
+	padding: 10em 0;
+}
+
+p .ui-btn {
+	margin-top: 1.5em;
+	width: 30%;
+	max-width: 120px;
+}
+
+.cmn-grid {
+	width:20em;
+	text-align:center;
+	margin:0 auto;
+}

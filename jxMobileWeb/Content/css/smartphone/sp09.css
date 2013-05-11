@@ -1,0 +1,112 @@
+@CHARSET "UTF-8";
+
+/****************************************
+		smartphone06
+*****************************************/
+
+.sp09-gc1 {
+	float: left;
+	width: 50%;
+	text-align: left;
+	overflow: hidden;
+}
+
+.sp09-gc2 {
+	float: left;
+	width: 100%;
+	text-align: left;
+	overflow: hidden;
+}
+.sp09-font {
+        float: left;
+        font-weight: 900;
+        width: 27%;
+}
+.sp09-gc3 {
+	float: left;
+	width: 73%;
+}
+.sp09-gc4 {
+	width: 100%;
+}
+.sp09-gc5 {
+	padding-top:0.37em;
+	padding-bottom:0.32em;
+}
+.sp09-gc6 {
+	float: left;
+}
+.sp09-gc7 {
+	padding-top:0.5em;
+}
+
+.radio-fl-1-ok{
+	display:block;
+}
+
+
+.radio-fl-1-attention{
+	display:none;
+}
+.sp09-gc8{
+	width:67%;
+	float:left;
+}
+.sp09-gc9{
+	width:32%;
+	float:left;
+	padding-left:0.2em;
+	padding-top:0.2em;
+}
+.sp09-gc10{
+	width:99.3%;
+	height: 2.2em;
+}
+
+/****************************************
+		Override Settings
+*****************************************/
+
+.cmn-grid-cell-l {
+    width: 25%;
+}
+
+.cmn-grid-cell-l {
+    width: 25%;
+}
+
+.ui-controlgroup .ui-controlgroup-controls {
+	width: 100%;
+	text-align: left;
+}
+
+.ui-controlgroup .ui-radio {
+	width: 50%;
+}
+#popupMemo .ui-controlgroup, #popupMemo fieldset.ui-controlgroup {
+	margin: 0;
+	width: 100%;
+	text-align: right;
+}
+
+#popupMemo .ui-controlgroup .ui-radio {
+	width: 33%;
+	line-height: 1.2em;
+	font-size: .6em;
+}
+
+#popupMemo .ui-select .ui-btn-icon-right .ui-btn-inner, #popupMemo .ui-select .ui-li-has-count .ui-btn-inner {
+	padding-right: 0;
+	font-size: .8em;
+}
+
+#popupMemo .ui-select .ui-btn-icon-right .ui-btn-inner .ui-icon, #popupMemo .ui-select .ui-li-has-count .ui-btn-inner .ui-icon {
+	width: 0;
+}
+
+.sp06-gc7 .cmn-readonly {
+	min-height: 2.8em;
+	max-height: 2.8em;
+	margin: .4em 0 .4em 2%;
+	padding: .2em 1%;
+}

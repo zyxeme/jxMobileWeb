@@ -1,0 +1,91 @@
+@CHARSET "UTF-8";
+
+/****************************************
+		taplet03
+*****************************************/
+
+#area-customer {
+	background-color: #fff;
+	margin-top: 1.3em;
+}
+
+.tb03-bold{
+	font-weight:bold;
+	padding-top: 0.4em;
+}
+
+.tb03-navbar {
+	width: 100%;
+	height: 2em;
+}
+
+.tb03-detail-area{
+	padding:1em;
+	border: 1px solid #BBB;
+	margin: 1em 0;
+}
+
+.tb03-gc1 {
+	width:17%;
+}
+
+.tb03-gc2 {
+	width:33%;
+}
+
+.tb03-search{
+	float:none;
+	text-align: left;
+	margin-bottom: .4em;
+}
+
+.tb03-button1{
+	float:right;
+	margin-left:0.2em;
+	margin-right:0.2em;
+}
+
+.tb03-button2{
+	margin-left: 22%;
+}
+
+
+/****************************************
+		Override common
+*****************************************/
+
+.cmn-grid-cell-noborder{
+	height:3em;
+}
+
+.tb03-navbar {
+	height: 1.5em;
+}
+
+/****************************************
+		Override Jquery Mobile
+*****************************************/
+
+.tb03-search .ui-btn-inner{
+	padding :0;
+}
+
+.tb03-search .ui-btn{
+	margin-left:1em;
+	margin-top:.2em;
+}
+
+.ui-grid-c>:nth-child(n) {
+	width:20%;
+}
+
+.ui-grid-a>:nth-child(n),.ui-grid-d>:nth-child(n) {
+	width:10%;
+	clear: none;
+	margin-top: .5em;
+	margin-bottom: .5em;
+}
+
+.ui-grid-d>:nth-child(n){
+	width:20%;
+}

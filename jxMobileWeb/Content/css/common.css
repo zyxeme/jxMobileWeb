@@ -1,0 +1,275 @@
+@CHARSET "UTF-8";
+
+/****************************************
+		1. General Settings
+*****************************************/
+html,body,div,span,applet,object,iframe,strong,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,legend,caption,tbody,tfoot,thead,table,label,tr,th,td
+	{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	list-style: none;
+	background: transparent;
+}
+
+html {
+}
+
+body {
+
+}
+
+a {
+	text-decoration: none;
+}
+
+input {
+	max-width: 98%;
+}
+
+hr {
+	width: 99%;
+}
+
+/* hide input type = time/number up&down arrows */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+/****************************************
+		2. Jquery Override Settings
+*****************************************/
+.ui-page {
+	background: url('../images/bodybg_black.png') repeat;
+}
+
+p .ui-btn {
+	width: 24%;
+	max-width: 120px;
+	min-width: 100px;
+}
+
+.ui-btn-corner-all {
+	-webkit-border-radius: .5em;
+	border-radius: .5em;
+}
+
+.ui-field-contain {
+	margin: 0;
+	padding: 0;
+}
+
+.ui-btn-inner {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.ui-select .ui-btn-inner {
+	padding: 0;
+}
+
+.ui-field-contain .ui-select {
+	width: 100%;
+}
+
+.ui-btn {
+	margin: .4em 0;
+}
+
+.ui-select {
+	line-height: 2.2em;
+}
+
+div.ui-input-text {
+	margin: .3em 0;
+}
+
+.ui-controlgroup-horizontal .ui-radio .ui-mini .ui-btn-inner {
+	padding: .35em 11px .3em;
+	font-size: 1em;
+}
+
+/****************************************
+		3. Common Settings
+*****************************************/
+.cmn-page {
+
+}
+
+.cmn-mainbody {
+	padding: 1em;
+}
+
+.cmn-align-left {
+	text-align: left;
+}
+
+.cmn-align-center {
+	text-align: center;
+}
+
+.cmn-align-right {
+	text-align: right;
+}
+
+.cmn-area {
+	background-color: #fff;
+	border: 1px #999 solid;
+	border-radius: .5em;
+	padding: .5em 1em;
+}
+
+.cmn-hidden {
+	display: none;
+}
+
+/****************************************
+		3.1 Navigation & Toolbar & Tab
+*****************************************/
+
+.cmn-navi-tab {
+	-webkit-border-top-left-radius: .5em;
+	-webkit-border-top-right-radius: .5em;
+	border-top-left-radius: .5em;
+	border-top-right-radius: .5em;
+}
+
+.cmn-navi-tab .ui-btn-text {
+	font-size: 1.5em;
+}
+
+.ui-block-aC.ui-block-bC.ui-block-cC.ui-block-d{
+	height: 1.9em;
+	line-height: 1.9em;
+}
+
+/****************************************
+		3.2 Grid
+*****************************************/
+
+.cmn-grid {
+	overflow: hidden;
+}
+
+.cmn-grid-cell {
+	float: left;
+	min-height: 1px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+	height: 3em;
+	line-height: 3em;
+	font-size:1em;
+	vertical-align: middle;
+	text-align: center;
+	border: 1px solid #bbb;
+	font-weight: bold;
+}
+
+.cmn-grid-cell-noborder {
+	float: left;
+	min-height: 1px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+	height: 2.5em;
+	line-height: 2.5em;
+	font-size:1em;
+	vertical-align: middle;
+	text-align: center;
+	border: 0;
+	font-weight: normal;
+}
+
+.cmn-grid-cell-l {
+    background: #eee;
+    width: 25%;
+    overflow: hidden;
+}
+
+.cmn-grid-cell-r {
+    background: #fff;
+    width: 75%;
+    overflow: hidden;
+}
+
+.cmn-detail-row .cmn-grid-cell-l {
+	background:#ccc;
+}
+
+.cmn-detail-odd .cmn-grid-cell-l {
+	background:#ddd;
+}
+
+.cmn-detail-select .cmn-grid-cell-l {
+	background:#5393C5;
+	color:#fff;
+}
+
+.cmn-grid-border-r {
+	border-right: 1px solid #999;
+}
+
+.cmn-grid-border-b {
+	border-bottom: 1px solid #999;
+}
+
+.cmn-list-title{
+	background:#444;
+	color: #fff;
+	border-top: 1px solid #111;
+	text-shadow: 0 1px 0 #111;
+	border-top-left-radius: .5em;
+	border-top-right-radius: .5em;
+}
+
+.cmn-list-title-inner{
+	border-top: 1px solid #FFF;
+	border-color: rgba(255, 255, 255, .3);
+	border-top-left-radius: .5em;
+	border-top-right-radius: .5em;
+}
+
+/****************************************
+		3.3 Controls
+*****************************************/
+
+.cmn-readonly {
+	width: 96%;
+	min-height: 1.4em;
+	max-height: 1.4em;
+	line-height: 1em;
+	overflow: hidden;
+	word-wrap: break;
+	font-weight: normal;
+	margin: .4em 1%;
+	padding: .3em 1% .1em;
+	background: #fff;
+	border: 1px solid #999;
+	border-radius: .2em;
+	text-align: left;
+}
+
+/****************************************
+		4. Etc.
+*****************************************/
+
+.cmn-space-v {
+	min-height: 1em;
+	width: 100%;
+}
+
+.cmn-color-orange {
+	color: orange;
+}
+
+.cmn-bg-orange{
+	background:orange;
+	background-image: linear-gradient( #FFDC9D,#FFA500 )
+}

@@ -1,0 +1,32 @@
+@CHARSET "UTF-8";
+
+/****************************************
+		taplet02
+*****************************************/
+
+.tb02-btn-space {
+	height: 4em;
+}
+
+.tb02-btn-margin-l {
+	margin-left: 3%;
+}
+
+.tb02-btn-margin-r {
+	margin-right: 3%;
+}
+
+.tb02-cell-margin-b {
+	margin-bottom: 2em;
+}
+
+/****************************************
+		Override Jquery Mobile
+*****************************************/
+.cmn-area p .ui-btn{
+	width: 20%;
+}
+
+.ui-btn {
+	padding:0 1em;
+}

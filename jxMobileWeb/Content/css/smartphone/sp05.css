@@ -1,0 +1,499 @@
+@CHARSET "UTF-8";
+
+/****************************************
+		smartphone06
+*****************************************/
+
+.sp05-gc1 {
+	float: left;
+	width: 100%;
+	text-align: left;
+	overflow: hidden;
+}
+
+.sp05-gc11 {
+	float: left;
+	width: 100%;
+	text-align: left;
+	overflow: hidden;
+        margin-left: 0.9em;
+}
+
+.sp05-gc2 {
+	float: left;
+	width: 50%;
+	text-align: left;
+	overflow: hidden;
+}
+
+.sp05-gc3 {
+	width: 70%;
+	text-align: left;
+	overflow: hidden;
+}
+
+.sp05-gc4 {
+	width: 30%;
+	text-align: left;
+	overflow: hidden;
+}
+
+.sp05-gc5 {
+	width: 33.3%;
+	text-align: left;
+	overflow: hidden;
+}
+
+.sp05-gc6 {
+        width: 33.3%;
+        text-align: center;
+        overflow: hidden;
+}
+
+.sp05-gc7 {
+        width: 100%;
+        text-align: left;
+        overflow: hidden;
+        margin-left: 0.2em;
+}
+
+.sp05-gc8{
+      width: 100%;
+      float: left;
+      text-align: left;
+}
+
+.sp05-09 {
+      width: 60%;
+      float: left;
+}
+
+.sp05-10 {
+      width: 20%;
+      float: right;
+      margin-right: 1.6em;
+}
+
+.sp05-11 {
+      float: right;
+      
+
+
+}
+
+.font-wai{
+      font-size: 1.2em;
+      color: blue;
+
+}
+
+.font1{
+       font-weight: 100;
+       font-size: 0.8em;
+
+}
+
+.font2{
+       font-weight: 900;
+       font-size: 0.8em;
+       float: left;
+    
+
+}
+
+.font21 {
+       font-weight: 900;
+       font-size: 0.8em;
+       float: left;
+       text-align: left;
+       width: 100%;
+       height: 2.8em;
+       line-height: 3.8em;
+}
+
+.font22 {
+       height: 1em;
+       line-height: 2.6em;
+       width: 100%; 
+}
+
+.font26 {
+       height: 1em;
+       line-height: 3.4em;
+   
+}
+
+.font25 {
+       font-weight: 900;
+       font-size: 0.8em;
+       float: left;
+       text-align: left;
+       width: 100%;
+       height: 2.8em;
+       line-height: 3.8em;
+
+
+
+}
+
+.font23 {
+       height: 1.4em;
+       width: 100%;
+       white-space:normal;
+       font-size: 0.95em;
+}
+
+.font3{
+       font-weight: 900;
+       font-size: 0.8em;
+       float: left;
+       text-align: center;
+
+}
+
+.font31{
+       float: left;
+       line-height: 2.6em;
+
+}
+
+.font32{     
+       margin-left: 0.06em;
+       line-height: 0.8em;
+}
+
+.font33{     
+       margin-left: 0.06em;
+       line-height: 0.8em;
+}
+
+.font34{
+       text-align: left;
+       float: left;
+       line-height: 2.6em;
+       width: 100%;
+
+}
+
+.font4{
+       text-align: left;
+       float: left;
+       line-height: 4.6em;
+       width: 100%;
+       font-size: 0.8em;
+       font-weight: 900;
+}
+
+.font41{
+       text-align: left;
+       float: left;
+       line-height: 4.6em;
+       width: 100%;
+       font-size: 0.6em;
+       font-weight: 100;
+}
+
+.sp05-mulrows1 {
+        height: 1.5em;
+        line-height: 1.5em;
+        background: #99BBFF;
+        margin-left: 0.2em;
+        width: 46%;
+        
+}
+
+.sp05-mulrows11 {
+        height: 1.5em;
+        line-height: 1.5em;
+        background: #99BBFF;
+        width: 26%;        
+}
+
+.sp05-mulrows2 {
+        height: 3em;
+        
+    
+        margin-left: 0.2em;
+        width: 46%;
+        
+}
+.sp05-mulrows12 {
+        height: 3em;
+       
+       
+        width: 26%;        
+}
+
+.backclo {
+    background:#ddd;
+
+}
+
+.backclo1 {
+    background:#FF8888 ;
+
+}
+
+.height1 {
+
+       margin-top: 0.5em;
+}
+
+.sp05-space {
+        float: left;
+        width: 60%;
+}
+
+.sp05-btm {
+        float: left;
+        margin-left: 7em;
+        width: 26%;
+}
+
+.sp05-btm1 {
+        float: right;l
+        width: 26%;
+        
+}
+
+.sp05-btm2 {
+        height: 0.5em;
+        margin-bottom: 1em;
+}
+
+
+.sp05-height2 {
+        height: 10em;
+      
+
+}
+
+.font-login {
+      width: 4em;
+
+}
+
+.font-height {
+      height: 1.8em;
+
+}
+
+.sp05-select1{
+       float: left;
+       width: 100%;
+       text-align: center;
+}
+
+.sp05-select2{
+       float: left;
+       width: 100%;
+       text-align: center;
+}
+
+.sp05-color {
+       margin-top: 0.5em;
+       width: 100%;
+       float: left;  
+       margin:0 auto;
+}
+
+.sp05-color1 {
+       float: left;
+       background: #000000;
+}
+
+.sp05-color4 {
+       float: left;
+       background: #BBBB00;
+}
+
+.sp05-color2 {
+       float: left;
+       width: 100%;
+       height: 0em;
+       line-height: 2.4em;
+       margin-left: 0.8em;
+}
+
+.sp05-color3 {
+       float: left;
+       margin-left: 8.6em;
+       line-height: 0.5em;
+}
+
+.sp05-button2 {
+       width: 20%;
+       height: 1em;
+}
+
+.sp05-font {
+      width: 40%;
+      float: left;
+      text-align: left;
+
+}
+
+.sp05-font1 {
+      width: 10%;
+      float: left;
+
+}
+
+.sp05-font2 {
+      width: 30%;
+      float: left;
+
+}
+
+.sp05-main {
+  width: 100%;
+  margin-top: 0.1em;
+
+}
+
+.area {
+   padding: 0em 0.2em;  
+
+}
+
+.sp06-gc4 {
+	width: 75%;
+	text-align: left;
+}
+
+.memo2 {
+       width: 100%;
+       
+
+}
+
+.sp06-mulrows1 {
+	height: 13.5em;
+	line-height: 1.5em;
+	padding-top: 5em;
+}
+
+.sp06-mulrows1-r {
+	height: 13.5em;
+}
+
+.sp06-mulrows2 {
+	height: 7.3em;
+	line-height: 1.5em;
+	padding-top: 2.4em;
+}
+
+.sp06-mulrows2-r {
+	height: 7.3em;
+}
+
+p.sp06-memo-btn .ui-btn {
+	width: 16%;
+}
+
+p.sp06-memo-btn .ui-mini .ui-btn-inner {
+	padding: 0;
+        
+}
+
+.sp06-popup-btn-area {
+	float: left;
+	min-height: 1px;
+	height: 2.5em;
+	line-height: 2.5em;
+	border: 0;
+}
+
+.sp06-popup-space-v {
+	min-height:2.5em;
+}
+
+.sp03-color1 {
+       border:solid 0.1em  #888800;
+       background: #000000;
+}
+
+.sp03-color2 {
+       border:solid 0.1em #888800;
+       background: #88AA00;
+}
+
+.sp03-color3 {
+       border:solid 0.1em #888800;
+       background: #00FFFF;
+}
+
+.sp03-color5 {
+       border:solid 0.1em #888800;
+       
+}
+
+
+.sp03-color6 {
+       border:solid 0.1em #888800;
+       background: #55AA00;
+}
+
+.sp03-color7 {
+       border:solid 0.1em #888800;
+       background: #FF0000;
+}
+
+.sp03-color8 {
+       border:solid 0.1em #888800;
+       background: #EEEE00;
+}
+
+#popupMemo2-popup{
+    width:80%;
+}
+
+.sp05-confirm{
+    width: 40%;
+    margin-left: 5.8em;
+  
+}
+
+/****************************************
+		Override Settings
+*****************************************/
+
+
+
+.ui-controlgroup .ui-controlgroup-controls {
+	width: 80%;
+	text-align: center;
+        margin-left: 2em;
+}
+
+.ui-controlgroup .ui-radio {
+	width: 33%;
+}
+
+#popupMemo .ui-controlgroup, #popupMemo fieldset.ui-controlgroup {
+	margin: 0;
+	width: 100%;
+	text-align: right;
+}
+
+#popupMemo .ui-controlgroup .ui-radio {
+	width: 33%;
+	line-height: 1.2em;
+	font-size: .6em;
+}
+
+#popupMemo .ui-select .ui-btn-icon-right .ui-btn-inner, #popupMemo .ui-select .ui-li-has-count .ui-btn-inner {
+	padding-right: 0;
+	font-size: .8em;
+}
+
+#popupMemo .ui-select .ui-btn-icon-right .ui-btn-inner .ui-icon, #popupMemo .ui-select .ui-li-has-count .ui-btn-inner .ui-icon {
+	width: 0em;
+}
+
+.sp06-gc7 .cmn-readonly {
+	min-height: 2.8em;
+	max-height: 2.8em;
+	margin: .4em 0 .4em 2%;
+	padding: .2em 1%;
+}
