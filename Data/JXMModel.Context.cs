@@ -34,5 +34,6 @@ namespace JxMobileWeb.Data
         public DbSet<JXNOMNGSETRF> JXNOMNGSETRF { get; set; }
         public DbSet<JXSLIPDETAILRF> JXSLIPDETAILRF { get; set; }
         public DbSet<JXSLIPHEDRRF> JXSLIPHEDRRF { get; set; }
+        public DbSet<CarInfo> CarInfoSet { get; set; }
     }
 }

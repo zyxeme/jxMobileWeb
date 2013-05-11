@@ -46,6 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CarInfo.cs">
+      <DependentUpon>JXMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CARMAINRF.cs">
+      <DependentUpon>JXMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CARSPECRF.cs">
+      <DependentUpon>JXMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CUSTOMERRF.cs">
+      <DependentUpon>JXMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JXACCEGOINFURF.cs">
+      <DependentUpon>JXMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JXCUSTVTTLRF.cs">
+      <DependentUpon>JXMModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="JXMModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -60,6 +78,15 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>JXMModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="JXNOMNGSETRF.cs">
+      <DependentUpon>JXMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JXSLIPDETAILRF.cs">
+      <DependentUpon>JXMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JXSLIPHEDRRF.cs">
+      <DependentUpon>JXMModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="vReportListForSearch.cs">

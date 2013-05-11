@@ -14,6 +14,7 @@
         <EntityTypeShape EntityType="JXMobileModel.JXNOMNGSETRF" Width="1.5" PointX="10.75" PointY="0.75" />
         <EntityTypeShape EntityType="JXMobileModel.JXSLIPDETAILRF" Width="1.5" PointX="10.75" PointY="5.75" />
         <EntityTypeShape EntityType="JXMobileModel.JXSLIPHEDRRF" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="JXMobileModel.CarInfo" Width="1.5" PointX="0.75" PointY="3.875" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

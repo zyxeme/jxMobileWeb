@@ -12,15 +12,17 @@ namespace JxMobileWeb.Controllers
     public class HomeController : BaseController
     {
         private IRecordRepository recordRepository;
+        private ICarInfoRepository carinfoRepository;
 
         public HomeController()
-            : this((IRecordRepository)context.GetObject("RecordRepository"))
+            : this((IRecordRepository)context.GetObject("RecordRepository"), (ICarInfoRepository)context.GetObject("CarInfoRepository"))
         {
         }
 
-        public HomeController(IRecordRepository repository)
+        public HomeController(IRecordRepository recordRepo, ICarInfoRepository carinfoRepo)
         {
-            this.recordRepository = repository;
+            this.recordRepository = recordRepo;
+            this.carinfoRepository = carinfoRepo;
         }
 
         //
@@ -28,7 +30,8 @@ namespace JxMobileWeb.Controllers
 
         public ActionResult Index()
         {
-            IList<vReportListForSearch> records = recordRepository.GetList();
+            //IList<vReportListForSearch> records = recordRepository.GetList();
+            IList<CarInfo> records = carinfoRepository.GetCarList();
 
             return View(records);
         }

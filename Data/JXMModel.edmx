@@ -44,7 +44,35 @@
       [vReportListForSearch].[KANA] AS [KANA]
       FROM [dbo].[vReportListForSearch] AS [vReportListForSearch]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="CarInfo" EntityType="JXMobileModel.Store.CarInfo">
+            <DefiningQuery>
+              SELECT
+              [CARMAINRF].[ENTERPRISECODERF],
+              [CARMAINRF].[CARMNGNORF],
+              [CARMAINRF].[NUMBERPLATE1NAMERF],
+              [CARMAINRF].[NUMBERPLATE2RF],
+              [CARMAINRF].[NUMBERPLATE3RF],
+              [CARMAINRF].[NUMBERPLATE4RF],
+              [CARSPECRF].[MODELNAMERF]
+              FROM
+              [dbo].[CARMAINRF]
+              INNER JOIN [dbo].[CARSPECRF] ON [CARMAINRF].[CARMNGNORF] = [CARSPECRF].[CARMNGNORF]
+            </DefiningQuery>
+          </EntitySet>
         </EntityContainer>
+        <EntityType Name="CarInfo">
+          <Key>
+            <PropertyRef Name="ENTERPRISECODERF" />
+            <PropertyRef Name="CARMNGNORF" />
+          </Key>
+          <Property Name="ENTERPRISECODERF" Type="nchar" Nullable="false" MaxLength="16" />
+          <Property Name="CARMNGNORF" Type="int" Nullable="false" />
+          <Property Name="NUMBERPLATE1NAMERF" Type="nvarchar" MaxLength="4" />
+          <Property Name="NUMBERPLATE2RF" Type="nvarchar" MaxLength="3" />
+          <Property Name="NUMBERPLATE3RF" Type="nvarchar" MaxLength="2" />
+          <Property Name="NUMBERPLATE4RF" Type="int" />
+          <Property Name="MODELNAMERF" Type="nvarchar" MaxLength="100" />
+        </EntityType>
         <EntityType Name="CARMAINRF">
           <Key>
             <PropertyRef Name="ENTERPRISECODERF" />
@@ -729,6 +757,7 @@
           <EntitySet Name="JXNOMNGSETRF" EntityType="JXMobileModel.JXNOMNGSETRF" />
           <EntitySet Name="JXSLIPDETAILRF" EntityType="JXMobileModel.JXSLIPDETAILRF" />
           <EntitySet Name="JXSLIPHEDRRF" EntityType="JXMobileModel.JXSLIPHEDRRF" />
+          <EntitySet Name="CarInfoSet" EntityType="JXMobileModel.CarInfo" />
         </EntityContainer>
         <EntityType Name="vReportListForSearch">
           <Key>
@@ -1364,6 +1393,19 @@
           <Property Type="Int32" Name="CIMATDATERF" />
           <Property Type="Binary" Name="JXSIGNIMGRF" MaxLength="Max" FixedLength="false" />
         </EntityType>
+        <EntityType Name="CarInfo">
+          <Key>
+            <PropertyRef Name="ENTERPRISECODERF" />
+            <PropertyRef Name="CARMNGNORF" />
+          </Key>
+          <Property Type="String" Name="ENTERPRISECODERF" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Type="Int32" Name="CARMNGNORF" Nullable="false" />
+          <Property Type="String" Name="NUMBERPLATE1NAMERF" Nullable="false" MaxLength="4" />
+          <Property Type="String" Name="NUMBERPLATE2RF" Nullable="false" MaxLength="3" />
+          <Property Type="String" Name="NUMBERPLATE3RF" Nullable="false" MaxLength="2" />
+          <Property Type="Int32" Name="NUMBERPLATE4RF" Nullable="false" />
+          <Property Type="String" Name="MODELNAMERF" Nullable="false" MaxLength="100" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1989,6 +2031,19 @@
                 <ScalarProperty Name="ENTERPRISECODERF" ColumnName="ENTERPRISECODERF" />
                 <ScalarProperty Name="UPDATEDATETIMERF" ColumnName="UPDATEDATETIMERF" />
                 <ScalarProperty Name="CREATEDATETIMERF" ColumnName="CREATEDATETIMERF" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CarInfoSet">
+            <EntityTypeMapping TypeName="IsTypeOf(JXMobileModel.CarInfo)">
+              <MappingFragment StoreEntitySet="CarInfo">
+                <ScalarProperty Name="MODELNAMERF" ColumnName="MODELNAMERF" />
+                <ScalarProperty Name="NUMBERPLATE4RF" ColumnName="NUMBERPLATE4RF" />
+                <ScalarProperty Name="NUMBERPLATE3RF" ColumnName="NUMBERPLATE3RF" />
+                <ScalarProperty Name="NUMBERPLATE2RF" ColumnName="NUMBERPLATE2RF" />
+                <ScalarProperty Name="NUMBERPLATE1NAMERF" ColumnName="NUMBERPLATE1NAMERF" />
+                <ScalarProperty Name="CARMNGNORF" ColumnName="CARMNGNORF" />
+                <ScalarProperty Name="ENTERPRISECODERF" ColumnName="ENTERPRISECODERF" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

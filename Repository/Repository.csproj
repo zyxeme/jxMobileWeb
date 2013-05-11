@@ -44,7 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\ICarInfoRepository.cs" />
     <Compile Include="Interfaces\IRecordRepository.cs" />
+    <Compile Include="LocalDB\CarInfoRepositoryLocal.cs" />
     <Compile Include="LocalDB\Infrastructure\GenericRepository.cs" />
     <Compile Include="LocalDB\Infrastructure\IGenericRepository.cs" />
     <Compile Include="LocalDB\Infrastructure\IUnitOfWork.cs" />
