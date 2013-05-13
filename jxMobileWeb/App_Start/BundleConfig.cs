@@ -40,20 +40,20 @@ namespace JxMobileWeb
                         "~/Content/themes/base/jquery.ui.theme.css"));
 
             // JxMobileWeb用JavaScript定義
-            bundles.Add(new StyleBundle("~/bundles/smartphone").Include(
+            bundles.Add(new ScriptBundle("~/bundles/smartphone/js").Include(
                         "~/Scripts/Common.js",
-                        "~/Scripts/smartphone/*",
+                        "~/Scripts/smartphone/*"));
+            bundles.Add(new StyleBundle("~/bundles/smartphone/css").Include(
                         "~/Content/css/common.css",
-                        "~/Content/css/jxm.css",
-                        //"~/Content/css/jxm.min.css",
+                        "~/Content/css/jxm.css", //"~/Content/css/jxm.min.css",
                         "~/Content/css/smartphone/*"));
 
-            bundles.Add(new StyleBundle("~/bundles/tablet").Include(
+            bundles.Add(new ScriptBundle("~/bundles/tablet/js").Include(
                         "~/Scripts/Common.js",
-                        "~/Scripts/tablet/*",
+                        "~/Scripts/tablet/*"));
+            bundles.Add(new StyleBundle("~/bundles/tablet/css").Include(
                         "~/Content/css/common.css",
-                        "~/Content/css/jxm.css",
-                        //"~/Content/css/jxm.min.css",
+                        "~/Content/css/jxm.css", //"~/Content/css/jxm.min.css",
                         "~/Content/css/tablet/*"));
         }
     }

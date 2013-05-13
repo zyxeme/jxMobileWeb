@@ -140,6 +140,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\Tablet\TB_08Controller.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -148,6 +149,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\common.css" />
+    <Content Include="Content\css\images\ajax-loader.gif" />
+    <Content Include="Content\css\images\icons-18-black.png" />
+    <Content Include="Content\css\images\icons-18-white.png" />
+    <Content Include="Content\css\images\icons-36-black.png" />
+    <Content Include="Content\css\images\icons-36-white.png" />
+    <Content Include="Content\css\jxm.css" />
+    <Content Include="Content\css\jxm.min.css" />
+    <Content Include="Content\css\tablet\tb08.css" />
+    <Content Include="Content\images\bodybg_black.png" />
+    <Content Include="Content\images\bodybg_white.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -209,6 +221,7 @@
     <Content Include="objects.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Scripts\common.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -223,6 +236,31 @@
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\smartphone\sp03.js" />
+    <Content Include="Scripts\smartphone\sp04.js" />
+    <Content Include="Scripts\smartphone\sp05.js" />
+    <Content Include="Scripts\smartphone\sp06.js" />
+    <Content Include="Scripts\smartphone\sp07.js" />
+    <Content Include="Scripts\smartphone\sp08.js" />
+    <Content Include="Scripts\smartphone\sp09.js" />
+    <Content Include="Scripts\tablet\tb03.js" />
+    <Content Include="Scripts\tablet\tb04.js" />
+    <Content Include="Scripts\tablet\tb06.js" />
+    <Content Include="Scripts\tablet\tb07.js" />
+    <Content Include="Scripts\tablet\tb08.js" />
+    <Content Include="Scripts\tablet\tb09.js" />
+    <Content Include="Scripts\tablet\tb10.js" />
+    <Content Include="Scripts\tablet\tb11.js" />
+    <Content Include="Scripts\tablet\tb12.js" />
+    <Content Include="Scripts\tablet\tb13.js" />
+    <Content Include="Scripts\tablet\tb15_1.js" />
+    <Content Include="Scripts\tablet\tb15_2.js" />
+    <Content Include="Scripts\tablet\tb15_3.js" />
+    <Content Include="Scripts\tablet\tb18.js" />
+    <Content Include="Scripts\tablet\tb19.js" />
+    <Content Include="Scripts\tablet\tb20-1.js" />
+    <Content Include="Scripts\tablet\tb20-2.js" />
+    <Content Include="Scripts\tablet\tb20-3.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -239,11 +277,12 @@
     <Content Include="Views\Error\ServerError.cshtml" />
     <Content Include="Views\Error\AccessDeniedError.cshtml" />
     <Content Include="Views\Error\NotFoundError.cshtml" />
+    <Content Include="Views\Shared\_LayoutSmartPhone.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\css\smartphone\" />
     <Folder Include="Controllers\SmartPhone\" />
-    <Folder Include="Controllers\Tablet\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
