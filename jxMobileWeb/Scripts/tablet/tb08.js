@@ -53,7 +53,6 @@ function setGridData(data){
 
 function getCarInfor() {
     if (modelData == undefined) return {};
-    alert(modelData);
     var dummyData = modelData;
     /*
 	var dummyData = 

@@ -31,7 +31,25 @@ namespace JxMobileWeb.Controllers.Tablet
 
         public ActionResult List()
         {
-            IList<vReportListForSearch> records = recordRepository.GetList();
+            //IList<vReportListForSearch> records = recordRepository.GetList();
+
+            IList<Tb08Model> records = new List<Tb08Model>();
+
+            records.Add(
+                new Tb08Model
+                {
+                    hno = "5",
+                    date = "03/21",
+                    hnoTime = "12:47",
+                    endTime = "10:17",
+                    carNo1 = "品川",
+                    carNo2 = "302",
+                    carNo3 = "か",
+                    carNo4 = "9527",
+                    customerName = "山田 太郎",
+                    customerNameKana = "ヤマダ　タロウ",
+                    isShow = true
+                });
 
             return View(records);
         }
