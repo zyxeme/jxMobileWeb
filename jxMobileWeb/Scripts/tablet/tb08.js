@@ -1,4 +1,6 @@
-$(function() {
+var modelData;
+
+$(function () {
 	setGridData(getCarInfor());
 });
 
@@ -49,7 +51,11 @@ function setGridData(data){
 	}
 }
 
-function getCarInfor(){
+function getCarInfor() {
+    if (modelData == undefined) return {};
+    alert(modelData);
+    var dummyData = modelData;
+    /*
 	var dummyData = 
 	[
 		{
@@ -109,7 +115,8 @@ function getCarInfor(){
 			,"isShow":true
 		}
 	];
-	
+    */
+
 	return dummyData;
 }
 

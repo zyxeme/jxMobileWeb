@@ -1,0 +1,140 @@
+﻿@{
+    ViewBag.Title = "受注一覧";
+    Layout = "~/Views/Shared/_LayoutTablet.cshtml";
+}
+@model IList<JxMobileWeb.Data.vReportListForSearch>
+@section customs {
+    <link rel="stylesheet" href="~/Content/css/tablet/tb08.css" />
+    <script src="~/Scripts/tablet/tb08.js"></script>
+    <script type="text/javascript">
+        var modelData = @Html.Raw(Json.Encode(@Model));
+    </script>
+}
+
+<div data-role="page" data-theme="a" >
+	<div data-role="header" data-position="fixed" >
+    	<a href="#" data-icon="back" class="ui-btn-left" onclick="history.go(-1);" >BACK</a>
+        <h1 class="title">受注一覧</h1>
+        <a href="../index.html" data-ajax="false" data-icon="home" class="ui-btn-right" >HOME</a>
+    </div><!-- /header -->
+
+    <div data-role="mainbody" class="cmn-mainbody" >
+		<div class="cmn-grid">
+			<div id="tb08ListTitle">
+			<div class="cmn-grid-cell cmn-grid-cell-l cmn-list-title tb08-gc1"><div class="cmn-list-title-inner tb08-line-height">受注<br/>番号</div></div>
+			<div class="cmn-grid-cell cmn-grid-cell-l cmn-list-title tb08-gc1"><div class="cmn-list-title-inner tb08-line-height">受注<br/>日時</div></div>
+			<div class="cmn-grid-cell cmn-grid-cell-l cmn-list-title tb08-gc1"><div class="cmn-list-title-inner tb08-line-height">終了<br/>予定</div></div>
+			<div class="cmn-grid-cell cmn-grid-cell-l cmn-list-title tb08-gc2"><div class="cmn-list-title-inner">車番</div></div>
+			<div class="cmn-grid-cell cmn-grid-cell-l cmn-list-title tb08-gc2"><div class="cmn-list-title-inner">車種</div></div>
+			<div class="cmn-grid-cell cmn-grid-cell-l cmn-list-title tb08-gc3"><div class="cmn-list-title-inner">お客様名</div></div>
+			<div class="cmn-grid-cell cmn-grid-cell-l cmn-list-title tb08-gc3"><div class="cmn-list-title-inner">お客様カナ</div></div>
+			</div>
+		</div>
+		<div id="tb08ListData">
+            @*
+            @foreach (JxMobileWeb.Data.vReportListForSearch record in Model)
+            {
+			<div class="cmn-grid-cell cmn-grid-cell-l tb08-gc1">@record.ENTERPRISECODE</div>
+			<div class="cmn-grid-cell cmn-grid-cell-l tb08-gc1 tb08-line-height">3/21<br/>12:47</div>
+			<div class="cmn-grid-cell cmn-grid-cell-l tb08-gc1">13:17</div>
+			<div class="cmn-grid-cell cmn-grid-cell-l tb08-gc2">@record.NUMBERPLATE</div>
+			<div class="cmn-grid-cell cmn-grid-cell-l tb08-gc2 tb08-align-l">@record.MODELNAME</div>
+			<div class="cmn-grid-cell cmn-grid-cell-l tb08-gc3 tb08-align-l">@record.CUSTNAME</div>
+			<div class="cmn-grid-cell cmn-grid-cell-l tb08-gc3 tb08-align-l">@record.KANA</div>
+            }
+            *@
+		</div>
+		<p class="cmn-align-center">
+			<a href="#" data-role="button" data-inline="true" >更新</a>
+			<a href="#popupSearch" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-transition="pop">検索</a>
+			<a href="#" data-role="button" data-inline="true" >確定</a>
+		</p>
+	</div><!-- /cmn-body -->
+    <!-- popup -->
+	<div data-role="popup" id="popupMenu" >
+		<div data-role="popup" id="popupSearch" data-overlay-theme="a" class="ui-corner-all">
+			<div class="cmn-align-center" style="padding:10px 20px;">
+				<h3>検索条件設定</h3>
+				<div id="area-customer" class="cmn-grid">
+					<div class="cmn-grid-cell-noborder cmn-grid-cell-l">種別：</div>
+					<div class="cmn-grid-cell-noborder cmn-grid-cell-r">
+						<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+							<input type="radio" name="radio" id="radio-jyutyuu" value="0" checked="checked">
+							<label for="radio-jyutyuu">受注一覧</label>
+							<input type="radio" name="radio" id="radio-mitsumori" value="1">
+							<label for="radio-mitsumori">見積一覧</label>
+							<input type="radio" name="radio" id="radio-seisan" value="2">
+							<label for="radio-seisan">精算一覧</label>
+						</fieldset>
+					</div>
+					<div class="cmn-grid-cell-noborder cmn-grid-cell-l">日付：</div>
+					<div class="cmn-grid-cell-noborder cmn-grid-cell-r" >
+						<div class="tb08-grid-cell-r">
+							<input id="searchDateF" type="date" >
+						</div>
+						<div class="tb08-grid-cell-r1 tb08-align-center">
+							～
+						</div>
+						<div class="tb08-grid-cell-r">
+							<input id="searchDateT" type="date">
+						</div>
+					</div>
+					<div class="tb08-grid-cell-noborder1 cmn-grid-cell-l">車番：</div>
+					<div class="tb08-grid-cell-noborder1 cmn-grid-cell-r" >
+						<div data-role="fieldcontain" >
+							<select id="carSelect1">
+								<option>選択...</option>
+								<optgroup label="東京都">
+									<option value="1">品川</option>
+									<option value="2">渋谷</option>
+									<option value="3">新宿</option>
+									<option value="4">杉並</option>
+								</optgroup>
+								<optgroup label="東京都2">
+									<option value="5">練馬</option>
+									<option value="6">大塚</option>
+									<option value="7">千住</option>
+								</optgroup>
+							</select>
+						</div>
+						<div class="tb08-grid-cell-r2">
+							<input id="searchCarNo2" type="text">
+						</div>
+						<div class="tb08-grid-cell-r3 tb08-padding-lr">
+							<div data-role="fieldcontain" >
+								<select id="carSelect2">
+									<option>選択...</option>
+									<optgroup label="東京都">
+										<option value="1">か</option>
+										<option value="2">に</option>
+										<option value="3">め</option>
+									</optgroup>
+									<optgroup label="東京都2">
+										<option value="4">か</option>
+										<option value="5">に</option>
+										<option value="6">め</option>
+									</optgroup>
+								</select>
+							</div>
+						</div>
+						<div class="tb08-grid-cell-r2">
+							<input id="searchCarNo4" type="text" >
+						</div>
+					</div>
+					<div class="cmn-grid-cell-noborder cmn-grid-cell-l">氏名（カナ）：</div>
+					<div class="cmn-grid-cell-noborder cmn-grid-cell-r" >
+						<input id="customerNameKana" type="text">
+					</div>
+					<div class="cmn-grid-cell-noborder cmn-grid-cell-l">受注番号：</div>
+					<div class="cmn-grid-cell-noborder cmn-grid-cell-r" >
+						<input id="hno" type="text">
+					</div>
+				</div>
+				<p class="cmn-align-center">
+					<a href="#" data-rel="back" data-role="button" data-inline="true" >戻る</a>
+					<a href="#" data-rel="back" data-role="button" data-inline="true" onclick="onSearch()">検索</a>
+				</p>
+			</div>
+	    </div>
+	</div>
+</div><!-- /page -->

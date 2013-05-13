@@ -11,6 +11,9 @@ namespace JxMobileWeb
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/jquerymobile").Include(
+                        "~/Scripts/jquery.mobile-{version}.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
                         "~/Scripts/jquery-ui-{version}.js"));
 
@@ -42,19 +45,19 @@ namespace JxMobileWeb
             // JxMobileWeb用JavaScript定義
             bundles.Add(new ScriptBundle("~/bundles/smartphone/js").Include(
                         "~/Scripts/Common.js",
-                        "~/Scripts/smartphone/*"));
+                        "~/Scripts/smartphone/*.js"));
             bundles.Add(new StyleBundle("~/bundles/smartphone/css").Include(
                         "~/Content/css/common.css",
                         "~/Content/css/jxm.css", //"~/Content/css/jxm.min.css",
-                        "~/Content/css/smartphone/*"));
+                        "~/Content/css/smartphone/*.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/tablet/js").Include(
                         "~/Scripts/Common.js",
-                        "~/Scripts/tablet/*"));
+                        "~/Scripts/tablet/*.js"));
             bundles.Add(new StyleBundle("~/bundles/tablet/css").Include(
                         "~/Content/css/common.css",
                         "~/Content/css/jxm.css", //"~/Content/css/jxm.min.css",
-                        "~/Content/css/tablet/*"));
+                        "~/Content/css/tablet/*.css"));
         }
     }
 }
